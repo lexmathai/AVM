@@ -39,6 +39,9 @@
   .dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.4rem}
   .dot-green{background:var(--green)}.dot-yellow{background:var(--yellow)}.dot-red{background:var(--red)}
   footer{border-top:1px solid var(--border)}footer p{max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.25rem;color:var(--muted);font-size:.9rem}
+  .footer-control-link{font-size:.75rem;opacity:.6;margin-left:.5rem}
+  .footer-control-link a{color:var(--muted)}
+  .footer-control-link a:hover{opacity:1}
   section{scroll-margin-top:1rem}
 </style>
 </head>
@@ -50,7 +53,6 @@
     <li><a href="#about">About</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#audit">Control Tower</a></li>
   </ul></nav>
 </header>
 
@@ -60,7 +62,6 @@
     <p class="muted" style="font-size:1.2rem;max-width:48ch">Founder of Texas Movement International — media, consulting, and performance brands built for economic leverage.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#ventures">See What I'm Building</a>
-      <a class="btn btn-secondary" href="#audit">View My Control Tower</a>
     </div>
   </section>
 
@@ -137,7 +138,12 @@
   </section>
 </main>
 
-<footer><p>© <span id="yr"></span> Alexander Mathai · Texas Movement International</p></footer>
+<footer>
+  <p>© <span id="yr"></span> Alexander Mathai · Texas Movement International
+    <!-- TODO: Add password protection / authentication check before allowing access to #audit section. Consider cookie-based auth or client-side password prompt. -->
+    <span class="footer-control-link"><a href="#audit">Control panel</a></span>
+  </p>
+</footer>
 
 <script>
 (function(){
