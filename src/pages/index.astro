@@ -1,107 +1,269 @@
+// src/pages/index.astro
 ---
 const name = "Alexander Mathai";
-const tagline = "TODO: one-line positioning statement.";
-const description = "TODO: a 1–2 sentence meta description for search and social cards.";
+const fullName = "Alexander Varghese Mathai";
+const tagline =
+  "I'm Alexander Varghese Mathai — founder and 100% owner of Texas Movement International, a multi-vertical systems company spanning performance, media, footwear, AI consulting, and economic development.";
+const description =
+  "Alexander Varghese Mathai builds operating systems for high-stakes people. Founder and sole owner of Texas Movement International — performance, media, footwear, AI consulting, and economic development.";
 const heroImage = "/AVM-Blue-turtleneck-standing-arm-cross.jpg";
 const ogImage = new URL("/og-alexander-mathai.png", Astro.site).toString();
 const canonical = Astro.site?.toString() ?? "https://alexandermathai.com/";
-const ecosystem = [
-  { label: "Consulting",  href: "https://consulting.texasmovement.com" },
-  { label: "Performance", href: "https://performance.texasmovement.com" },
-  { label: "Health",      href: "https://health.texasmovement.com" },
-  { label: "FounderLink", href: "https://founderlink.texasmovement.com" },
-  { label: "Media",       href: "https://media.texasmovement.com" },
-  { label: "Social",      href: "https://social.texasmovement.com" },
-  { label: "Hero",        href: "https://hero.texasmovement.com" },
-  { label: "Reparations", href: "https://reparations.texasmovement.com" },
+const currentYear = new Date().getFullYear();
+
+const metrics = [
+  { value: "$800K+", label: "Revenue and value moved through systems I've built and run." },
+  { value: "100+", label: "Operators, athletes, and founders served directly." },
+  { value: "12 years", label: "Building, shipping, and refining in the field — not in theory." },
 ];
-const year = new Date().getFullYear();
+
+const ecosystem = [
+  {
+    label: "Social / Gather",
+    note: "Community and convening layer for the ecosystem.",
+    href: "https://social.texasmovement.com",
+  },
+  {
+    label: "Media",
+    note: "Storytelling, distribution, and signal for the work.",
+    href: "https://media.texasmovement.com",
+  },
+  {
+    label: "HERO Footwear & Performance",
+    note: "Footwear and performance product line.",
+    href: "https://hero.texasmovement.com",
+  },
+  {
+    label: "TM Consulting",
+    note: "AI and systems consulting for high-stakes operators.",
+    href: "https://consulting.texasmovement.com",
+  },
+  {
+    label: "FounderLink",
+    note: "Operator-to-operator network and deal flow.",
+    href: "https://founderlink.texasmovement.com",
+  },
+  {
+    label: "TM Reparations & Partners",
+    note: "Economic development and partner initiatives.",
+    href: "https://reparations.texasmovement.com",
+  },
+  {
+    label: "TM Performance",
+    note: "Human performance and training systems.",
+    href: "https://performance.texasmovement.com",
+  },
+  {
+    label: "Flagship",
+    note: "Creator and founder hub — the spine of it all.",
+    href: "https://texasmovement.com",
+  },
+];
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{name}</title>
+    <title>{fullName} — Operator for high-stakes people</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={name} />
+    <meta property="og:title" content={`${fullName} — Operator for high-stakes people`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={name} />
+    <meta name="twitter:title" content={`${fullName} — Operator for high-stakes people`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
     <main class="wrap">
       <section class="hero">
-        <img class="portrait" src={heroImage} alt={`Portrait of ${name}`} width="280" height="350" />        <div class="hero-copy">
         <div class="hero-copy">
-          <p class="eyebrow">TODO: eyebrow / role</p>
-          <h1>{name}</h1>
+          <p class="eyebrow">Operator for high-stakes people</p>
+          <h1>I build <span class="hl">systems</span> for people who cannot afford to lose.</h1>
           <p class="tagline">{tagline}</p>
+
+          <div class="thesis">
+            <p>
+              Most people optimize for looking big. I optimize for being unkillable. The work isn't
+              a personal brand — it's an operating system: the structures, leverage, and discipline
+              that let a small number of serious people compound advantage while everyone else
+              performs busyness. I don't sell motion. I install machinery that keeps producing after
+              I leave the room.
+            </p>
+          </div>
+
+          <div class="metrics">
+            {metrics.map((m) => (
+              <div class="metric">
+                <span class="metric-value">{m.value}</span>
+                <span class="metric-label">{m.label}</span>
+              </div>
+            ))}
+          </div>
+
           <div class="cta">
-            <a class="btn btn-primary" href="mailto:hello@alexandermathai.com">Get in touch</a>
-            <a class="btn btn-ghost" href="#ecosystem">Explore the ecosystem</a>
+            <a class="btn btn-primary" href="https://consulting.texasmovement.com">Book a working session</a>
+            <a class="btn btn-ghost" href="mailto:alexander@texasmovement.com">Send a direct brief</a>
+          </div>
+
+          <p class="note">
+            I'm not trying to be everywhere. I build with a small number of operators who have real
+            stakes, not tourism-level problems.
+          </p>
+
+          <p class="hero-footer">
+            <span>Chicago</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="https://texasmovement.com">TexasMovement.com</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="https://consulting.texasmovement.com">Texas Movement Consulting</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="https://www.linkedin.com/in/alexandermathai">LinkedIn</a>
+          </p>
+        </div>
+
+        <figure class="hero-media">
+          <img
+            class="portrait"
+            src={heroImage}
+            alt={`Portrait of ${fullName}, founder of Texas Movement International`}
+            width="320"
+            height="400"
+          />
+          <figcaption>Alexander Varghese Mathai — founder &amp; sole owner, Texas Movement International.</figcaption>
+        </figure>
+      </section>
+
+      <aside class="sidebar" aria-label="Founder profile">
+        <h2 class="sidebar-title">Founder profile</h2>
+
+        <div class="card">
+          <h3>{fullName}</h3>
+          <p class="role">Founder &amp; 100% owner, Texas Movement International LLC</p>
+          <div class="chips">
+            <span class="chip">Systems</span>
+            <span class="chip">AI consulting</span>
+            <span class="chip">Performance</span>
+            <span class="chip">Media</span>
+            <span class="chip">Footwear</span>
+            <span class="chip">Economic development</span>
           </div>
         </div>
-      </section>
-      <section class="grid">
-        <article class="main">
-          <h2>About</h2>
-          <p>TODO: replace with your real intro copy. This starter exists only so the site builds and deploys cleanly on first push.</p>
-          <p>Keep paragraphs short and swap in your actual narrative, work, and links.</p>
-        </article>
-        <aside class="sidebar">
-          <h2 class="sr-only">Highlights</h2>
-          <div class="card"><h3>Now</h3><p>TODO: what you're focused on right now.</p></div>
-          <div class="card"><h3>Contact</h3><p><a href="mailto:hello@alexandermathai.com">hello@alexandermathai.com</a></p></div>
-        </aside>
-      </section>
+
+        <div class="card">
+          <h3>Selected systems</h3>
+          <ul>
+            <li>HERO Footwear &amp; Performance — product line from concept to market.</li>
+            <li>TM Consulting — AI and operating systems for founders under pressure.</li>
+            <li>TM Reparations &amp; Partners — economic development and partner capital.</li>
+            <li>FounderLink — operator network and deal flow.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Receipts (abridged)</h3>
+          <ul>
+            <li>$800K+ moved through systems I built and personally run.</li>
+            <li>100+ operators, athletes, and founders served directly.</li>
+            <li>12 years shipping in the field across multiple verticals.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Background</h3>
+          <p>
+            Multi-vertical builder out of Chicago. I run performance, media, footwear, AI
+            consulting, and economic development under one roof — owned outright, no committee, no
+            dilution of standards.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p><a href="mailto:alexander@texasmovement.com">alexander@texasmovement.com</a></p>
+          <p><a href="https://consulting.texasmovement.com">consulting.texasmovement.com</a></p>
+        </div>
+      </aside>
+
       <section id="ecosystem" class="ecosystem">
         <h2>Ecosystem</h2>
+        <p class="eco-intro">Eight verticals, one operating system. Each runs on its own, all reinforce the spine.</p>
         <div class="eco-grid">
           {ecosystem.map((item) => (
             <a class="eco-card" href={item.href}>
               <span class="eco-label">{item.label}</span>
+              <span class="eco-note">{item.note}</span>
               <span class="eco-arrow" aria-hidden="true">→</span>
             </a>
           ))}
         </div>
       </section>
     </main>
-    <footer class="footer"><p>© {year} {name}. All rights reserved.</p></footer>
+
+    <footer class="footer">
+      <p class="footer-status">Under active iteration — I ship, then refine.</p>
+      <p class="footer-legal">© {currentYear} Alexander Mathai · Texas Movement International LLC</p>
+    </footer>
+
     <style is:global>
-      :root{--bg:#0e0f13;--panel:#16181f;--line:#262a35;--ink:#eceef3;--mut:#9aa3b2;--acc:#c9a35e;--maxw:1080px;}
+      :root{--bg:#0e0f13;--panel:#16181f;--line:#262a35;--ink:#eceef3;--mut:#9aa3b2;--acc:#c9a35e;--maxw:1180px;}
       *{box-sizing:border-box;} html,body{margin:0;padding:0;}
-      body{background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+      body{background:var(--bg);color:var(--ink);font:16px/1.65 "Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
       a{color:inherit;}
-      .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 24px;}
-      .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-      .hero{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
-      .portrait{width:280px;height:auto;border-radius:14px;object-fit:cover;border:1px solid var(--line);}
-      .hero-copy{flex:1;min-width:280px;}
-      .eyebrow{color:var(--acc);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 8px;}
-      h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin:0 0 12px;}
-      .tagline{color:var(--mut);font-size:1.15rem;margin:0 0 24px;max-width:46ch;}
-      .cta{display:flex;gap:12px;flex-wrap:wrap;}
-      .btn{display:inline-block;padding:11px 18px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;}
+      .wrap{max-width:var(--maxw);margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1fr;gap:48px;}
+      @media(min-width:960px){.wrap{grid-template-columns:minmax(0,2.1fr) minmax(280px,1fr);grid-template-areas:"hero side" "eco eco";column-gap:56px;}.hero{grid-area:hero;}.sidebar{grid-area:side;}.ecosystem{grid-area:eco;}}
+      .hero{display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap;}
+      .hero-copy{flex:1;min-width:300px;}
+      .eyebrow{color:var(--acc);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:600;margin:0 0 14px;}
+      h1{font-size:clamp(2.4rem,5.2vw,3.7rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 18px;font-weight:800;}
+      .hl{color:var(--acc);}
+      .tagline{color:var(--ink);font-size:1.12rem;margin:0 0 22px;max-width:60ch;}
+      .thesis{border-left:3px solid var(--acc);padding:2px 0 2px 18px;margin:0 0 28px;}
+      .thesis p{color:var(--mut);margin:0;max-width:64ch;}
+      .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin:0 0 28px;}
+      .metric{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+      .metric-value{display:block;font-size:1.6rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+      .metric-label{display:block;color:var(--mut);font-size:.86rem;margin-top:6px;}
+      .cta{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+      .btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;}
       .btn-primary{background:var(--acc);color:#1a1305;} .btn-ghost{border:1px solid var(--line);color:var(--ink);}
-      .grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:64px;}
-      @media(min-width:820px){.grid{grid-template-columns:2fr 1fr;}}
-      .main h2,.ecosystem h2{font-size:1.4rem;margin:0 0 14px;} .main p{color:var(--mut);}
+      .note{color:var(--mut);font-size:.95rem;max-width:60ch;margin:0 0 22px;}
+      .hero-footer{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;color:var(--mut);font-size:.88rem;margin:0;}
+      .hero-footer a{color:var(--acc);text-decoration:none;} .hero-footer .sep{color:var(--line);}
+      .hero-media{margin:0;flex-shrink:0;width:320px;max-width:100%;}
+      .portrait{width:320px;max-width:100%;height:auto;border-radius:16px;object-fit:cover;border:1px solid var(--line);display:block;}
+      .hero-media figcaption{color:var(--mut);font-size:.82rem;margin-top:12px;max-width:320px;}
       .sidebar{display:flex;flex-direction:column;gap:16px;}
-      .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;}
-      .card h3{margin:0 0 6px;font-size:1rem;} .card p{margin:0;color:var(--mut);} .card a{color:var(--acc);text-decoration:none;}
-      .ecosystem{margin-top:64px;}
-      .eco-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
-      .eco-card{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;}
-      .eco-card:hover{border-color:var(--acc);transform:translateY(-2px);} .eco-label{font-weight:600;} .eco-arrow{color:var(--acc);}
-      .footer{border-top:1px solid var(--line);margin-top:72px;}
-      .footer p{max-width:var(--maxw);margin:0 auto;padding:24px;color:var(--mut);font-size:.9rem;}
+      .sidebar-title{font-size:1.05rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin:0 0 4px;}
+      .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;}
+      .card h3{margin:0 0 10px;font-size:1.02rem;} .card p{margin:0 0 8px;color:var(--mut);} .card p:last-child{margin-bottom:0;}
+      .card a{color:var(--acc);text-decoration:none;}
+      .card .role{color:var(--ink);font-weight:500;}
+      .card ul{margin:0;padding-left:18px;color:var(--mut);} .card li{margin-bottom:8px;} .card li:last-child{margin-bottom:0;}
+      .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+      .chip{background:#1d2030;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.78rem;color:var(--ink);}
+      .ecosystem{margin-top:8px;}
+      .ecosystem h2{font-size:1.5rem;margin:0 0 8px;}
+      .eco-intro{color:var(--mut);margin:0 0 22px;max-width:70ch;}
+      .eco-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
+      .eco-card{position:relative;display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;}
+      .eco-card:hover{border-color:var(--acc);transform:translateY(-2px);}
+      .eco-label{font-weight:700;padding-right:24px;} .eco-note{color:var(--mut);font-size:.86rem;}
+      .eco-arrow{position:absolute;top:18px;right:20px;color:var(--acc);}
+      .footer{border-top:1px solid var(--line);margin-top:8px;}
+      .footer p{max-width:var(--maxw);margin:0 auto;padding:6px 24px;color:var(--mut);font-size:.9rem;}
+      .footer-status{padding-top:24px !important;color:var(--ink) !important;font-weight:500;}
+      .footer-legal{padding-bottom:24px !important;}
     </style>
   </body>
 </html>
