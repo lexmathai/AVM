@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>Alexander Varghese Mathai — Texas Movement International</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Varghese Mathai — engineer and systems builder, founder of Texas Movement International. I build operating systems for people and institutions who can't afford to be fragile.">
+  <meta name="description" content="Alexander Varghese Mathai — engineer and systems builder, founder of Texas Movement International. I build operating systems for people and institutions who can’t afford to be fragile.">
+  <meta property="og:title" content="Alexander Varghese Mathai — Texas Movement International">
+  <meta property="og:description" content="I build operating systems for people and institutions who can’t afford to be fragile. Texas Movement International is the platform that runs that method.">
+  <meta property="og:image" content="https://alexandermathai.com/og-alexander-mathai.png">
+  <meta property="og:type" content="website">
   <style>
     :root {
       color-scheme: dark light;
@@ -27,7 +31,7 @@
       padding: 0;
       font-family: var(--sans);
       background:
-        radial-gradient(circle at top, #111827 0, #020617 55%);
+        radial-gradient(circle at top left, #111827 0, #020617 55%);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
     }
@@ -42,7 +46,7 @@
     }
 
     .page {
-      max-width: 880px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 32px 20px 64px;
     }
@@ -52,26 +56,27 @@
       border-bottom: 1px solid var(--border);
       display: flex;
       flex-wrap: wrap;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 18px;
     }
 
     .title-block {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
+      flex: 1 1 320px;
     }
 
     h1 {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       margin: 0;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .subtitle {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--muted);
     }
 
@@ -81,8 +86,8 @@
       color: var(--muted);
     }
 
-    nav {
-      font-size: 0.9rem;
+    .nav-row {
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -92,7 +97,46 @@
       padding: 4px 10px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(15,23,42,0.85);
+      background: rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 0 0 1px rgba(15,23,42,0.7),
+        0 18px 35px rgba(15,23,42,0.8);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .avatar-tag {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid var(--accent-soft);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     main {
@@ -171,6 +215,22 @@
       font-size: 0.9rem;
     }
 
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .social-row a {
+      color: var(--muted);
+    }
+
+    .social-row a:hover {
+      color: var(--link-hover);
+    }
+
     footer {
       border-top: 1px solid var(--border);
       margin-top: 40px;
@@ -181,6 +241,16 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 8px;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+      }
+      .title-block {
+        flex: 1 1 100%;
+      }
     }
 
     @media (max-width: 640px) {
@@ -194,6 +264,10 @@
         padding-left: 0;
         padding-top: 16px;
       }
+      .avatar {
+        width: 90px;
+        height: 90px;
+      }
     }
   </style>
 </head>
@@ -204,26 +278,41 @@
         <h1>Alexander Varghese Mathai</h1>
         <div class="subtitle">Engineer · Systems Builder · Founder, Texas Movement International</div>
         <div class="tagline">I build operating systems for people and institutions who can’t afford to be fragile.</div>
+        <div class="nav-row">
+          <nav>
+            <a href="#about">About</a>
+            <a href="#tmi">Texas Movement</a>
+            <a href="#why">Why This Exists</a>
+            <a href="#acquisition">1B Control Sale</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span class="muted">·</span>
+          <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TMI</a>
+          <!-- Add X/IG/etc if you want -->
+        </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#tmi">Texas Movement</a>
-        <a href="#why">Why This Exists</a>
-        <a href="#acquisition">1B Control Sale</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="avatar-wrap">
+        <!-- Uses your existing image file from the repo -->
+        <div class="avatar">
+          <img src="/AVM-Blue-turtleneck-standing-arm-cross.jpg" alt="Alexander Varghese Mathai">
+        </div>
+        <div class="avatar-tag">Founder · TMI</div>
+      </div>
     </header>
 
     <main>
-      <!-- Hero / About -->
+      <!-- About -->
       <section id="about">
         <h2>About</h2>
         <p>I’m an engineer who builds systems that <strong>keep working without me</strong>.</p>
-        <p>My work sits where performance science, AI, and operations collide. I’ve built for people and institutions who can’t afford to be fragile: pro athletes, founders, teams, and civic-scale problems where “just try harder” is a joke.</p>
+        <p>My work sits where performance science, AI, and operations collide. I’ve built for people and institutions who can’t afford to be fragile: pro athletes, founders, teams, and civic‑scale problems where “just try harder” is a joke.</p>
         <p>Texas Movement International is the container for that work — one operating platform instead of ten separate side projects.</p>
       </section>
 
-      <!-- TMI: what it is -->
+      <!-- TMI -->
       <section id="tmi">
         <h2>Texas Movement International</h2>
         <p><span class="pill">Platform</span><span class="pill">Founder‑authored</span><span class="pill">Multi‑vertical</span></p>
@@ -239,13 +328,13 @@
           <li><a href="https://social.texasmovement.com" target="_blank" rel="noreferrer">social.texasmovement.com</a> — community &amp; social layer.</li>
           <li><a href="https://reparations.texasmovement.com" target="_blank" rel="noreferrer">reparations.texasmovement.com</a> — mission / social impact.</li>
         </ul>
-        <p>Each property is a vertical. Together they behave like **one platform** because they all run on the same mythos, the same language, and the same operating frameworks.</p>
+        <p>Each property is a vertical. Together they behave like <strong>one platform</strong> because they all run on the same mythos, the same language, and the same operating frameworks.</p>
         <div class="callout">
           <p><strong>For most people</strong> — Texas Movement is the company that runs the method. For one buyer, it is a control‑sale platform. Keep reading.</p>
         </div>
       </section>
 
-      <!-- Why this is valuable at all -->
+      <!-- Why this exists / value -->
       <section id="why">
         <h2>Why This Exists</h2>
         <p>Right now, TMI is:</p>
@@ -256,13 +345,12 @@
           <li>An architecture that lets new verticals spin up on the same rails instead of starting from scratch.</li>
         </ul>
         <p>The hard work is done: thinking, naming, patterning, integrating. The platform exists. It’s not a deck.</p>
-
         <div class="callout">
           <p><strong>If you’re trying to price it, ignore the CSS.</strong> A serious buyer is paying for time, coherence, and option value — not just domain names.</p>
         </div>
       </section>
 
-      <!-- 1B control-sale pitch -->
+      <!-- 1B Control Sale -->
       <section id="acquisition">
         <h2>1B Control Sale</h2>
         <p><span class="pill">Control sale only</span><span class="pill">Ten‑figure floor</span><span class="pill">No NIL / no voice</span></p>
