@@ -7,9 +7,9 @@ export default defineConfig({
   // Generate a fully static site (HTML/CSS/JS only), ideal for GitHub Pages
   output: 'static',
 
-  // Optional: adjust if you later serve from a subpath; for now leave root
+  // Root path (keep this for a root domain)
   base: '/',
 
-  // You can add integrations (e.g., sitemap, MDX) here later
+  // Add integrations later as needed (e.g., sitemap, MDX)
   integrations: [],
 });
