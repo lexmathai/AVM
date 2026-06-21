@@ -13,14 +13,17 @@
     :root {
       color-scheme: dark light;
       --bg: #020617;
-      --fg: #f4f4f5;
+      --fg: #f9fafb;
       --muted: #9ca3af;
-      --border: #1f2937;
+      --border: #111827;
       --accent: #f97316;
-      --accent-soft: rgba(249,115,22,0.12);
+      --accent-soft: rgba(249,115,22,0.14);
+      --accent-strong: #fb923c;
       --link: #f97316;
       --link-hover: #fb923c;
-      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --chip-bg: rgba(15,23,42,0.85);
+      --chip-border: #1f2937;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
       --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
@@ -31,7 +34,8 @@
       padding: 0;
       font-family: var(--sans);
       background:
-        radial-gradient(circle at top left, #111827 0, #020617 55%);
+        radial-gradient(circle at 0 0, #0b1120 0, #020617 48%),
+        radial-gradient(circle at 100% 100%, #111827 0, #020617 52%);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
     }
@@ -39,6 +43,7 @@
     a {
       color: var(--link);
       text-decoration: none;
+      transition: color 0.12s ease;
     }
     a:hover {
       color: var(--link-hover);
@@ -46,32 +51,31 @@
     }
 
     .page {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 32px 20px 64px;
+      padding: 28px 20px 56px;
     }
 
     header {
-      padding: 12px 0 24px;
+      padding: 10px 0 22px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 20px;
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
     }
 
     .title-block {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      flex: 1 1 320px;
+      min-width: 0;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       margin: 0;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
@@ -87,34 +91,45 @@
     }
 
     .nav-row {
-      margin-top: 10px;
+      margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
     nav a {
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.9);
-      font-size: 0.9rem;
+      border: 1px solid var(--chip-border);
+      background: var(--chip-bg);
+      font-size: 0.87rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav a span.dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--muted);
     }
 
     .avatar-wrap {
       position: relative;
-      flex: 0 0 auto;
+      justify-self: end;
     }
 
     .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 24px;
+      width: 112px;
+      height: 112px;
+      border-radius: 26px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(15,23,42,0.9);
       box-shadow:
-        0 0 0 1px rgba(15,23,42,0.7),
-        0 18px 35px rgba(15,23,42,0.8);
+        0 0 0 1px rgba(15,23,42,0.8),
+        0 20px 40px rgba(15,23,42,0.9);
+      background: #020617;
     }
 
     .avatar img {
@@ -122,25 +137,37 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: saturate(1.05);
     }
 
     .avatar-tag {
       position: absolute;
-      bottom: -4px;
+      bottom: -6px;
       right: -4px;
-      padding: 2px 8px;
+      padding: 2px 9px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid var(--accent-soft);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.4);
       font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .avatar-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.16);
     }
 
     main {
-      padding-top: 28px;
+      padding-top: 26px;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -152,16 +179,16 @@
     }
 
     section h2 {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: var(--muted);
       margin: 0 0 10px;
     }
 
     p {
       font-size: 0.98rem;
-      line-height: 1.65;
+      line-height: 1.7;
       margin: 0 0 10px;
     }
 
@@ -177,19 +204,26 @@
 
     .pill {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 2px 9px;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 0.74rem;
+      border: 1px solid var(--chip-border);
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       color: var(--muted);
       margin-right: 6px;
       margin-bottom: 4px;
+      background: var(--chip-bg);
+    }
+
+    .pill-hot {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+      background: rgba(249,115,22,0.08);
     }
 
     .callout {
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid var(--border);
       background: rgba(15,23,42,0.9);
       padding: 12px 14px;
@@ -197,16 +231,16 @@
     }
 
     .callout-strong {
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid var(--accent);
       background: var(--accent-soft);
       padding: 12px 14px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .callout strong,
     .callout-strong strong {
-      color: var(--accent);
+      color: var(--accent-strong);
       font-weight: 600;
     }
 
@@ -220,7 +254,7 @@
       flex-wrap: wrap;
       gap: 8px;
       font-size: 0.9rem;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .social-row a {
@@ -231,9 +265,29 @@
       color: var(--link-hover);
     }
 
+    .term-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: 10px 18px;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .term-label {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .term-value {
+      font-size: 0.96rem;
+    }
+
     footer {
       border-top: 1px solid var(--border);
-      margin-top: 40px;
+      margin-top: 36px;
       padding-top: 16px;
       font-size: 0.86rem;
       color: var(--muted);
@@ -243,21 +297,17 @@
       gap: 8px;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 780px) {
       header {
-        flex-direction: row;
-        align-items: center;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: flex-start;
       }
-      .title-block {
-        flex: 1 1 100%;
+      .avatar-wrap {
+        justify-self: flex-start;
       }
     }
 
     @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
       section {
         border-left: none;
         border-top: 1px solid var(--border);
@@ -265,8 +315,11 @@
         padding-top: 16px;
       }
       .avatar {
-        width: 90px;
-        height: 90px;
+        width: 92px;
+        height: 92px;
+      }
+      .term-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -280,11 +333,11 @@
         <div class="tagline">I build operating systems for people and institutions who can’t afford to be fragile.</div>
         <div class="nav-row">
           <nav>
-            <a href="#about">About</a>
-            <a href="#tmi">Texas Movement</a>
-            <a href="#why">Why This Exists</a>
-            <a href="#acquisition">1B Control Sale</a>
-            <a href="#contact">Contact</a>
+            <a href="#about"><span class="dot"></span>About</a>
+            <a href="#tmi"><span class="dot"></span>Texas Movement</a>
+            <a href="#why"><span class="dot"></span>Why This Exists</a>
+            <a href="#acquisition"><span class="dot"></span>1B Control Sale</a>
+            <a href="#contact"><span class="dot"></span>Contact</a>
           </nav>
         </div>
         <div class="social-row">
@@ -297,7 +350,10 @@
         <div class="avatar">
           <img src="/AVM-Blue-turtleneck-standing-arm-cross.jpg" alt="Alexander Varghese Mathai">
         </div>
-        <div class="avatar-tag">Founder · TMI</div>
+        <div class="avatar-tag">
+          <span class="avatar-tag-dot"></span>
+          Founder · TMI
+        </div>
       </div>
     </header>
 
@@ -305,8 +361,8 @@
       <section id="about">
         <h2>About</h2>
         <p>I’m an engineer who builds systems that <strong>keep working without me</strong>.</p>
-        <p>My work sits where performance science, AI, and operations collide. I’ve built for people and institutions who can’t afford to be fragile: pro athletes, founders, teams, and civic‑scale problems where “just try harder” is a joke.</p>
-        <p>Texas Movement International is the container for that work — one operating platform instead of ten separate side projects.</p>
+        <p>I live where performance science, AI, and operations collide. My work has touched pro sport, founders, and civic‑scale problems — the places where “try harder” is not a strategy and motivational theater is a liability.</p>
+        <p>Texas Movement International is the container for that work: one platform instead of ten separate projects, one worldview instead of a different costume in every room.</p>
       </section>
 
       <section id="tmi">
@@ -347,7 +403,7 @@
 
       <section id="acquisition">
         <h2>1B Control Sale</h2>
-        <p><span class="pill">Control sale only</span><span class="pill">Ten‑figure floor</span><span class="pill">No NIL / no voice</span></p>
+        <p><span class="pill pill-hot">Control sale only</span><span class="pill">Ten‑figure floor</span><span class="pill">No NIL / no voice</span></p>
         <p>If you want to hire me, you can buy time through the consulting arm.</p>
         <p>If you want me to <strong>never have a voice in this system again</strong> — to own the platform, the brand, the system, and every commercial right tied to it — that’s a different conversation.</p>
 
@@ -356,14 +412,24 @@
           <p class="mono">That is the minimum number that starts a real process for a full, exclusive buyout of the platform, brand, domains, IP, and operating system.</p>
         </div>
 
-        <p>In plain language, a control deal looks like this:</p>
-        <ul>
-          <li><strong>Scope:</strong> full acquisition of Texas Movement International — platform, brand, domains, IP, systems, and all commercial rights.</li>
-          <li><strong>Control:</strong> one buyer, one platform. No partial carveouts dressed up as acquisitions.</li>
-          <li><strong>No residual rights:</strong> no licensing of my name, image, likeness (NIL), or voice in any form, now or later.</li>
-          <li><strong>No ongoing role:</strong> no advisory retainer, no creative‑director title, no quiet back‑channel involvement.</li>
-          <li><strong>Status after closing:</strong> after a limited, clearly scoped transition, I am fully retired and fully detached from the asset.</li>
-        </ul>
+        <div class="callout" aria-label="Control sale term sheet">
+          <div class="term-grid">
+            <div class="term-label">Scope</div>
+            <div class="term-value">Full acquisition of Texas Movement International — platform, brand, domains, IP, systems, and all commercial rights.</div>
+
+            <div class="term-label">Control</div>
+            <div class="term-value">One buyer, one platform. No partial carveouts dressed up as acquisitions.</div>
+
+            <div class="term-label">No residual rights</div>
+            <div class="term-value">No licensing of my name, image, likeness (NIL), or voice in any form, now or later.</div>
+
+            <div class="term-label">No ongoing role</div>
+            <div class="term-value">No advisory retainer, no creative‑director title, no quiet back‑channel involvement.</div>
+
+            <div class="term-label">After closing</div>
+            <div class="term-value">After a limited, clearly scoped transition, I am fully retired and fully detached from the asset.</div>
+          </div>
+        </div>
 
         <p>If you clear that floor, pass diligence, and can execute a clean control sale, you walk away owning a platform you can run, extend, or rebrand however you like. I walk away with my life, and no residual ties.</p>
         <p>If you can’t clear it, the asset is not for sale.</p>
