@@ -13,11 +13,19 @@
   <meta property="og:title" content="Alexander Varghese Mathai — Engineer & Systems Founder">
   <meta property="og:description" content="Founder of Texas Movement International. Engineer who builds performance and business systems that work without him.">
   <meta property="og:url" content="https://alexandermathai.com">
+  <!-- Hero preview image for iMessage/Android: save this file at the root of your site -->
+  <meta property="og:image" content="https://alexandermathai.com/og-alexander-mathai.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Alexander Mathai — Engineer who builds systems that work without him. Founder of Texas Movement International.">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alexander Varghese Mathai — Engineer & Systems Founder">
   <meta name="twitter:description" content="Engineer who builds performance and business systems. Founder of Texas Movement International.">
+  <meta name="twitter:image" content="https://alexandermathai.com/og-alexander-mathai.png">
+  <meta name="twitter:image:alt" content="Alexander Mathai — Engineer & Systems Founder, Texas Movement International.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,8 +132,8 @@
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,0.9fr);
-      gap:48px;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,0.7fr);
+      gap:40px;
       align-items:center;
     }
     .eyebrow{
@@ -240,13 +248,84 @@
       font-size:9px;
     }
 
-    /* Snapshot card */
+    /* Hero photo block */
+    .hero-photo-card{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:radial-gradient(circle at 0 0,rgba(200,161,90,.16),transparent 65%),var(--paper);
+      box-shadow:var(--shadow);
+      padding:14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      max-width:360px;
+      margin:0 auto;
+    }
+    .hero-photo-frame{
+      position:relative;
+      border-radius:14px;
+      overflow:hidden;
+      background:#050608;
+      aspect-ratio:4/5;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-photo-frame img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      /* settle the light studio backdrop into the dark theme */
+      filter:grayscale(.14) contrast(1.05) brightness(.98);
+    }
+    /* faint navy scrim so the portrait reads as part of the dark card */
+    .hero-photo-frame::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(180deg,rgba(5,6,8,.10) 0%,transparent 22%,transparent 68%,rgba(5,6,8,.55) 100%);
+    }
+    .hero-photo-frame .photo-fallback{position:relative;z-index:1;}
+    /* graceful fallback if the portrait file is missing */
+    .hero-photo-frame .photo-fallback{
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      text-align:center;
+      padding:40px 16px;
+    }
+    .hero-photo-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      font-size:11px;
+      color:var(--ink-soft);
+      font-family:var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .hero-photo-meta span strong{
+      display:block;
+      font-family:var(--display);
+      font-size:13px;
+      letter-spacing:0;
+      text-transform:none;
+      color:var(--ink);
+    }
+
+    /* Snapshot / spec card */
     .spec{
       background:radial-gradient(circle at 0 0,rgba(200,161,90,.16),transparent 60%),var(--paper);
       border-radius:18px;
       border:1px solid rgba(255,255,255,.06);
       box-shadow:var(--shadow);
       padding:22px 22px 20px;
+      margin-top:18px;
     }
     .spec-top{
       display:flex;
@@ -275,7 +354,7 @@
     }
     .spec-row{
       display:grid;
-      grid-template-columns:76px 1fr;
+      grid-template-columns:96px 1fr;
       gap:10px;
       padding:9px 0;
       border-top:1px solid rgba(255,255,255,.06);
@@ -312,12 +391,12 @@
       padding:52px 0 0;
     }
     .sec-head{
-      max-width:620px;
+      max-width:640px;
       margin-bottom:26px;
     }
     .sec-head h2{
       font-family:var(--display);
-      font-size:22px;
+      font-size:clamp(20px,3.2vw,26px);
       letter-spacing:-.01em;
       margin-top:10px;
     }
@@ -326,6 +405,22 @@
       color:var(--ink-soft);
       margin-top:8px;
     }
+
+    /* About */
+    .about-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr);
+      gap:34px;
+      align-items:start;
+    }
+    .prose p{
+      font-size:14.5px;
+      color:var(--ink-soft);
+      margin-bottom:14px;
+    }
+    .prose p strong{color:var(--ink);font-weight:600;}
+    .prose p:last-child{margin-bottom:0;}
+    .about-grid .spec{margin-top:0;}
 
     .grid-2{
       display:grid;
@@ -390,7 +485,7 @@
     .table-caption{
       font-size:12.5px;
       color:var(--ink-soft);
-      margin-bottom:6px;
+      margin:22px 0 6px;
       font-style:italic;
     }
     .table-card{
@@ -398,12 +493,13 @@
       border-radius:16px;
       border:1px solid rgba(255,255,255,.06);
       background:rgba(8,10,16,.98);
-      overflow:hidden;
+      overflow-x:auto;
     }
     table{
       width:100%;
       border-collapse:collapse;
       font-size:12.5px;
+      min-width:520px;
     }
     thead th{
       text-align:left;
@@ -415,10 +511,12 @@
       background:#11141b;
       color:var(--ink-soft);
     }
+    thead th:last-child{color:var(--accent);}
     tbody td{
       padding:11px 14px;
       border-top:1px solid rgba(255,255,255,.05);
       color:var(--ink-soft);
+      vertical-align:top;
     }
     tbody tr:hover td{
       background:rgba(255,255,255,.02);
@@ -432,6 +530,15 @@
     td.now{color:var(--ink-soft);}
     td.next{color:var(--ink);}
     td.later{color:var(--accent);}
+
+    /* Texas Movement platform rows */
+    .platform .spec{margin-top:0;}
+    .platform-grid{
+      display:grid;
+      grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);
+      gap:34px;
+      align-items:start;
+    }
 
     /* Closing */
     .cta-band{
@@ -458,22 +565,29 @@
       background:radial-gradient(circle,rgba(200,161,90,.35),transparent 70%);
       pointer-events:none;
     }
+    .cta-band .eyebrow{position:relative;z-index:1;}
     .cta-band h2{
       font-family:var(--display);
-      font-size:22px;
+      font-size:clamp(20px,3.2vw,24px);
       margin-top:8px;
+      position:relative;
+      z-index:1;
     }
     .cta-band p{
       font-size:14.5px;
       color:var(--ink-soft);
       margin-top:10px;
       max-width:460px;
+      position:relative;
+      z-index:1;
     }
     .cta-note{
       font-family:var(--mono);
       font-size:11px;
       color:var(--accent);
       margin-top:14px;
+      position:relative;
+      z-index:1;
     }
     .cta-actions{
       display:flex;
@@ -482,6 +596,7 @@
       position:relative;
       z-index:1;
     }
+    .cta-actions .btn{justify-content:space-between;}
 
     footer{
       border-top:1px solid rgba(255,255,255,.06);
@@ -493,14 +608,17 @@
     .foot{
       display:flex;
       flex-wrap:wrap;
-      gap:18px;
+      gap:28px;
       justify-content:space-between;
       align-items:flex-start;
     }
+    .foot-brand{max-width:300px;}
+    .foot-brand .brand{margin-bottom:10px;}
+    .foot-brand p{font-size:12.5px;color:var(--ink-soft);}
     .foot-links{
       display:flex;
       flex-wrap:wrap;
-      gap:16px;
+      gap:38px;
     }
     .foot-col h4{
       font-family:var(--mono);
@@ -508,18 +626,48 @@
       letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--ink-soft);
-      margin-bottom:6px;
+      margin-bottom:8px;
     }
     .foot-col a{
       display:block;
       font-size:13px;
       color:var(--ink-soft);
-      margin-bottom:4px;
+      margin-bottom:5px;
     }
     .foot-col a:hover{color:var(--accent)}
+    .foot-legal{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.05);
+      font-family:var(--mono);
+      font-size:10.5px;
+      letter-spacing:.06em;
+      color:var(--ink-soft);
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 14px;
+      justify-content:space-between;
+    }
+
+    /* Hero entrance — restrained, runs once */
+    @keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .hero .eyebrow,.hero h1,.hero .lede,.hero .self-id,.hero .hero-cta,.hero .cred-strip{
+      animation:riseIn .7s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .hero h1{animation-delay:.05s}
+    .hero .lede{animation-delay:.10s}
+    .hero .self-id{animation-delay:.16s}
+    .hero .hero-cta{animation-delay:.22s}
+    .hero .cred-strip{animation-delay:.28s}
+    .hero-photo-card{animation:riseIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:.10s}
+    .hero .spec{animation:riseIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:.20s}
 
     @media(max-width:920px){
-      .hero-grid{grid-template-columns:1fr;gap:36px}
+      .hero-grid{grid-template-columns:1fr;gap:24px}
+      .hero-photo-card{order:-1;max-width:260px;}
+      .spec{margin-top:16px;}
+      .about-grid{grid-template-columns:1fr;gap:24px}
+      .platform-grid{grid-template-columns:1fr;gap:24px}
       .cta-band{grid-template-columns:1fr;padding:28px 22px}
     }
     @media(max-width:720px){
@@ -529,6 +677,12 @@
       main{padding-top:32px}
       section{padding-top:42px}
       .grid-2{grid-template-columns:1fr}
+      .foot-links{gap:24px}
+    }
+
+    /* Accessibility: respect reduced-motion preference */
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
     }
   </style>
 </head>
@@ -584,130 +738,194 @@
         </div>
       </div>
 
-      <aside class="spec" aria-label="Profile snapshot">
-        <div class="spec-top">
-          <div class="spec-label">Profile snapshot</div>
-          <div class="spec-tag">Founder-built · Company-run</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-k">Core lens</div>
-          <div class="spec-v">
-            <b>Systems first</b>
-            <span>Biomechanics-grade diagnostics applied to AI, funnels, and operations.</span>
+      <div>
+        <div class="hero-photo-card">
+          <div class="hero-photo-frame">
+            <img src="AVM-Blue-turtleneck-standing-arm-cross.jpg"
+                 alt="Alexander Mathai standing with arms crossed in a dark turtleneck"
+                 onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\'photo-fallback\'>Portrait<br>AVM-Blue-turtleneck-standing-arm-cross.jpg</div>')">
+          </div>
+          <div class="hero-photo-meta">
+            <span><strong>Alexander Mathai</strong> Founder · Systems engineer</span>
+            <span>Texas Movement International</span>
           </div>
         </div>
-        <div class="spec-row">
-          <div class="spec-k">What I build</div>
-          <div class="spec-v">
-            <b>Companies, not jobs</b>
-            <span>Methodologies, playbooks, and offers that survive without me in the room.</span>
+
+        <aside class="spec" aria-label="Profile snapshot">
+          <div class="spec-top">
+            <div class="spec-label">Profile snapshot</div>
+            <div class="spec-tag">Founder-built · Company-run</div>
           </div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-k">Platform</div>
-          <div class="spec-v">
-            <b>Texas Movement</b>
-            <span>Consulting, performance, and education — all running on the same underlying framework.</span>
+          <div class="spec-row">
+            <div class="spec-k">Core lens</div>
+            <div class="spec-v">
+              <b>Systems first</b>
+              <span>Biomechanics-grade diagnostics applied to AI, funnels, and operations.</span>
+            </div>
           </div>
-        </div>
-        <div class="spec-foot">
-          Founder-authored, company-operated. My name stays on the thinking; the company’s name stays on the doing.
-        </div>
-      </aside>
+          <div class="spec-row">
+            <div class="spec-k">What I build</div>
+            <div class="spec-v">
+              <b>Companies, not jobs</b>
+              <span>Methodologies, playbooks, and offers that survive without me in the room.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Platform</div>
+            <div class="spec-v">
+              <b>Texas Movement</b>
+              <span>Consulting, performance, and education — all running on the same underlying framework.</span>
+            </div>
+          </div>
+          <div class="spec-foot">
+            Founder-authored, company-operated. My name stays on the thinking; the company’s name stays on the doing.
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
-  <section id="about">
+  <!-- ABOUT -->
+  <section id="about" class="about">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">About</span>
-        <h2>From tensegrity and force lines to AI and funnels.</h2>
-        <p>
-          My original training is in civil engineering and biomechanics. I started by mapping how force travels through the body,
-          then applied the same logic to how information, work, and money travel through organizations.
-        </p>
+        <div class="eyebrow">About</div>
+        <h2>I diagnose the system before I touch the symptom.</h2>
+        <p>Most people optimize the part that hurts. An engineer finds the load path that made it hurt — then redesigns it so the failure can’t happen the same way twice.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="prose">
+          <p>My training is structural. At the Illinois Institute of Technology I learned to read anything — a bridge, a body, a business — as a system of <strong>loads, constraints, and redundancy</strong>. That lens doesn’t switch off when the subject changes from a beam to a funnel.</p>
+          <p>I spent years applying it to human performance: diagnosing how athletes move, where force leaks, and how to rebuild a body so it holds under competition. The work behind those results is the same work I now run for operators — a <strong>professional-sports and Fortune-500 track record</strong> of finding the structural fault, not just the visible crack.</p>
+          <p>The difference between me and a generalist consultant is method. I don’t hand you opinions; I hand you a <strong>system you can run without me</strong> — documented, load-tested, and built to transfer. That’s the entire point. If a fix only works while I’m standing next to it, it isn’t finished.</p>
+        </div>
+
+        <aside class="spec" aria-label="Credentials">
+          <div class="spec-top">
+            <div class="spec-label">Credentials</div>
+            <div class="spec-tag">Verified</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Education</div>
+            <div class="spec-v">
+              <b>Illinois Institute of Technology</b>
+              <span>Engineering — structural &amp; systems foundation.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Licensure</div>
+            <div class="spec-v">
+              <b>EIT</b>
+              <span>Engineer in Training — on the engineering track.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Performance</div>
+            <div class="spec-v">
+              <b>CPT · USATF Level 1</b>
+              <span>Certified trainer and track &amp; field coach.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Track record</div>
+            <div class="spec-v">
+              <b>Pro sports &amp; Fortune 500</b>
+              <span>Documented consulting work across elite performance and enterprise operations.</span>
+            </div>
+          </div>
+          <div class="spec-foot">
+            One method, three domains. The credentials are the proof the method holds where the stakes are highest.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I BUILD -->
+  <section id="work" class="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">What I Build</div>
+        <h2>Four kinds of work. One underlying method.</h2>
+        <p>Each engagement starts with a diagnosis and ends with something that runs on its own. The domain changes; the engineering doesn’t.</p>
       </div>
 
       <div class="grid-2">
-        <div class="card">
-          <div class="tag">What I am</div>
-          <h3>Engineer, not generic “coach.”</h3>
-          <p>
-            I read problems as structural: constraints, failure points, and load paths. That lens doesn’t care whether the medium is
-            a hamstring, a sales funnel, or an AI workflow — the question is always where the system is leaking and how to rebuild it.
-          </p>
+        <article class="card">
+          <div class="tag">01 · Performance</div>
+          <h3>Performance systems</h3>
+          <p>Movement and return-to-load rebuilt the way an engineer designs for stress — so the athlete holds up, not just the highlight reel.</p>
           <ul class="chk">
-            <li>Civil engineering and biomechanics background.</li>
-            <li>Systems diagnostics used in both movement and business.</li>
-            <li>Bias toward evidence, documentation, and repeatability.</li>
+            <li>Biomechanical diagnostics &amp; force-leak mapping</li>
+            <li>Load programming and progression logic</li>
+            <li>Return-to-performance protocols that transfer to staff</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="card">
-          <div class="tag">What I am not</div>
-          <h3>Personality-based “brand.”</h3>
-          <p>
-            I am not trying to be the product. The value sits in the frameworks, playbooks, and implementation systems that Texas Movement
-            can run without my hours as the bottleneck.
-          </p>
+        <article class="card">
+          <div class="tag">02 · Operations</div>
+          <h3>Operations &amp; funnel systems</h3>
+          <p>The B2B funnel and the org behind it, read as one structure. I find where revenue load is being lost and re-route it.</p>
           <ul class="chk">
-            <li>No “guru funnel” or personality cult economics.</li>
-            <li>Methodology is being moved into company-owned playbooks and delivery.</li>
-            <li>Work is shifting from hourly access to productized and recurring delivery.</li>
+            <li>Funnel architecture &amp; bottleneck diagnosis</li>
+            <li>Handoff SOPs that remove single points of failure</li>
+            <li>Operating cadence the team owns, not the founder</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+        </article>
 
-  <section id="work">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">What I build</span>
-        <h2>Founder-built systems, not scattered side quests.</h2>
-        <p>
-          Texas Movement started as a broad holding pen for my ideas. The next iteration is a tighter architecture: one core company,
-          one underlying methodology, and multiple applications that compound instead of compete.
-        </p>
+        <article class="card">
+          <div class="tag">03 · AI</div>
+          <h3>AI project systems</h3>
+          <p>AI builds fail on structure, not models. I scope the constraints, design the pipeline, and engineer the failure modes before they bite.</p>
+          <ul class="chk">
+            <li>Scope, constraint &amp; data-path mapping</li>
+            <li>Delivery pipeline with built-in redundancy</li>
+            <li>Failure-mode planning so the system degrades safely</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="tag">04 · Transfer</div>
+          <h3>Systems that transfer</h3>
+          <p>The deliverable that makes the rest worth paying for: the method, written down, so it leaves with your team instead of with me.</p>
+          <ul class="chk">
+            <li>Documented playbooks &amp; decision rules</li>
+            <li>Team enablement and role-level training</li>
+            <li>Certification so quality survives turnover</li>
+          </ul>
+        </article>
       </div>
 
-      <div class="table-caption">
-        How I am restructuring my own platform so the company compounds without increasing founder dependence.
-      </div>
-      <div class="table-card" aria-label="Focus roadmap">
+      <p class="table-caption">Every engagement moves left to right. I’m done when the system holds in the “Transfer” column — without me in the room.</p>
+      <div class="table-card">
         <table>
           <thead>
             <tr>
-              <th>Phase</th>
-              <th>Now</th>
-              <th>Next</th>
-              <th>Later</th>
+              <th>Domain</th>
+              <th>Diagnose (now)</th>
+              <th>Build (next)</th>
+              <th>Transfer (the goal)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="stage">Focus</td>
-              <td class="now">Texas Movement as the core systems platform.</td>
-              <td class="next">Consulting + performance + education, all on one framework.</td>
-              <td class="later">Optional spin-outs with their own teams and stories.</td>
+              <td class="stage">Performance</td>
+              <td class="now">Find the force leak</td>
+              <td class="next">Rebuild load &amp; progression</td>
+              <td class="later">Staff runs the protocol</td>
             </tr>
             <tr>
-              <td class="stage">Revenue</td>
-              <td class="now">High-skill founder work.</td>
-              <td class="next">Productized offers and retainers.</td>
-              <td class="later">Licensing, certification, and recurring systems revenue.</td>
+              <td class="stage">Operations</td>
+              <td class="now">Map the bottleneck</td>
+              <td class="next">Install SOPs &amp; cadence</td>
+              <td class="later">Team owns the system</td>
             </tr>
             <tr>
-              <td class="stage">IP</td>
-              <td class="now">Frameworks authored and in use.</td>
-              <td class="next">Documented, trademarked, and taught inside the company.</td>
-              <td class="later">Independent IP entity licensing methods to operators.</td>
-            </tr>
-            <tr>
-              <td class="stage">Dependency</td>
-              <td class="now">Founder as product + factory.</td>
-              <td class="next">Founder as architect + closer; team as delivery.</td>
-              <td class="later">Company delivers; founder optional in the loop.</td>
+              <td class="stage">AI projects</td>
+              <td class="now">Scope &amp; constraints</td>
+              <td class="next">Pipeline &amp; redundancy</td>
+              <td class="later">Ships &amp; maintains itself</td>
             </tr>
           </tbody>
         </table>
@@ -715,76 +933,75 @@
     </div>
   </section>
 
-  <section id="tm">
+  <!-- TEXAS MOVEMENT -->
+  <section id="tm" class="platform">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Texas Movement</span>
-        <h2>The platform that carries the work.</h2>
-        <p>
-          Texas Movement International is the container that holds the systems: consulting for AI and funnels,
-          performance training built on Anatomy Trains, and education that teaches others to run the same diagnostics.
-        </p>
+        <div class="eyebrow">The Platform</div>
+        <h2>Texas Movement operates the method.</h2>
+        <p>The thinking is mine. The delivery isn’t meant to be. Texas Movement International is the company that turns the method into offers you can buy, run, and keep.</p>
       </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <div class="tag">Texas Movement Consulting</div>
-          <h3>AI systems & inverted funnels.</h3>
-          <p>
-            For founders and teams with serious AI bets and B2B revenue paths who want structural, not cosmetic, fixes.
-            We diagnose where your AI projects and funnel break, then rebuild vendor-agnostic, evidence-first workflows that compound.
-          </p>
-          <ul class="chk">
-            <li>Strategy calls, project consulting, and retainers.</li>
-            <li>Biomechanics-grade diagnostics applied to operations.</li>
-            <li>Built to be run by a team, not just the founder.</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://consulting.texasmovement.com" target="_blank" rel="noopener">
-            Visit consulting <span class="arr">→</span>
-          </a>
+      <div class="platform-grid">
+        <div class="prose">
+          <p>A method that only lives in one person’s head is a liability — to clients and to the business. So I built a company around it. <strong>I author the system; Texas Movement runs it.</strong></p>
+          <p>That separation is deliberate. It’s what lets the work scale past my calendar, hold its quality when I’m not in the room, and become something with real enterprise value rather than a freelancer’s reputation.</p>
+          <p>Three focused arms, one framework underneath. Start where your problem is — consulting is the front door.</p>
         </div>
 
-        <div class="card">
-          <div class="tag">Texas Movement Performance</div>
-          <h3>Train the system, not the symptom.</h3>
-          <p>
-            For athletes and coaches who care more about force transmission than aesthetics. Movement training built from first principles
-            on Anatomy Trains methodology, treating the body as one connected system of force lines.
-          </p>
-          <ul class="chk">
-            <li>Protocols engineered from first principles.</li>
-            <li>Courseware that packages the method so others can run it.</li>
-            <li>Built to live independently of my personal session hours.</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://texasmovement.com" target="_blank" rel="noopener">
-            Visit Texas Movement <span class="arr">→</span>
-          </a>
-        </div>
+        <aside class="spec" aria-label="Texas Movement arms">
+          <div class="spec-top">
+            <div class="spec-label">Platform · Texas Movement Intl.</div>
+            <div class="spec-tag">Company-operated</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Consulting</div>
+            <div class="spec-v">
+              <b>Texas Movement Consulting</b>
+              <span>Productized engagements for founders and operators. The front door.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Education</div>
+            <div class="spec-v">
+              <b>The method, taught</b>
+              <span>Playbooks and training that put the system in your team’s hands.</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Performance</div>
+            <div class="spec-v">
+              <b>Movement systems</b>
+              <span>Where the method started — biomechanics-grade performance work.</span>
+            </div>
+          </div>
+          <div class="spec-foot">
+            Founder-authored, company-operated — by design, not by accident.
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
     <div class="wrap">
       <div class="cta-band">
         <div>
-          <span class="eyebrow">Contact</span>
-          <h2>Tell me where your system is leaking.</h2>
-          <p>
-            If you’re a founder, operator, or team who wants to fix AI projects, funnels, or performance systems at the structural level,
-            send a short brief. I’d rather read one clear page than ten vague decks.
-          </p>
-          <div class="cta-note">
-            One request, one system: describe what you sell, to whom, how it works today, and where it’s breaking.
-            If you only want a tool recommendation or a generic AI keynote, I’m not the right fit.
-          </div>
+          <div class="eyebrow">Contact</div>
+          <h2>Have a system that feels structurally wrong?</h2>
+          <p>Tell me what’s under load and where it’s failing. If it’s a fit, the next step is a scoped diagnosis — not an open-ended retainer.</p>
+          <div class="cta-note">Best fit: founders &amp; operators with real revenue at stake.</div>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="mailto:movementconsultant@gmail.com?subject=System%20diagnostic%20-%20AlexanderMathai.com&body=What%20we%20sell%3A%0A%0AWho%20we%20serve%3A%0A%0AWhere%20the%20system%20is%20breaking%3A%0A%0AWhat%20we%20want%20instead%3A">
+          <a class="btn btn-primary" href="https://consulting.texasmovement.com" target="_blank" rel="noopener">
+            Start at Consulting <span class="arr">→</span>
+          </a>
+          <a class="btn btn-ghost" href="mailto:movementconsultant@gmail.com?subject=Project%20inquiry%20-%20AlexanderMathai.com">
             Email Alexander <span class="arr">↗</span>
           </a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noopener">
-            Connect on LinkedIn
+            Connect on LinkedIn <span class="arr">↗</span>
           </a>
         </div>
       </div>
@@ -793,26 +1010,34 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div>
-      <div>© <span id="year"></span> AlexanderMathai.com</div>
-      <div>Founder of Texas Movement International LLC.</div>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <span>Alexander Mathai</span>
+          <span>Engineer · Systems Builder</span>
+        </a>
+        <p>Engineer who builds performance and business systems that work without him. Founder of Texas Movement International.</p>
+      </div>
+
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Platform</h4>
+          <a href="https://consulting.texasmovement.com" target="_blank" rel="noopener">Texas Movement Consulting</a>
+          <a href="#work">What I Build</a>
+          <a href="#tm">Texas Movement</a>
+        </div>
+        <div class="foot-col">
+          <h4>Connect</h4>
+          <a href="mailto:movementconsultant@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
     </div>
-    <div class="foot-links">
-      <div class="foot-col">
-        <h4>Texas Movement</h4>
-        <a href="https://texasmovement.com" target="_blank" rel="noopener">texasmovement.com</a>
-        <a href="https://consulting.texasmovement.com" target="_blank" rel="noopener">Consulting</a>
-      </div>
-      <div class="foot-col">
-        <h4>Elsewhere</h4>
-        <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/movementconsultant" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="foot-col">
-        <h4>Contact</h4>
-        <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>
-      </div>
+
+    <div class="foot-legal">
+      <span>© <span id="year"></span> Texas Movement International LLC. All rights reserved.</span>
+      <span>Founder-authored · Company-operated</span>
     </div>
   </div>
 </footer>
