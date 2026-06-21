@@ -1,0 +1,107 @@
+---
+const name = "Alexander Mathai";
+const tagline = "TODO: one-line positioning statement.";
+const description = "TODO: a 1–2 sentence meta description for search and social cards.";
+const heroImage = "/AVM-Blue-turtleneck-standing-arm-cross.jpg";
+const ogImage = new URL("/og-alexander-mathai.png", Astro.site).toString();
+const canonical = Astro.site?.toString() ?? "https://alexandermathai.com/";
+const ecosystem = [
+  { label: "Consulting",  href: "https://consulting.texasmovement.com" },
+  { label: "Performance", href: "https://performance.texasmovement.com" },
+  { label: "Health",      href: "https://health.texasmovement.com" },
+  { label: "FounderLink", href: "https://founderlink.texasmovement.com" },
+  { label: "Media",       href: "https://media.texasmovement.com" },
+  { label: "Social",      href: "https://social.texasmovement.com" },
+  { label: "Hero",        href: "https://hero.texasmovement.com" },
+  { label: "Reparations", href: "https://reparations.texasmovement.com" },
+];
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{name}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={name} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={name} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <img class="portrait" src={heroImage} alt=Portrait of ${name}} width="280" height="350" />
+        <div class="hero-copy">
+          <p class="eyebrow">TODO: eyebrow / role</p>
+          <h1>{name}</h1>
+          <p class="tagline">{tagline}</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="mailto:hello@alexandermathai.com">Get in touch</a>
+            <a class="btn btn-ghost" href="#ecosystem">Explore the ecosystem</a>
+          </div>
+        </div>
+      </section>
+      <section class="grid">
+        <article class="main">
+          <h2>About</h2>
+          <p>TODO: replace with your real intro copy. This starter exists only so the site builds and deploys cleanly on first push.</p>
+          <p>Keep paragraphs short and swap in your actual narrative, work, and links.</p>
+        </article>
+        <aside class="sidebar">
+          <h2 class="sr-only">Highlights</h2>
+          <div class="card"><h3>Now</h3><p>TODO: what you're focused on right now.</p></div>
+          <div class="card"><h3>Contact</h3><p><a href="mailto:hello@alexandermathai.com">hello@alexandermathai.com</a></p></div>
+        </aside>
+      </section>
+      <section id="ecosystem" class="ecosystem">
+        <h2>Ecosystem</h2>
+        <div class="eco-grid">
+          {ecosystem.map((item) => (
+            <a class="eco-card" href={item.href}>
+              <span class="eco-label">{item.label}</span>
+              <span class="eco-arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><p>© {year} {name}. All rights reserved.</p></footer>
+    <style is:global>
+      :root{--bg:#0e0f13;--panel:#16181f;--line:#262a35;--ink:#eceef3;--mut:#9aa3b2;--acc:#c9a35e;--maxw:1080px;}
+      *{box-sizing:border-box;} html,body{margin:0;padding:0;}
+      body{background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+      a{color:inherit;}
+      .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 24px;}
+      .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+      .hero{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+      .portrait{width:280px;height:auto;border-radius:14px;object-fit:cover;border:1px solid var(--line);}
+      .hero-copy{flex:1;min-width:280px;}
+      .eyebrow{color:var(--acc);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 8px;}
+      h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin:0 0 12px;}
+      .tagline{color:var(--mut);font-size:1.15rem;margin:0 0 24px;max-width:46ch;}
+      .cta{display:flex;gap:12px;flex-wrap:wrap;}
+      .btn{display:inline-block;padding:11px 18px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;}
+      .btn-primary{background:var(--acc);color:#1a1305;} .btn-ghost{border:1px solid var(--line);color:var(--ink);}
+      .grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:64px;}
+      @media(min-width:820px){.grid{grid-template-columns:2fr 1fr;}}
+      .main h2,.ecosystem h2{font-size:1.4rem;margin:0 0 14px;} .main p{color:var(--mut);}
+      .sidebar{display:flex;flex-direction:column;gap:16px;}
+      .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;}
+      .card h3{margin:0 0 6px;font-size:1rem;} .card p{margin:0;color:var(--mut);} .card a{color:var(--acc);text-decoration:none;}
+      .ecosystem{margin-top:64px;}
+      .eco-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
+      .eco-card{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .15s ease,transform .15s ease;}
+      .eco-card:hover{border-color:var(--acc);transform:translateY(-2px);} .eco-label{font-weight:600;} .eco-arrow{color:var(--acc);}
+      .footer{border-top:1px solid var(--line);margin-top:72px;}
+      .footer p{max-width:var(--maxw);margin:0 auto;padding:24px;color:var(--mut);font-size:.9rem;}
+    </style>
+  </body>
+</html>
