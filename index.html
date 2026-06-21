@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Alexander Varghese Mathai — Engineer, Systems Builder, Founder of Texas Movement</title>
+  <title>Alexander Varghese Mathai — Texas Movement International</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Varghese Mathai — engineer and systems builder, founder of Texas Movement International. I build infrastructure for people and institutions who have real stakes.">
+  <meta name="description" content="Alexander Varghese Mathai — engineer and systems builder, founder of Texas Movement International. I build operating systems for people and institutions who can't afford to be fragile.">
   <style>
     :root {
       color-scheme: dark light;
-      --bg: #050608;
-      --fg: #f4f4f4;
-      --accent: #f97316;
+      --bg: #040509;
+      --fg: #f4f4f5;
       --muted: #9ca3af;
-      --border: #1f2933;
+      --border: #1f2937;
+      --accent: #f97316;
+      --accent-soft: rgba(249,115,22,0.12);
       --link: #f97316;
       --link-hover: #fb923c;
-      --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 0;
       font-family: var(--sans);
-      background: radial-gradient(circle at top, #0b0f19 0, var(--bg) 55%);
+      background:
+        radial-gradient(circle at top, #111827 0, #020617 55%);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
     }
@@ -36,14 +36,13 @@
       color: var(--link);
       text-decoration: none;
     }
-
     a:hover {
       color: var(--link-hover);
       text-decoration: underline;
     }
 
     .page {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
       padding: 32px 20px 64px;
     }
@@ -65,9 +64,9 @@
     }
 
     h1 {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       margin: 0;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -76,18 +75,24 @@
       color: var(--muted);
     }
 
+    .tagline {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
     nav {
       font-size: 0.9rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     nav a {
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15,23,42,0.85);
     }
 
     main {
@@ -105,45 +110,35 @@
     section h2 {
       font-size: 1.05rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       color: var(--muted);
       margin: 0 0 10px;
     }
 
     p {
       font-size: 0.98rem;
-      line-height: 1.6;
+      line-height: 1.65;
       margin: 0 0 10px;
     }
 
-    .muted {
-      color: var(--muted);
-    }
-
-    .tagline {
-      font-family: var(--mono);
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
 
     ul {
-      margin: 6px 0 12px 1.2em;
+      margin: 6px 0 12px 1.25em;
       padding: 0;
       font-size: 0.95rem;
     }
 
-    li {
-      margin-bottom: 4px;
-    }
+    li { margin-bottom: 4px; }
 
     .pill {
       display: inline-block;
       padding: 2px 8px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--muted);
       margin-right: 6px;
       margin-bottom: 4px;
@@ -152,12 +147,21 @@
     .callout {
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15,23,42,0.9);
       padding: 12px 14px;
       margin-top: 10px;
     }
 
-    .callout strong {
+    .callout-strong {
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+
+    .callout strong,
+    .callout-strong strong {
       color: var(--accent);
       font-weight: 600;
     }
@@ -199,89 +203,106 @@
       <div class="title-block">
         <h1>Alexander Varghese Mathai</h1>
         <div class="subtitle">Engineer · Systems Builder · Founder, Texas Movement International</div>
-        <div class="tagline">I build infrastructure (not motivation) for people and institutions who have real stakes.</div>
+        <div class="tagline">I build operating systems for people and institutions who can’t afford to be fragile.</div>
       </div>
       <nav>
         <a href="#about">About</a>
-        <a href="#work">What I Build</a>
         <a href="#tmi">Texas Movement</a>
-        <a href="#acquisition">Acquisition</a>
+        <a href="#why">Why This Exists</a>
+        <a href="#acquisition">1B Control Sale</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
+      <!-- Hero / About -->
       <section id="about">
         <h2>About</h2>
-        <p>I am an engineer who builds systems designed to work without me in the loop. My background spans performance science, AI strategy, and operations for people and institutions who cannot afford failure — athletes, founders, cities, and families.</p>
-        <p>Texas Movement International is the umbrella for that work: a platform of operating companies, frameworks, and properties that turn a single worldview into repeatable systems.</p>
+        <p>I’m an engineer who builds systems that <strong>keep working without me</strong>.</p>
+        <p>My work sits where performance science, AI, and operations collide. I’ve built for people and institutions who can’t afford to be fragile: pro athletes, founders, teams, and civic-scale problems where “just try harder” is a joke.</p>
+        <p>Texas Movement International is the container for that work — one operating platform instead of ten separate side projects.</p>
       </section>
 
-      <section id="work">
-        <h2>What I Build</h2>
-        <p>I tend to work on three types of problems:</p>
-        <ul>
-          <li>Systems for performance and recovery that do not depend on constant motivation.</li>
-          <li>Operating models for founders and institutions who need to get more done with fewer moving parts.</li>
-          <li>Interfaces between AI, human performance, and long-lived infrastructure.</li>
-        </ul>
-        <p>My bias is toward infrastructure over inspiration, and toward long-horizon systems over quick wins.</p>
-      </section>
-
+      <!-- TMI: what it is -->
       <section id="tmi">
         <h2>Texas Movement International</h2>
-        <p><span class="pill">Platform</span><span class="pill">Founder-authored</span><span class="pill">Multi-vertical</span></p>
-        <p>Texas Movement International (“TMI”) is a mythos-led operating platform expressed across nine properties on a shared brand, copy, and systems layer:</p>
+        <p><span class="pill">Platform</span><span class="pill">Founder‑authored</span><span class="pill">Multi‑vertical</span></p>
+        <p>Texas Movement International (“TMI”) is not a personal brand. It’s a <strong>mythos‑led operating system</strong> expressed across nine properties that share the same architecture:</p>
         <ul>
           <li><a href="https://texasmovement.com" target="_blank" rel="noreferrer">texasmovement.com</a> — platform hub &amp; mythos core.</li>
-          <li><a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">consulting.texasmovement.com</a> — consulting engine (live).</li>
+          <li><a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">consulting.texasmovement.com</a> — live consulting engine.</li>
           <li><a href="https://hero.texasmovement.com" target="_blank" rel="noreferrer">hero.texasmovement.com</a> — flagship narrative offer.</li>
           <li><a href="https://performance.texasmovement.com" target="_blank" rel="noreferrer">performance.texasmovement.com</a> — performance &amp; optimization.</li>
-          <li><a href="https://health.texasmovement.com" target="_blank" rel="noreferrer">health.texasmovement.com</a> — health &amp; wellbeing.</li>
-          <li><a href="https://founderlink.texasmovement.com" target="_blank" rel="noreferrer">founderlink.texasmovement.com</a> — founder enablement.</li>
+          <li><a href="https://health.texasmovement.com" target="_blank" rel="noreferrer">health.texasmovement.com</a> — health &amp; recovery.</li>
+          <li><a href="https://founderlink.texasmovement.com" target="_blank" rel="noreferrer">founderlink.texasmovement.com</a> — founder network &amp; ecosystem.</li>
           <li><a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">media.texasmovement.com</a> — media &amp; content engine.</li>
           <li><a href="https://social.texasmovement.com" target="_blank" rel="noreferrer">social.texasmovement.com</a> — community &amp; social layer.</li>
           <li><a href="https://reparations.texasmovement.com" target="_blank" rel="noreferrer">reparations.texasmovement.com</a> — mission / social impact.</li>
         </ul>
-        <p>Each property is a vertical; together they behave as a single platform because they share one authored worldview, one design language, and one set of operating frameworks.</p>
+        <p>Each property is a vertical. Together they behave like **one platform** because they all run on the same mythos, the same language, and the same operating frameworks.</p>
         <div class="callout">
-          <p><strong>For operators</strong> — Texas Movement runs the method as a company. For strategic buyers who want control of the entire platform, see the Acquisition section.</p>
+          <p><strong>For most people</strong> — Texas Movement is the company that runs the method. For one buyer, it is a control‑sale platform. Keep reading.</p>
         </div>
       </section>
 
-      <section id="acquisition">
-        <h2>Acquisition</h2>
-        <p><span class="pill">Control sale only</span><span class="pill">Non‑negotiable floor</span><span class="pill">No NIL / no voice</span></p>
-        <p>Texas Movement International is not available as a partial sale, licensing deal, or long-term advisory relationship. If someone wants me to not have a voice in this system — to own the platform, the brand, the system, and all future use of it outright — that is a control transaction, not a consulting engagement.</p>
-        <div class="callout">
-          <p class="mono"><strong>Absolute floor for any control sale:</strong> <strong>$1,000,000,000 USD</strong>.</p>
-          <p class="mono">This is a hard, non‑negotiable minimum for a full, exclusive acquisition of Texas Movement International and the underlying platform.</p>
-        </div>
-        <p>Terms, in plain language:</p>
+      <!-- Why this is valuable at all -->
+      <section id="why">
+        <h2>Why This Exists</h2>
+        <p>Right now, TMI is:</p>
         <ul>
-          <li><strong>Scope:</strong> full acquisition of the platform, brand, domains, IP, systems, and all commercial rights tied to Texas Movement International.</li>
-          <li><strong>Control:</strong> one buyer, one platform. No partial carveouts pretending to be a whole acquisition.</li>
+          <li>A working consulting business that already sells systems work to real clients.</li>
+          <li>A nine‑property platform with a consistent brand, language, and logic.</li>
+          <li>A set of proprietary frameworks that can be turned into productized offers and curriculum.</li>
+          <li>An architecture that lets new verticals spin up on the same rails instead of starting from scratch.</li>
+        </ul>
+        <p>The hard work is done: thinking, naming, patterning, integrating. The platform exists. It’s not a deck.</p>
+
+        <div class="callout">
+          <p><strong>If you’re trying to price it, ignore the CSS.</strong> A serious buyer is paying for time, coherence, and option value — not just domain names.</p>
+        </div>
+      </section>
+
+      <!-- 1B control-sale pitch -->
+      <section id="acquisition">
+        <h2>1B Control Sale</h2>
+        <p><span class="pill">Control sale only</span><span class="pill">Ten‑figure floor</span><span class="pill">No NIL / no voice</span></p>
+        <p>If you want to hire me, you can buy time through the consulting arm.</p>
+        <p>If you want me to <strong>never have a voice in this system again</strong> — to own the platform, the brand, the system, and every commercial right tied to it — that’s a different conversation.</p>
+
+        <div class="callout-strong">
+          <p class="mono"><strong>Absolute floor for any control sale of TMI:</strong> $1,000,000,000 USD.</p>
+          <p class="mono">That is the minimum number that starts a real process for a full, exclusive buyout of the platform, brand, domains, IP, and operating system.</p>
+        </div>
+
+        <p>In plain language, a control deal looks like this:</p>
+        <ul>
+          <li><strong>Scope:</strong> full acquisition of Texas Movement International — platform, brand, domains, IP, systems, and all commercial rights.</li>
+          <li><strong>Control:</strong> one buyer, one platform. No partial carveouts dressed up as acquisitions.</li>
           <li><strong>No residual rights:</strong> no licensing of my name, image, likeness (NIL), or voice in any form, now or later.</li>
-          <li><strong>No ongoing role:</strong> no advisory retainer, no creative-director arrangement, no public-facing obligations, and no quiet back‑channel operating involvement.</li>
+          <li><strong>No ongoing role:</strong> no advisory retainer, no creative‑director title, no quiet back‑channel involvement.</li>
           <li><strong>Status after closing:</strong> after a limited, clearly scoped transition, I am fully retired and fully detached from the asset.</li>
         </ul>
-        <p>If a serious buyer clears that floor and diligence, the transaction is a clean transfer of control. If not, the asset is not for sale.</p>
-        <p class="muted">This is a positioning floor for any control sale, not an appraisal or financial advice. Any real process would run through independent valuation, full diligence, and professional counsel on both sides.</p>
+
+        <p>If you clear that floor, pass diligence, and can execute a clean control sale, you walk away owning a platform you can run, extend, or rebrand however you like. I walk away with my life, and no residual ties.</p>
+        <p>If you can’t clear it, the asset is not for sale.</p>
+
+        <p class="muted">This is a positioning floor for any control sale, not an appraisal or financial advice. Any real process would run through independent valuation, full diligence, and proper counsel on both sides.</p>
       </section>
 
+      <!-- Contact -->
       <section id="contact">
         <h2>Contact</h2>
-        <p>For consulting, collaboration, or serious acquisition inquiries, you can reach me directly:</p>
+        <p>For systems work, partnership, or serious acquisition conversations:</p>
         <p class="mono">
           <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>
         </p>
-        <p class="muted">Use a clear subject line if you are contacting me about a potential acquisition or control sale.</p>
+        <p class="muted">If you’re reaching out about a potential control sale, say so clearly in the subject line.</p>
       </section>
     </main>
 
     <footer>
       <div>© <span id="year"></span> Alexander Varghese Mathai</div>
-      <div class="muted">This site is intentionally simple: one page, one worldview.</div>
+      <div class="muted">One page, one worldview.</div>
     </footer>
   </div>
 
