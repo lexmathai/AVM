@@ -1,460 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Alexander Varghese Mathai — Texas Movement International</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Alexander Varghese Mathai — engineer and systems builder, founder of Texas Movement International. I build operating systems for people and institutions who can’t afford to be fragile.">
-  <meta property="og:title" content="Alexander Varghese Mathai — Texas Movement International">
-  <meta property="og:description" content="I build operating systems for people and institutions who can’t afford to be fragile. Texas Movement International is the platform that runs that method.">
-  <meta property="og:image" content="https://alexandermathai.com/og-alexander-mathai.png">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <title>Alexander Mathai – Founder, Texas Movement International</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Alexander Varghese Mathai – founder of Texas Movement International, building high-leverage systems across AI strategy, legal operations, and athletic performance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      color-scheme: dark light;
-      --bg: #020617;
-      --fg: #f9fafb;
-      --muted: #9ca3af;
-      --border: #111827;
-      --accent: #f97316;
-      --accent-soft: rgba(249,115,22,0.14);
-      --accent-strong: #fb923c;
-      --link: #f97316;
-      --link-hover: #fb923c;
-      --chip-bg: rgba(15,23,42,0.85);
-      --chip-border: #1f2937;
-      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      --mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --bg: #05060a;
+      --bg-alt: #0b0d14;
+      --accent: #32d583;
+      --accent-soft: rgba(50, 213, 131, 0.1);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --card: #111827;
+      --border-subtle: #1f2933;
+      --danger: #f97373;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: var(--sans);
-      background:
-        radial-gradient(circle at 0 0, #0b1120 0, #020617 48%),
-        radial-gradient(circle at 100% 100%, #111827 0, #020617 52%);
-      color: var(--fg);
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: var(--link);
+      color: inherit;
       text-decoration: none;
-      transition: color 0.12s ease;
-    }
-    a:hover {
-      color: var(--link-hover);
-      text-decoration: underline;
     }
 
     .page {
-      max-width: 1040px;
+      min-height: 100vh;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 28px 20px 56px;
+      padding: 32px 16px 64px;
     }
 
     header {
-      padding: 10px 0 22px;
-      border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) auto;
-      gap: 20px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      gap: 16px;
     }
 
-    .title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    h1 {
-      font-size: 1.9rem;
-      margin: 0;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .tagline {
-      font-family: var(--mono);
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .nav-row {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
     }
 
-    nav a {
-      padding: 5px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--chip-border);
-      background: var(--chip-bg);
-      font-size: 0.87rem;
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+    }
+
+    .logo-text span:last-child {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 860px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero {
+      padding-right: 8px;
+    }
+
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-    }
-
-    nav a span.dot {
-      width: 4px;
-      height: 4px;
+      gap: 8px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: var(--muted);
-    }
-
-    .avatar-wrap {
-      position: relative;
-      justify-self: end;
-    }
-
-    .avatar {
-      width: 112px;
-      height: 112px;
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(15,23,42,0.9);
-      box-shadow:
-        0 0 0 1px rgba(15,23,42,0.8),
-        0 20px 40px rgba(15,23,42,0.9);
-      background: #020617;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.05);
-    }
-
-    .avatar-tag {
-      position: absolute;
-      bottom: -6px;
-      right: -4px;
-      padding: 2px 9px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.96);
-      border: 1px solid rgba(148,163,184,0.4);
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 11px;
       text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
     }
 
-    .avatar-tag-dot {
+    .eyebrow-dot {
       width: 6px;
       height: 6px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.16);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
     }
 
-    main {
-      padding-top: 26px;
+    h1 {
+      font-size: clamp(32px, 5vw, 44px);
+      line-height: 1.06;
+      margin-bottom: 16px;
+    }
+
+    h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 40rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .metric {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 2px;
     }
 
-    section {
-      border-left: 1px solid var(--border);
-      padding-left: 18px;
+    .metric span:first-child {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
     }
 
-    section h2 {
-      font-size: 0.95rem;
+    .metric span:last-child {
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--muted);
-      margin: 0 0 10px;
+      letter-spacing: 0.08em;
     }
 
-    p {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      margin: 0 0 10px;
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
     }
 
-    .muted { color: var(--muted); }
-
-    ul {
-      margin: 6px 0 12px 1.25em;
-      padding: 0;
-      font-size: 0.95rem;
-    }
-
-    li { margin-bottom: 4px; }
-
-    .pill {
-      display: inline-block;
-      padding: 2px 9px;
+    .btn-primary {
+      padding: 10px 18px;
       border-radius: 999px;
-      border: 1px solid var(--chip-border);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-right: 6px;
-      margin-bottom: 4px;
-      background: var(--chip-bg);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border: none;
+      color: #020617;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.35);
+      transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
     }
 
-    .pill-hot {
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(34, 197, 94, 0.45);
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
       border-color: var(--accent);
-      color: var(--accent-strong);
-      background: rgba(249,115,22,0.08);
+      color: var(--accent);
     }
 
-    .callout {
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.9);
-      padding: 12px 14px;
+    .cta-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cta-note span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
       margin-top: 10px;
     }
 
-    .callout-strong {
-      border-radius: 14px;
-      border: 1px solid var(--accent);
-      background: var(--accent-soft);
-      padding: 12px 14px;
-      margin-top: 12px;
+    .hero-footer-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(148, 163, 184, 0.4);
     }
 
-    .callout strong,
-    .callout-strong strong {
-      color: var(--accent-strong);
+    .hero-footer a {
+      color: var(--text-muted);
+    }
+
+    .hero-footer a:hover {
+      color: var(--accent);
+    }
+
+    .sidebar-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.8);
+      padding: 18px 18px 16px;
+    }
+
+    .founder-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .side-name {
       font-weight: 600;
+      margin-bottom: 4px;
     }
 
-    .mono {
-      font-family: var(--mono);
-      font-size: 0.9rem;
+    .side-role {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
-    .social-row {
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-top: 8px;
+      gap: 6px;
+      margin-bottom: 14px;
     }
 
-    .social-row a {
-      color: var(--muted);
+    .chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.25);
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      font-size: 11px;
+      color: #a5f3fc;
     }
 
-    .social-row a:hover {
-      color: var(--link-hover);
+    .chip.alt {
+      background: rgba(55, 65, 81, 0.4);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
     }
 
-    .term-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-      gap: 10px 18px;
-      margin-top: 8px;
-      font-size: 0.95rem;
-    }
-
-    .term-label {
-      font-family: var(--mono);
-      font-size: 0.85rem;
+    .side-section-title {
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
+      letter-spacing: 0.11em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      margin-top: 4px;
     }
 
-    .term-value {
-      font-size: 0.96rem;
+    .side-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .side-list li {
+      margin-bottom: 4px;
+    }
+
+    .side-list span {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .side-divider {
+      height: 1px;
+      background: rgba(31, 41, 55, 0.9);
+      margin: 10px 0 12px;
+    }
+
+    .side-link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .side-link-row a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .side-link-row a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      margin-top: 36px;
-      padding-top: 16px;
-      font-size: 0.86rem;
-      color: var(--muted);
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
       justify-content: space-between;
-      gap: 8px;
     }
 
-    @media (max-width: 780px) {
-      header {
-        grid-template-columns: minmax(0, 1fr);
-        align-items: flex-start;
-      }
-      .avatar-wrap {
-        justify-self: flex-start;
-      }
+    .badge-wip {
+      color: var(--danger);
+      font-weight: 500;
     }
 
-    @media (max-width: 640px) {
-      section {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding-left: 0;
-        padding-top: 16px;
-      }
-      .avatar {
-        width: 92px;
-        height: 92px;
-      }
-      .term-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .badge-wip::before {
+      content: "●";
+      margin-right: 4px;
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="title-block">
-        <h1>Alexander Varghese Mathai</h1>
-        <div class="subtitle">Engineer · Systems Builder · Founder, Texas Movement International</div>
-        <div class="tagline">I build operating systems for people and institutions who can’t afford to be fragile.</div>
-        <div class="nav-row">
-          <nav>
-            <a href="#about"><span class="dot"></span>About</a>
-            <a href="#tmi"><span class="dot"></span>Texas Movement</a>
-            <a href="#why"><span class="dot"></span>Why This Exists</a>
-            <a href="#acquisition"><span class="dot"></span>1B Control Sale</a>
-            <a href="#contact"><span class="dot"></span>Contact</a>
-          </nav>
-        </div>
-        <div class="social-row">
-          <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span class="muted">·</span>
-          <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TMI</a>
+      <div class="logo-mark">
+        <div class="logo-icon">A</div>
+        <div class="logo-text">
+          <span>Alexander Mathai</span>
+          <span>Texas Movement International</span>
         </div>
       </div>
-      <div class="avatar-wrap">
-        <div class="avatar">
-          <img src="/AVM-Blue-turtleneck-standing-arm-cross.jpg" alt="Alexander Varghese Mathai">
-        </div>
-        <div class="avatar-tag">
-          <span class="avatar-tag-dot"></span>
-          Founder · TMI
-        </div>
-      </div>
+      <nav class="nav-links">
+        <a href="#systems">Systems</a>
+        <a href="#cases">Cases</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>I’m an engineer who builds systems that <strong>keep working without me</strong>.</p>
-        <p>I live where performance science, AI, and operations collide. My work has touched pro sport, founders, and civic‑scale problems — the places where “try harder” is not a strategy and motivational theater is a liability.</p>
-        <p>Texas Movement International is the container for that work: one platform instead of ten separate projects, one worldview instead of a different costume in every room.</p>
-      </section>
-
-      <section id="tmi">
-        <h2>Texas Movement International</h2>
-        <p><span class="pill">Platform</span><span class="pill">Founder‑authored</span><span class="pill">Multi‑vertical</span></p>
-        <p>Texas Movement International (“TMI”) is not a personal brand. It’s a <strong>mythos‑led operating system</strong> expressed across nine properties that share the same architecture:</p>
-        <ul>
-          <li><a href="https://texasmovement.com" target="_blank" rel="noreferrer">texasmovement.com</a> — platform hub &amp; mythos core.</li>
-          <li><a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">consulting.texasmovement.com</a> — live consulting engine.</li>
-          <li><a href="https://hero.texasmovement.com" target="_blank" rel="noreferrer">hero.texasmovement.com</a> — flagship narrative offer.</li>
-          <li><a href="https://performance.texasmovement.com" target="_blank" rel="noreferrer">performance.texasmovement.com</a> — performance &amp; optimization.</li>
-          <li><a href="https://health.texasmovement.com" target="_blank" rel="noreferrer">health.texasmovement.com</a> — health &amp; recovery.</li>
-          <li><a href="https://founderlink.texasmovement.com" target="_blank" rel="noreferrer">founderlink.texasmovement.com</a> — founder network &amp; ecosystem.</li>
-          <li><a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">media.texasmovement.com</a> — media &amp; content engine.</li>
-          <li><a href="https://social.texasmovement.com" target="_blank" rel="noreferrer">social.texasmovement.com</a> — community &amp; social layer.</li>
-          <li><a href="https://reparations.texasmovement.com" target="_blank" rel="noreferrer">reparations.texasmovement.com</a> — mission / social impact.</li>
-        </ul>
-        <p>Each property is a vertical. Together they behave like <strong>one platform</strong> because they all run on the same mythos, the same language, and the same operating frameworks.</p>
-        <div class="callout">
-          <p><strong>For most people</strong> — Texas Movement is the company that runs the method. For one buyer, it is a control‑sale platform. Keep reading.</p>
-        </div>
-      </section>
-
-      <section id="why">
-        <h2>Why This Exists</h2>
-        <p>Right now, TMI is:</p>
-        <ul>
-          <li>A working consulting business that already sells systems work to real clients.</li>
-          <li>A nine‑property platform with a consistent brand, language, and logic.</li>
-          <li>A set of proprietary frameworks that can be turned into productized offers and curriculum.</li>
-          <li>An architecture that lets new verticals spin up on the same rails instead of starting from scratch.</li>
-        </ul>
-        <p>The hard work is done: thinking, naming, patterning, integrating. The platform exists. It’s not a deck.</p>
-        <div class="callout">
-          <p><strong>If you’re trying to price it, ignore the CSS.</strong> A serious buyer is paying for time, coherence, and option value — not just domain names.</p>
-        </div>
-      </section>
-
-      <section id="acquisition">
-        <h2>1B Control Sale</h2>
-        <p><span class="pill pill-hot">Control sale only</span><span class="pill">Ten‑figure floor</span><span class="pill">No NIL / no voice</span></p>
-        <p>If you want to hire me, you can buy time through the consulting arm.</p>
-        <p>If you want me to <strong>never have a voice in this system again</strong> — to own the platform, the brand, the system, and every commercial right tied to it — that’s a different conversation.</p>
-
-        <div class="callout-strong">
-          <p class="mono"><strong>Absolute floor for any control sale of TMI:</strong> $1,000,000,000 USD.</p>
-          <p class="mono">That is the minimum number that starts a real process for a full, exclusive buyout of the platform, brand, domains, IP, and operating system.</p>
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Operator for high-stakes people</span>
         </div>
 
-        <div class="callout" aria-label="Control sale term sheet">
-          <div class="term-grid">
-            <div class="term-label">Scope</div>
-            <div class="term-value">Full acquisition of Texas Movement International — platform, brand, domains, IP, systems, and all commercial rights.</div>
+        <h1>
+          I build <span class="highlight">systems</span> for people who cannot afford to lose.
+        </h1>
 
-            <div class="term-label">Control</div>
-            <div class="term-value">One buyer, one platform. No partial carveouts dressed up as acquisitions.</div>
+        <p class="subtitle">
+          Founder and owner of <strong>Texas Movement International</strong>, designing leverage-heavy systems across AI strategy, legal operations, and athletic performance so athletes, founders, and families can move with more stability and upside.
+        </p>
 
-            <div class="term-label">No residual rights</div>
-            <div class="term-value">No licensing of my name, image, likeness (NIL), or voice in any form, now or later.</div>
-
-            <div class="term-label">No ongoing role</div>
-            <div class="term-value">No advisory retainer, no creative‑director title, no quiet back‑channel involvement.</div>
-
-            <div class="term-label">After closing</div>
-            <div class="term-value">After a limited, clearly scoped transition, I am fully retired and fully detached from the asset.</div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span>$XXM+</span>
+            <span>value moved through client systems</span>
+          </div>
+          <div class="metric">
+            <span>100+ </span>
+            <span>AI‑assisted projects shipped</span>
+          </div>
+          <div class="metric">
+            <span>12</span>
+            <span>years in engineering & legal trenches</span>
           </div>
         </div>
 
-        <p>If you clear that floor, pass diligence, and can execute a clean control sale, you walk away owning a platform you can run, extend, or rebrand however you like. I walk away with my life, and no residual ties.</p>
-        <p>If you can’t clear it, the asset is not for sale.</p>
+        <div class="cta-row">
+          <a href="https://consulting.texasmovement.com" target="_blank" class="btn-primary">
+            Book a working session
+            <span>↗</span>
+          </a>
+          <a href="mailto:alexander@texasmovement.com" class="btn-ghost">
+            Send a direct brief
+          </a>
+        </div>
 
-        <p class="muted">This is a positioning floor for any control sale, not an appraisal or financial advice. Any real process would run through independent valuation, full diligence, and proper counsel on both sides.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>For systems work, partnership, or serious acquisition conversations:</p>
-        <p class="mono">
-          <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>
+        <p class="cta-note">
+          I’m not trying to be everywhere. <span>I’m building with a small number of operators who have real stakes.</span>
         </p>
-        <p class="muted">If you’re reaching out about a potential control sale, say so clearly in the subject line.</p>
+
+        <div class="hero-footer">
+          <span>Based in Chicago, operating nationally.</span>
+          <div class="hero-footer-divider"></div>
+          <a href="https://texasmovement.com" target="_blank">TexasMovement.com</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/alexandermathai" target="_blank">LinkedIn</a>
+        </div>
       </section>
+
+      <aside class="sidebar-card">
+        <div class="founder-tag">Founder profile</div>
+        <div class="side-name">Alexander Varghese Mathai</div>
+        <div class="side-role">Founder & 100% owner, Texas Movement International LLC</div>
+
+        <div class="chip-row">
+          <div class="chip">AI systems & automation</div>
+          <div class="chip">Civil engineering mindset</div>
+          <div class="chip">Pro se legal strategy</div>
+          <div class="chip alt">Sprints & performance design</div>
+        </div>
+
+        <div class="side-section-title" id="systems">Selected systems</div>
+        <ul class="side-list">
+          <li>AI‑driven consulting stack for founders <span>· GPT, Claude, Gemini wired into everyday ops</span></li>
+          <li>Media engine for long‑form and short‑form content <span>· LinkedIn, YouTube, TikTok</span></li>
+          <li>Legal documentation frameworks <span>· civil rights & landlord/tenant disputes</span></li>
+        </ul>
+
+        <div class="side-section-title" id="cases">Background</div>
+        <ul class="side-list">
+          <li>BS Civil Engineering (FE passed 2012)</li>
+          <li>Hands‑on AI consulting, e‑commerce, and media production</li>
+          <li>Drafting & coordinating complex motions and complaints</li>
+        </ul>
+
+        <div class="side-divider"></div>
+
+        <div class="side-link-row" id="contact">
+          <span>Prefer signal over noise. Send context, not a cold pitch.</span>
+          <a href="mailto:alexander@texasmovement.com">Email Alexander</a>
+        </div>
+      </aside>
     </main>
 
     <footer>
-      <div>© <span id="year"></span> Alexander Varghese Mathai</div>
-      <div class="muted">One page, one worldview.</div>
+      <span class="badge-wip">Under active iteration – I ship, then refine.</span>
+      <span>© <span id="year"></span> Alexander Mathai · Texas Movement International LLC</span>
     </footer>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
