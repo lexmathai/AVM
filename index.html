@@ -276,10 +276,8 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      /* settle the light studio backdrop into the dark theme */
       filter:grayscale(.14) contrast(1.05) brightness(.98);
     }
-    /* faint navy scrim so the portrait reads as part of the dark card */
     .hero-photo-frame::after{
       content:"";
       position:absolute;
@@ -288,7 +286,6 @@
       background:linear-gradient(180deg,rgba(5,6,8,.10) 0%,transparent 22%,transparent 68%,rgba(5,6,8,.55) 100%);
     }
     .hero-photo-frame .photo-fallback{position:relative;z-index:1;}
-    /* graceful fallback if the portrait file is missing */
     .hero-photo-frame .photo-fallback{
       font-family:var(--mono);
       font-size:11px;
@@ -1023,6 +1020,7 @@
       <div class="foot-links">
         <div class="foot-col">
           <h4>Platform</h4>
+          <a href="https://texasmovement.com" target="_blank" rel="noopener">texasmovement.com</a>
           <a href="https://consulting.texasmovement.com" target="_blank" rel="noopener">Texas Movement Consulting</a>
           <a href="#work">What I Build</a>
           <a href="#tm">Texas Movement</a>
