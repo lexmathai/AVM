@@ -1,7 +1,7 @@
 ---
 const title = "Alexander Mathai · Founder, Texas Movement International LLC";
 const description =
-  "Alexander Mathai is the founder of Texas Movement International LLC. He builds systems for performance, media, consulting, IP defense, AI workflows, and strategic operations for founders and teams.";
+  "Alexander Mathai is the founder of Texas Movement International LLC. He builds operating systems for serious work across performance, media, consulting, IP defense, AI workflows, e-commerce, and strategic operations.";
 const url = "https://alexandermathai.com";
 
 const personJsonLd = {
@@ -26,7 +26,7 @@ const personJsonLd = {
     "https://texasmovement.com",
   ],
   description:
-    "Founder of Texas Movement International LLC. Builds systems for performance, media, consulting, IP defense, AI workflows, and strategic operations.",
+    "Founder of Texas Movement International LLC. Builds operating systems for serious work across performance, media, consulting, IP defense, AI workflows, e-commerce, and strategic operations.",
 };
 
 const organizationJsonLd = {
@@ -159,14 +159,14 @@ const faqJsonLd = {
       <section id="overview" class="hero">
         <div class="hero-copy">
           <p class="eyebrow">FOUNDERSHIP · SYSTEMS · EXECUTION</p>
-          <h1>Alexander Mathai builds systems for performance, media, consulting, IP defense, and strategic operations.</h1>
-          <p class="hero-lead">
-            Founder of Texas Movement International LLC, focused on systems for people and organizations that need serious output.
+          <h1 class="hero-line1">Alexander Mathai builds operating systems for serious work.</h1>
+          <p class="hero-line2">
+            Performance, Media, Consulting, IP Defense, AI Workflows, E-commerce and Strategic Operations.
           </p>
-          <p class="supporting">
-            He works on complex workflows, founder operations, AI-assisted systems, platform-side IP defense, and strategic
-            problem-solving for operators, legal teams, promoters, and brands. This page is the personal authority layer.
-            Texas Movement is the company layer. Together, they show the person behind the system and the system behind the company.
+          <p class="hero-body">
+            Founder of Texas Movement International LLC, focused on systems for people and organizations that need serious
+            output. He works on complex workflows, founder operations, AI-assisted systems, platform-side IP defense, and
+            strategic problem-solving for operators, legal teams, promoters, and brands.
           </p>
           <div class="cta-row">
             <a class="button primary" href="https://texasmovement.com/" target="_blank" rel="noreferrer">
@@ -481,21 +481,28 @@ const faqJsonLd = {
     font-size: 0.78rem;
   }
 
-  h1 {
-    font-size: clamp(2.2rem, 4vw, 4rem);
+  .hero-line1 {
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
     line-height: 1.05;
-    color: #f8fafc;
+    color: #e2e8f0; /* darker slate */
+    margin: 0 0 0.5rem;
+  }
+
+  .hero-line2 {
+    font-size: clamp(1.7rem, 3.1vw, 2.8rem); /* ~75% of line 1 */
+    line-height: 1.1;
+    color: #cbd5e1; /* slightly lighter slate */
     margin: 0 0 1rem;
   }
 
-  .hero-lead {
+  .hero-body {
     font-size: 0.98rem;
     color: #cbd5e1;
-    margin-bottom: 0.75rem;
+    max-width: 60ch;
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #94a3b8;
@@ -505,15 +512,16 @@ const faqJsonLd = {
   h3 {
     margin: 0 0 0.4rem;
     color: #f8fafc;
+    font-size: 0.92rem;
   }
 
-  .supporting,
   .hero-card-body p,
   .card p,
   .faq-item p,
   .contact p,
   .bullets p {
     color: #cbd5e1;
+    font-size: 0.95rem;
   }
 
   .cta-row {
@@ -528,6 +536,7 @@ const faqJsonLd = {
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
   }
 
   .primary {
