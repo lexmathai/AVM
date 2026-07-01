@@ -1,671 +1,777 @@
 ---
-const title = "Alexander Mathai · Founder, Texas Movement International LLC";
-const description =
-  "Alexander Mathai is the founder of Texas Movement International LLC. He builds operating systems for serious work across performance, media, consulting, IP defense, AI workflows, e-commerce, and strategic operations.";
-const url = "https://alexandermathai.com";
+import type { AstroGlobal } from 'astro';
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Alexander Mathai",
-  url,
-  jobTitle: "Founder",
-  worksFor: {
-    "@type": "Organization",
-    name: "Texas Movement International LLC",
-    url: "https://texasmovement.com",
-  },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "BS in Civil Engineering",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/alexandermathai",
-    "https://www.instagram.com/alexanderofnazareth/",
-    "https://www.tiktok.com/@AlexanderVMathai",
-    "https://texasmovement.com",
-  ],
-  description:
-    "Founder of Texas Movement International LLC. Builds operating systems for serious work across performance, media, consulting, IP defense, AI workflows, e-commerce, and strategic operations.",
-};
+const siteUrl = 'https://alexandermathai.com';
+const tmiUrl = 'https://texasmovement.com';
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Texas Movement International LLC",
-  url: "https://texasmovement.com",
-  description:
-    "A systems company focused on footwear, performance, media, consulting, IP defense, and strategic operations.",
-  sameAs: [
-    "https://www.linkedin.com/company/texas-movement-consulting",
-  ],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      contactType: "General Inquiries",
-      email: "movementconsultant@gmail.com",
-    },
-  ],
-};
+const ecosystemLinks = [
+  { href: 'https://texasmovement.com', label: 'Texas Movement (TMI)' },
+  { href: 'https://consulting.texasmovement.com', label: 'Consulting' },
+  { href: 'https://performance.texasmovement.com', label: 'Performance' },
+  { href: 'https://media.texasmovement.com', label: 'Media' },
+  { href: 'https://distribution.texasmovement.com', label: 'Distribution' },
+  { href: 'https://health.texasmovement.com', label: 'Health' },
+  { href: 'https://founderlink.texasmovement.com', label: 'FounderLink' },
+  { href: 'https://hero.texasmovement.com', label: 'HERO' },
+  { href: 'https://social.texasmovement.com', label: 'Social / Gather' },
+  { href: 'https://reparations.texasmovement.com', label: 'Reparations Partners' }
+];
 
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Alexander Mathai",
-  url,
-  description:
-    "Founder page for Alexander Mathai, operator behind Texas Movement International LLC.",
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Who is Alexander Mathai?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Alexander Mathai is the founder of Texas Movement International LLC and the operator behind its consulting, media, performance, IP defense, and systems work.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does Alexander Mathai do?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "He builds systems for founders and teams who need help with strategy, AI workflows, media operations, IP defense, and complex execution problems.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is Texas Movement International LLC?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Texas Movement International LLC is the company Alexander founded to organize footwear, performance, media, consulting, IP defense, and strategic operations under one operating structure.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Who is this page for?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "This page is for founders, operators, legal teams, promoters, and brands that need a clear profile of the person behind Texas Movement and a direct path into the ecosystem.",
-      },
-    },
-  ],
-};
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/alexandermathai', label: 'LinkedIn' },
+  { href: 'https://www.instagram.com/alexanderofnazareth/', label: 'Instagram' },
+  { href: 'https://www.youtube.com/channel/UCnc6EwpsSJJO4NtbsS-UDFg', label: 'YouTube · TexasMovementMedia' }
+];
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>Alexander Mathai — Founder, Texas Movement International.</title>
+    <meta
+      name="description"
+      content="Alexander Mathai builds systems for people and institutions with real stakes. Founder & President of Texas Movement International — systems for performance, media, consulting, IP defense, and economic leverage."
+    />
+    <link rel="canonical" href={siteUrl} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={url} />
+    <meta name="theme-color" content="#15181E" />
 
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <!-- Open Graph [web:3][web:1] -->
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content={url} />
-    <meta property="og:image" content="/og-alexander-mathai.png" />
-    <meta property="og:site_name" content="Alexander Mathai" />
+    <meta property="og:title" content="Alexander Mathai — Founder, Texas Movement International." />
+    <meta
+      property="og:description"
+      content="Founder & President of Texas Movement International. Systems for performance, media, consulting, IP defense, and economic leverage for athletes, founders, cities, and families."
+    />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content="https://texasmovement.com/05_banner_header.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Alexander Mathai — Texas Movement International" />
 
+    <!-- Twitter [web:3] -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/og-alexander-mathai.png" />
+    <meta name="twitter:title" content="Alexander Mathai — Founder, Texas Movement International." />
+    <meta
+      name="twitter:description"
+      content="Alexander Mathai builds systems for people and institutions with real stakes. Authority layer for the Texas Movement ecosystem."
+    />
+    <meta name="twitter:image" content="https://texasmovement.com/05_banner_header.png" />
+    <meta name="twitter:image:alt" content="Alexander Mathai — Texas Movement International" />
 
-    <script type="application/ld+json">{JSON.stringify(personJsonLd)}</script>
-    <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
-    <script type="application/ld+json">{JSON.stringify(websiteJsonLd)}</script>
-    <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+    <!-- Schema.org authority layer [web:3][web:1][web:5][file:226] -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': 'https://alexandermathai.com/person',
+        name: 'Alexander Mathai',
+        url: siteUrl,
+        description:
+          'Alexander Mathai builds systems for performance, media, consulting, IP defense, and economic leverage as Founder & President of Texas Movement International.',
+        jobTitle: 'Founder & President, Texas Movement International',
+        affiliation: {
+          '@type': 'Organization',
+          '@id': 'https://texasmovement.com#org',
+          name: 'Texas Movement International LLC',
+          url: tmiUrl
+        },
+        sameAs: [
+          'https://texasmovement.com',
+          'https://www.linkedin.com/in/alexandermathai',
+          'https://www.instagram.com/alexanderofnazareth/',
+          'https://www.youtube.com/channel/UCnc6EwpsSJJO4NtbsS-UDFg'
+        ],
+        email: 'movementconsultant@gmail.com'
+      })}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      :root {
+        --paper: #e7e8e2;
+        --panel: #ddded7;
+        --hero: #e9e0d5;
+        --hero-soft: #f3ebe2;
+        --ink: #15181e;
+        --ink-soft: #454a54;
+        --line: #c4c6bd;
+        --line-strong: #a6a99f;
+        --graphite: #111217;
+        --white: #f4f5f0;
+        --accent-ink: #1f2937;
+        --tension: #bd3b22;
+        --wrap: 1040px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'IBM Plex Sans', system-ui, sans-serif;
+        font-size: 16.5px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--accent-ink);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(231, 232, 226, 0.92);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+
+      .topbar {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .brand-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 0.98rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .brand-subtitle {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      nav a:hover {
+        color: var(--ink);
+      }
+
+      main {
+        padding-bottom: 60px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section--panel {
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 32px;
+        height: 1px;
+        background: var(--tension);
+        flex: none;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        line-height: 1.06;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 5vw, 3.4rem);
+        margin-bottom: 14px;
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+      }
+
+      p {
+        color: var(--ink-soft);
+        max-width: 42em;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(135deg, var(--hero), var(--hero-soft));
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+        gap: 40px;
+        align-items: center;
+      }
+
+      .hero-tagline {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 10px;
+      }
+
+      .hero-body {
+        font-size: 1.02rem;
+        margin-bottom: 16px;
+      }
+
+      .hero-note {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-top: 14px;
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .btn {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        border-radius: 999px;
+        border: 1px solid var(--accent-ink);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent-ink);
+        color: var(--white);
+        transition: 0.18s ease;
+      }
+
+      .btn:hover {
+        background: transparent;
+        color: var(--accent-ink);
+      }
+
+      .btn--ghost {
+        background: transparent;
+        color: var(--accent-ink);
+      }
+
+      .btn--ghost:hover {
+        background: var(--accent-ink);
+        color: var(--white);
+      }
+
+      .btn .arrow {
+        transition: transform 0.18s ease;
+      }
+
+      .btn:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      .hero-figure {
+        border-radius: 16px;
+        border: 1px solid var(--line-strong);
+        padding: 18px 18px 14px;
+        background: rgba(255, 247, 238, 0.7);
+      }
+
+      .hero-figure-caption {
+        margin-top: 8px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        text-align: right;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .card {
+        border-radius: 14px;
+        border: 1px solid var(--line-strong);
+        background: var(--paper);
+        padding: 18px 18px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .card-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      .card-title {
+        font-size: 1.02rem;
+        font-weight: 600;
+      }
+
+      .card-body {
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .pill {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        background: var(--paper);
+        color: var(--ink-soft);
+      }
+
+      .list-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: 12px;
+      }
+
+      .list-inline a {
+        border-bottom: 1px solid transparent;
+      }
+
+      .list-inline a:hover {
+        border-bottom-color: var(--accent-ink);
+      }
+
+      footer {
+        padding: 22px 0 26px;
+        background: var(--graphite);
+        color: #9aa0ab;
+        border-top: 1px solid #1f2937;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+      }
+
+      .footer-inner {
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+
+      .footer-links a:hover {
+        color: #e5e7eb;
+      }
+
+      @media (max-width: 800px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          position: static;
+        }
+
+        .topbar {
+          height: auto;
+          padding: 12px 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
   </head>
-
   <body>
-    <main class="page">
-      <header class="topbar">
-        <div class="brand">
-          <div class="brand-mark">A</div>
-          <div class="brand-copy">
-            <div class="brand-name">Alexander Mathai</div>
-            <div class="brand-subtitle">Founder, Texas Movement International LLC</div>
-          </div>
+    <header>
+      <div class="wrap">
+        <div class="topbar">
+          <a href="#top" class="brand" aria-label="Alexander Mathai home">
+            <div class="brand-title">ALEXANDER MATHAI</div>
+            <div class="brand-subtitle">FOUNDER · TEXAS MOVEMENT INTERNATIONAL</div>
+          </a>
+          <nav>
+            <a href="#overview">Overview</a>
+            <a href="#work">What I do</a>
+            <a href="#lanes">Texas Movement lanes</a>
+            <a href="#keynote">Speaking & keynotes</a>
+            <a href="#socials">Socials</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
-        <nav class="nav">
-          <a href="#overview">Overview</a>
-          <a href="#work">Work</a>
-          <a href="#keynote">Keynote</a>
-          <a href="#tm-links">Texas Movement</a>
-          <a href="#socials">Socials</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+      </div>
+    </header>
 
-      <section id="overview" class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">FOUNDERSHIP · SYSTEMS · EXECUTION</p>
-          <h1 class="hero-line1">Alexander Mathai builds operating systems for serious work.</h1>
-          <p class="hero-line2">
-            Performance, Media, Consulting, IP Defense, AI Workflows, E-commerce and Strategic Operations.
-          </p>
-          <p class="hero-body">
-            Founder of Texas Movement International LLC, focused on systems for people and organizations that need serious
-            output. He works on complex workflows, founder operations, AI-assisted systems, platform-side IP defense, and
-            strategic problem-solving for operators, legal teams, promoters, and brands.
-          </p>
-          <div class="cta-row">
-            <a class="button primary" href="https://texasmovement.com/" target="_blank" rel="noreferrer">
-              Visit Texas Movement
-            </a>
-            <a class="button secondary" href="#contact">
-              Contact Alexander
-            </a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="portrait-wrap">
-            <img
-              src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
-              alt="Alexander Mathai portrait"
-              class="portrait"
-            />
-          </div>
-          <div class="hero-card-body">
-            <p class="hero-card-title">What I do</p>
-            <p>
-              I help serious people organize messy problems into workable systems. That includes consulting strategy,
-              AI workflows, media operations, IP defense through Texas Movement Distribution, performance systems, and
-              cross-functional execution support.
+    <main id="top">
+      <!-- Hero / authority layer [web:3][web:1][file:226] -->
+      <section id="overview" class="section hero">
+        <div class="wrap hero-inner">
+          <div>
+            <div class="hero-tagline">AUTHORITY LAYER · SYSTEMS FOR PEOPLE WHO MOVE.</div>
+            <h1>Alexander Mathai builds systems for people and institutions with real stakes.</h1>
+            <p class="hero-body">
+              I am the Founder & President of Texas Movement International, a systems company for performance, media,
+              consulting, IP defense, and economic leverage. This page is the personal authority layer; Texas Movement is
+              the company layer.
             </p>
+            <p class="hero-body">
+              I work on complex workflows, founder operations, AI-assisted systems, platform-side IP defense, and
+              strategic problem-solving for athletes, founders, cities, and families. The point is to make real work
+              legible, executable, and durable—not just impressive on paper.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn" href="#work">
+                See what I do <span class="arrow">→</span>
+              </a>
+              <a class="btn btn--ghost" href={tmiUrl} target="_blank" rel="noreferrer">
+                Go to TexasMovement.com <span class="arrow">→</span>
+              </a>
+            </div>
+            <div class="hero-note">
+              ONE PERSON · ONE COMPANY · SEVERAL LANES — THIS PAGE IS THE PERSON
+            </div>
           </div>
-        </aside>
+
+          <aside class="hero-figure">
+            <p style="font-size:0.9rem; color:var(--ink-soft);">
+              The work sits at the intersection of performance, AI strategy, and long-horizon economic questions.
+              Everything routes through systems: how people move, how information flows, how decisions get made, and how
+              rights are protected.
+            </p>
+            <div class="hero-figure-caption">
+              FIG. 01 — AUTHORITY LAYER · PERSON → COMPANY → LANES
+            </div>
+          </aside>
+        </div>
       </section>
 
+      <!-- What I do [web:3][web:1][file:226] -->
       <section id="work" class="section">
-        <h2>Core focus areas</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Strategy and operations</h3>
-            <p>Turn complex situations into clear timelines, decisions, and action plans.</p>
-          </article>
-          <article class="card">
-            <h3>AI and systems</h3>
-            <p>Use GPT, Claude, Gemini, and automation tools to reduce friction and improve execution.</p>
-          </article>
-          <article class="card">
-            <h3>Media and signal</h3>
-            <p>Shape the message with content systems that support credibility and distribution.</p>
-          </article>
-          <article class="card">
-            <h3>IP defense and platform ops</h3>
-            <p>Work with Texas Movement Distribution to keep creator catalogs defended and platform operations under control.</p>
-          </article>
-          <article class="card">
-            <h3>Performance thinking</h3>
-            <p>Apply engineering-style analysis to training, routines, and high-output environments.</p>
-          </article>
+        <div class="wrap grid-2">
+          <div>
+            <div class="eyebrow">WHAT I DO</div>
+            <h2>Systems, execution, and decision support for people who are already in motion.</h2>
+            <p>
+              My work is for founders, operators, athletes, teams, and institutions who are already moving and need
+              clearer systems around them. I help turn messy, high-stakes situations into structures that can be run,
+              audited, and defended.
+            </p>
+            <p>
+              That spans training and recovery systems, AI-assisted workflows, media operations, IP defense, and
+              structural questions around economic repair. The through-line is simple: structure creates leverage. The
+              job is building that structure with discipline.
+            </p>
+            <div class="pill-row">
+              <div class="pill">Strategy & systems</div>
+              <div class="pill">AI-assisted operations</div>
+              <div class="pill">Performance & recovery</div>
+              <div class="pill">Media & documentation</div>
+              <div class="pill">IP defense & catalog ops</div>
+              <div class="pill">Structural economic questions</div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="cards-grid">
+              <article class="card">
+                <div class="card-label">Lane</div>
+                <div class="card-title">Founder & operator work.</div>
+                <p class="card-body">
+                  Scoped consulting and decision support for founders and operators who need systems and records behind
+                  their choices—not just decks or encouragement.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-label">Lane</div>
+                <div class="card-title">Athlete & performance systems.</div>
+                <p class="card-body">
+                  Training, movement, and recovery treated as engineering problems. Systems built to hold under load,
+                  not just feel intense.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-label">Lane</div>
+                <div class="card-title">Media & public signal.</div>
+                <p class="card-body">
+                  Documentation and content systems through Texas Movement Media and Social, built to explain real work
+                  and signal it properly.
+                </p>
+              </article>
+
+              <article class="card">
+                <div class="card-label">Lane</div>
+                <div class="card-title">Rights, catalog, and structure.</div>
+                <p class="card-body">
+                  IP defense operations, catalog management, and structural analysis on economic repair—always
+                  operations and frameworks, never legal advice.
+                </p>
+              </article>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="section">
-        <h2>Background</h2>
-        <div class="bullets">
-          <p>Founder and 100% owner of Texas Movement International LLC.</p>
-          <p>BS in Civil Engineering, FE passed in 2012.</p>
-          <p>Experience across AI consulting, media production, e-commerce operations, IP defense workflows, and legal document support.</p>
-          <p>Based in the Chicago area and operating nationally.</p>
+      <!-- Texas Movement lanes [file:226][web:12] -->
+      <section id="lanes" class="section section--panel">
+        <div class="wrap">
+          <div class="eyebrow">TEXAS MOVEMENT ECOSYSTEM</div>
+          <h2>One company, several lanes. Each does one thing clearly.</h2>
+          <p>
+            Texas Movement International is the company I founded to organize footwear, performance, media, consulting,
+            IP defense, recovery, intake, public layer, and structural work under one operating system. Each lane is its
+            own property, with its own audience and offers.
+          </p>
+          <p>
+            You enter through the lane you need and leave understanding how it connects to the others. No lane tries to
+            be the entire company; this page is the person behind all of them.
+          </p>
+
+          <div class="cards-grid">
+            {ecosystemLinks.map((link) => (
+              <article class="card">
+                <div class="card-label">Lane</div>
+                <div class="card-title">{link.label}</div>
+                <p class="card-body">
+                  Visit the {link.label} property to see how that lane operates inside the system. It has its own
+                  offers, audience, and discipline.
+                </p>
+                <div class="cta-link">
+                  <a href={link.href} target="_blank" rel="noreferrer">
+                    Open {link.label} →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>How I work</h2>
-        <div class="bullets">
-          <p><strong>Systems first.</strong> I focus on structure, constraints, and durable execution.</p>
-          <p><strong>Document before narrative.</strong> The record has to hold up under review.</p>
-          <p><strong>Legally in-bounds.</strong> I do not provide legal advice or act as counsel.</p>
-          <p><strong>Built for serious work.</strong> I am a fit when the stakes are real and the brief is clear.</p>
-        </div>
-      </section>
-
+      <!-- Speaking & keynotes [web:3] -->
       <section id="keynote" class="section">
-        <h2>Keynote and live speaking</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Live speaking and keynotes</h3>
+        <div class="wrap grid-2">
+          <div>
+            <div class="eyebrow">SPEAKING & KEYNOTES</div>
+            <h2>Keynotes and live sessions on systems, performance, and leverage.</h2>
             <p>
-              I deliver live keynotes and speaking sessions on systems, performance, founder economics, IP defense on platforms,
-              AI-assisted operations, and how structure changes what people and organizations can actually do.
+              For conferences, offsites, and serious rooms, I speak about systems for founders, AI and operations,
+              performance and recovery, and long-horizon economic questions. The goal is to leave the room with clearer
+              structure, not just inspiration.
             </p>
-          </article>
-          <article class="card">
-            <h3>Who it is for</h3>
             <p>
-              Conferences, founder summits, corporate offsites, teams, and communities that want a practical, systems-first
-              view of performance, AI, and economic leverage — not generic motivation.
+              Keynotes are scoped like the consulting work: clear constraints, defined outcomes, and accountability.
+              They connect directly to the Texas Movement lanes that can carry the work forward after the event.
             </p>
-          </article>
-          <article class="card">
-            <h3>Format</h3>
-            <p>
-              Keynotes, fireside conversations, and small-room working sessions. I bias toward sessions that can leave
-              people with a usable framework, not just a story.
-            </p>
-          </article>
-          <article class="card">
-            <h3>How to request a keynote</h3>
-            <p>
-              Email a short outline of your event, audience, dates, and what you want people to walk away with to
-              <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>. Include “Keynote inquiry”
-              in the subject line.
-            </p>
-          </article>
+          </div>
+
+          <aside>
+            <div class="card">
+              <div class="card-label">Format</div>
+              <div class="card-title">Keynote / live session inquiry.</div>
+              <p class="card-body">
+                Email a short outline of your event, audience, dates, and what you want people to walk away with.
+                Include any constraints or lanes you already know need to be involved.
+              </p>
+              <div class="cta-link">
+                <a href="mailto:movementconsultant@gmail.com">
+                  Email movementconsultant@gmail.com with “Keynote inquiry” in the subject →
+                </a>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section id="tm-links" class="section">
-        <h2>Texas Movement ecosystem</h2>
-        <div class="link-grid">
-          <a href="https://texasmovement.com/" target="_blank" rel="noreferrer">TexasMovement.com</a>
-          <a href="https://distribution.texasmovement.com/" target="_blank" rel="noreferrer">Texas Movement Distribution</a>
-          <a href="https://consulting.texasmovement.com/" target="_blank" rel="noreferrer">Consulting</a>
-          <a href="https://media.texasmovement.com/" target="_blank" rel="noreferrer">Media</a>
-          <a href="https://performance.texasmovement.com/" target="_blank" rel="noreferrer">Performance</a>
-          <a href="https://hero.texasmovement.com/" target="_blank" rel="noreferrer">HERO</a>
-          <a href="https://founderlink.texasmovement.com/" target="_blank" rel="noreferrer">FounderLink</a>
-        </div>
-      </section>
+      <!-- Socials & LinkedIn [web:1][web:5][web:242] -->
+      <section id="socials" class="section section--panel">
+        <div class="wrap">
+          <div class="eyebrow">SOCIALS & PUBLIC SIGNAL</div>
+          <h2>Where to follow the work and the system.</h2>
+          <p>
+            To follow my work and the Texas Movement ecosystem, use the surfaces that carry real signal—LinkedIn,
+            Instagram, and YouTube via Texas Movement Media. Each has a role; none try to be everything.
+          </p>
 
-      <section id="socials" class="section">
-        <h2>LinkedIn and socials</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>LinkedIn</h3>
-            <p>
-              For systems threads, AI and operations notes, and founder-focused writing.
-              <br />
-              <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noreferrer">
-                linkedin.com/in/alexandermathai
+          <div class="list-inline">
+            {socialLinks.map((social) => (
+              <a href={social.href} target="_blank" rel="noreferrer">
+                {social.label} →
               </a>
-            </p>
-          </article>
-          <article class="card">
-            <h3>Instagram</h3>
-            <p>
-              For day-to-day perspective and visuals from Texas Movement.
-              <br />
-              <a href="https://www.instagram.com/alexanderofnazareth/" target="_blank" rel="noreferrer">
-                @alexanderofnazareth
-              </a>
-            </p>
-          </article>
-          <article class="card">
-            <h3>TikTok</h3>
-            <p>
-              For short-form systems notes, training, and ecosystem perspective.
-              <br />
-              <a href="https://www.tiktok.com/@AlexanderVMathai" target="_blank" rel="noreferrer">
-                @AlexanderVMathai
-              </a>
-            </p>
-          </article>
-          <article class="card">
-            <h3>Texas Movement network</h3>
-            <p>
-              HERO, Texas Movement Media, and Texas Movement Performance each have their own channels.
-              Start at
-              <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TexasMovement.com</a>
-              to see the full list.
-            </p>
-          </article>
+            ))}
+          </div>
+
+          <p style="margin-top:16px;">
+            Other appearances and accounts route back to these core surfaces and to TexasMovement.com. If you are
+            unsure whether something is part of the system, start here or at the hub.
+          </p>
         </div>
       </section>
 
-      <section id="faq" class="section">
-        <h2>Frequently asked questions</h2>
-
-        <div class="faq">
-          <div class="faq-item">
-            <h3>Who is Alexander Mathai?</h3>
-            <p>He is the founder of Texas Movement International LLC and the operator behind its consulting, media, performance, IP defense, and systems work.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>What does Alexander Mathai do?</h3>
-            <p>He builds systems for founders and teams that need help with strategy, AI workflows, media operations, IP defense, and complex execution problems.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>What is Texas Movement International LLC?</h3>
-            <p>It is the company Alexander founded to organize footwear, performance, media, consulting, IP defense, and related verticals under one operating structure.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Who is this page for?</h3>
-            <p>This page is for people who want a clear founder profile, a direct explanation of what he does, and a clean path into the Texas Movement ecosystem.</p>
-          </div>
+      <!-- Contact [web:3] -->
+      <section id="contact" class="section">
+        <div class="wrap">
+          <div class="eyebrow">CONTACT</div>
+          <h2>Start with a brief. Then we decide if there’s a fit.</h2>
+          <p>
+            For consulting, systems work, structural questions, or speaking, send a brief with context, constraints,
+            and what a good outcome would look like. Include any lanes you think are involved and any timelines that
+            matter.
+          </p>
+          <p class="card-body" style="margin-top:8px;">
+            Email: <a href="mailto:movementconsultant@gmail.com">movementconsultant@gmail.com</a>
+          </p>
+          <p style="margin-top:10px; font-size:0.9rem; color:var(--ink-soft);">
+            Please do not send confidential legal, medical, or tax information. Work stays inside systems, operations,
+            and education. Legal and medical decisions belong with qualified counsel.
+          </p>
         </div>
       </section>
-
-      <section id="contact" class="section contact">
-        <h2>Contact</h2>
-        <p>
-          Send a brief with context, constraints, and what a good outcome would look like.
-        </p>
-        <a href="mailto:movementconsultant@gmail.com" class="email">movementconsultant@gmail.com</a>
-        <p class="fineprint">
-          Please do not send confidential legal information. No attorney-client relationship is formed through this site.
-        </p>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-row">
-          <p>© 2026 Alexander Mathai · Texas Movement International LLC</p>
-          <div class="footer-links">
-            <a href="#overview">Back to top ↑</a>
-            <span class="footer-separator">·</span>
-            <a href="https://texasmovement.com/" target="_blank" rel="noreferrer">TMI</a>
-            <span class="footer-separator">·</span>
-            <a href="https://consulting.texasmovement.com/" target="_blank" rel="noreferrer">TMC</a>
-            <span class="footer-separator">·</span>
-            <a href="https://hero.texasmovement.com/" target="_blank" rel="noreferrer">HERO</a>
-          </div>
-        </div>
-      </footer>
     </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>Alexander Mathai — Founder & President, Texas Movement International.</span>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href={tmiUrl} target="_blank" rel="noreferrer">TexasMovement.com</a>
+          {ecosystemLinks.slice(0, 6).map((link) => (
+            <a href={link.href} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+          <a href="https://www.linkedin.com/in/alexandermathai" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/alexanderofnazareth/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/channel/UCnc6EwpsSJJO4NtbsS-UDFg" target="_blank" rel="noreferrer">
+            YouTube · TexasMovementMedia
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
-
-<style>
-  :global(body) {
-    margin: 0;
-    background: #020617;
-    color: #e5e7eb;
-    font-family: "Inter", system-ui, sans-serif;
-    line-height: 1.6;
-  }
-
-  .page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1.25rem 3rem;
-  }
-
-  .topbar,
-  .hero,
-  .section,
-  .footer {
-    margin-bottom: 2rem;
-  }
-
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: center;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-    padding-bottom: 1rem;
-  }
-
-  .brand {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-
-  .brand-mark {
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid rgba(148, 163, 184, 0.6);
-    border-radius: 999px;
-    display: grid;
-    place-items: center;
-  }
-
-  .brand-name {
-    font-weight: 700;
-    color: #f8fafc;
-  }
-
-  .brand-subtitle {
-    font-size: 0.9rem;
-    color: #94a3b8;
-  }
-
-  .nav {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .nav a,
-  .link-grid a,
-  .email {
-    color: #38bdf8;
-    text-decoration: none;
-  }
-
-  .nav a:hover,
-  .link-grid a:hover,
-  .email:hover {
-    text-decoration: underline;
-  }
-
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
-    gap: 1.5rem;
-    align-items: start;
-    padding-top: 0.5rem;
-  }
-
-  .eyebrow {
-    color: #60a5fa;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-size: 0.78rem;
-  }
-
-  .hero-line1 {
-    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
-    line-height: 1.05;
-    color: #e2e8f0; /* darker slate */
-    margin: 0 0 0.5rem;
-  }
-
-  .hero-line2 {
-    font-size: clamp(1.7rem, 3.1vw, 2.8rem); /* ~75% of line 1 */
-    line-height: 1.1;
-    color: #cbd5e1; /* slightly lighter slate */
-    margin: 0 0 1rem;
-  }
-
-  .hero-body {
-    font-size: 0.98rem;
-    color: #cbd5e1;
-    max-width: 60ch;
-  }
-
-  h2 {
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #94a3b8;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    margin: 0 0 0.4rem;
-    color: #f8fafc;
-    font-size: 0.92rem;
-  }
-
-  .hero-card-body p,
-  .card p,
-  .faq-item p,
-  .contact p,
-  .bullets p {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-  }
-
-  .cta-row {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 1.25rem;
-  }
-
-  .button {
-    padding: 0.75rem 1rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .primary {
-    background: #38bdf8;
-    color: #020617;
-  }
-
-  .secondary {
-    border: 1px solid rgba(148, 163, 184, 0.5);
-    color: #e5e7eb;
-  }
-
-  .hero-card,
-  .card,
-  .faq-item,
-  .contact {
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    border-radius: 1rem;
-    background: rgba(15, 23, 42, 0.55);
-  }
-
-  .hero-card {
-    overflow: hidden;
-  }
-
-  .portrait-wrap img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-card-body {
-    padding: 1rem;
-  }
-
-  .hero-card-title {
-    margin: 0 0 0.35rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.78rem;
-  }
-
-  .section {
-    padding-top: 0.5rem;
-  }
-
-  .cards,
-  .link-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .card,
-  .faq-item {
-    padding: 1rem;
-  }
-
-  .bullets {
-    display: grid;
-    gap: 0.75rem;
-    max-width: 70ch;
-  }
-
-  .faq {
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  .contact {
-    padding: 1rem;
-  }
-
-  .fineprint {
-    font-size: 0.85rem;
-    color: #94a3b8;
-  }
-
-  .footer {
-    border-top: 1px solid rgba(148, 163, 184, 0.25);
-    padding-top: 1rem;
-    color: #94a3b8;
-    font-size: 0.9rem;
-  }
-
-  .footer-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .footer-links {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-  }
-
-  .footer-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-
-  .footer-separator {
-    color: #64748b;
-  }
-
-  @media (max-width: 800px) {
-    .hero,
-    .cards,
-    .link-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .topbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .footer-row {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-</style>
