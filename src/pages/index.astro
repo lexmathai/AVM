@@ -1,5 +1,6 @@
 ---
-import { AstroSeo } from '@astrojs/seo';
+// Use the correct SEO package
+import AstroSeo from 'astro-seo';
 
 const siteUrl = 'https://alexandermathai.com';
 const title =
@@ -46,31 +47,29 @@ const email = 'movementconsultant@gmail.com';
 
     <meta name="theme-color" content="#15181E" />
 
-    <!-- Person + ecosystem schema [file:226][web:3][web:1][web:5] -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://alexandermathai.com/person",
-        "name": "Alexander Mathai",
-        "url": "https://alexandermathai.com",
-        "image": "https://alexandermathai.com/og-alexander-mathai.png",
-        "jobTitle": "Founder & President, Texas Movement International",
-        "description": "Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.",
-        "sameAs": [
-          "https://www.linkedin.com/in/alexandermathai",
-          "https://www.instagram.com/alexanderofnazareth/",
-          "https://texasmovement.com"
-        ],
-        "affiliation": {
-          "@type": "Organization",
-          "@id": "https://texasmovement.com#org",
-          "name": "Texas Movement International LLC",
-          "url": "https://texasmovement.com"
-        },
-        "email": "mailto:movementconsultant@gmail.com"
-      }
-    </script>
+    <!-- Person + ecosystem schema – now properly stringified -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://alexandermathai.com/person",
+      "name": "Alexander Mathai",
+      "url": "https://alexandermathai.com",
+      "image": "https://alexandermathai.com/og-alexander-mathai.png",
+      "jobTitle": "Founder & President, Texas Movement International",
+      "description": "Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.",
+      "sameAs": [
+        "https://www.linkedin.com/in/alexandermathai",
+        "https://www.instagram.com/alexanderofnazareth/",
+        "https://texasmovement.com"
+      ],
+      "affiliation": {
+        "@type": "Organization",
+        "@id": "https://texasmovement.com#org",
+        "name": "Texas Movement International LLC",
+        "url": "https://texasmovement.com"
+      },
+      "email": "mailto:movementconsultant@gmail.com"
+    })}></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,6 +79,7 @@ const email = 'movementconsultant@gmail.com';
     />
 
     <style>
+      /* All styles unchanged – kept as they are */
       :root {
         --paper: #e7e8e2;
         --panel: #ddded7;
@@ -555,7 +555,7 @@ const email = 'movementconsultant@gmail.com';
     </header>
 
     <main id="top">
-      <!-- Hero / authority layer [file:226][web:3][web:1] -->
+      <!-- Hero / authority layer -->
       <section id="overview" class="section hero">
         <div class="wrap hero-inner">
           <div>
@@ -629,7 +629,7 @@ const email = 'movementconsultant@gmail.com';
         </div>
       </section>
 
-      <!-- Keynote & live speaking [file:226][web:3] -->
+      <!-- Keynote & live speaking -->
       <section id="keynote" class="section section--panel">
         <div class="wrap grid-2">
           <div>
@@ -694,7 +694,7 @@ const email = 'movementconsultant@gmail.com';
         </div>
       </section>
 
-      <!-- Systems work & operating record [file:226][web:3][web:1] -->
+      <!-- Systems work & operating record -->
       <section id="systems" class="section">
         <div class="wrap">
           <div class="eyebrow">SYSTEMS WORK</div>
@@ -792,7 +792,7 @@ const email = 'movementconsultant@gmail.com';
         </div>
       </section>
 
-      <!-- Ecosystem connection [file:226][web:12] -->
+      <!-- Ecosystem connection -->
       <section id="ecosystem" class="section section--panel">
         <div class="wrap">
           <div class="eyebrow">ECOSYSTEM</div>
@@ -818,7 +818,7 @@ const email = 'movementconsultant@gmail.com';
         </div>
       </section>
 
-      <!-- FAQ [file:226][web:3][web:1] -->
+      <!-- FAQ -->
       <section id="faq" class="section section--tight">
         <div class="wrap">
           <div class="eyebrow">FAQ</div>
@@ -875,7 +875,7 @@ const email = 'movementconsultant@gmail.com';
         </div>
       </section>
 
-      <!-- Contact [file:226][web:3] -->
+      <!-- Contact -->
       <section id="contact" class="section section--panel section--tight">
         <div class="wrap">
           <div class="eyebrow">CONTACT</div>
