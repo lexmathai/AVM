@@ -2,11 +2,12 @@
 import AstroSeo from 'astro-seo';
 
 const siteUrl = 'https://alexandermathai.com';
-const title =
-  'Alexander Mathai — Founder, Texas Movement International';
+const title = 'Alexander Mathai — Founder, Texas Movement International';
 const description =
   'Alexander Mathai operates Texas Movement International, a systems company for people who move. This is the founder and authority layer: keynotes, operating record, and routes into the ecosystem.';
-const ogImage = '/og-alexander-mathai.png';
+
+// Use absolute URL for OG/Twitter
+const ogImage = 'https://alexandermathai.com/og-alexander-mathai.png';
 
 const twitterHandle = '@alexanderofnazareth';
 
@@ -46,29 +47,33 @@ const email = 'movementconsultant@gmail.com';
 
     <meta name="theme-color" content="#15181E" />
 
-    <!-- Person + ecosystem schema – properly stringified -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://alexandermathai.com/person",
-      "name": "Alexander Mathai",
-      "url": "https://alexandermathai.com",
-      "image": "https://alexandermathai.com/og-alexander-mathai.png",
-      "jobTitle": "Founder & President, Texas Movement International",
-      "description": "Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.",
-      "sameAs": [
-        "https://www.linkedin.com/in/alexandermathai",
-        "https://www.instagram.com/alexanderofnazareth/",
-        "https://texasmovement.com"
-      ],
-      "affiliation": {
-        "@type": "Organization",
-        "@id": "https://texasmovement.com#org",
-        "name": "Texas Movement International LLC",
-        "url": "https://texasmovement.com"
-      },
-      "email": "mailto:movementconsultant@gmail.com"
-    })}></script>
+    {/* Person + ecosystem schema – properly stringified */}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': 'https://alexandermathai.com/person',
+        name: 'Alexander Mathai',
+        url: siteUrl,
+        image: ogImage,
+        jobTitle: 'Founder & President, Texas Movement International',
+        description:
+          'Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.',
+        sameAs: [
+          'https://www.linkedin.com/in/alexandermathai',
+          'https://www.instagram.com/alexanderofnazareth/',
+          'https://texasmovement.com',
+        ],
+        affiliation: {
+          '@type': 'Organization',
+          '@id': 'https://texasmovement.com#org',
+          name: 'Texas Movement International LLC',
+          url: 'https://texasmovement.com',
+        },
+        email: 'mailto:movementconsultant@gmail.com',
+      })}
+    ></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,7 +83,6 @@ const email = 'movementconsultant@gmail.com';
     />
 
     <style>
-      /* All CSS unchanged – keep as provided */
       :root {
         --paper: #e7e8e2;
         --panel: #ddded7;
@@ -722,7 +726,11 @@ const email = 'movementconsultant@gmail.com';
                 needs structure.
               </p>
               <p class="cta-link">
-                <a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://consulting.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Open consulting.texasmovement.com →
                 </a>
               </p>
@@ -730,17 +738,27 @@ const email = 'movementconsultant@gmail.com';
 
             <article class="card">
               <div class="card-label">Lane</div>
-              <div class="card-title">Texas Movement Performance & Health.</div>
+              <div class="card-title">
+                Texas Movement Performance & Health.
+              </div>
               <p class="card-body">
                 Training systems, biomechanics, and herbs-only recovery protocols
                 for athletes and serious movers who treat training like engineering.
               </p>
               <p class="cta-link">
-                <a href="https://performance.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://performance.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Performance layer →
                 </a>
                 &nbsp;&nbsp;
-                <a href="https://health.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://health.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Health layer →
                 </a>
               </p>
@@ -755,15 +773,27 @@ const email = 'movementconsultant@gmail.com';
                 graph through Social / Gather.
               </p>
               <p class="cta-link">
-                <a href="https://media.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://media.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Media →
                 </a>
                 &nbsp;&nbsp;
-                <a href="https://distribution.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://distribution.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Distribution →
                 </a>
                 &nbsp;&nbsp;
-                <a href="https://social.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://social.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Social →
                 </a>
               </p>
@@ -778,11 +808,19 @@ const email = 'movementconsultant@gmail.com';
                 repair and long-horizon questions.
               </p>
               <p class="cta-link">
-                <a href="https://founderlink.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://founderlink.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   FounderLink →
                 </a>
                 &nbsp;&nbsp;
-                <a href="https://reparations.texasmovement.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://reparations.texasmovement.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reparations →
                 </a>
               </p>
@@ -901,7 +939,8 @@ const email = 'movementconsultant@gmail.com';
       <div class="wrap">
         <div class="footer-inner">
           <span>
-            Alexander Mathai · Founder, Texas Movement International · alexandermathai.com
+            Alexander Mathai · Founder, Texas Movement International ·
+            alexandermathai.com
           </span>
           <div class="footer-links">
             <a href="#top">Back to top</a>
