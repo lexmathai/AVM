@@ -1,29 +1,30 @@
 ---
 const title = "Alexander Mathai · Founder, Texas Movement International LLC";
 const description =
-  "Alexander Mathai is the founder of Texas Movement International LLC. He builds systems for performance, media, consulting, AI workflows, and strategic operations for founders and teams.";
+  "Alexander Mathai is the founder of Texas Movement International LLC. He builds systems for performance, media, consulting, IP defense, AI workflows, and strategic operations for founders and teams.";
 const url = "https://alexandermathai.com";
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Alexander Mathai",
-  url: url,
+  url,
   jobTitle: "Founder",
   worksFor: {
     "@type": "Organization",
     name: "Texas Movement International LLC",
-    url: "https://texasmovement.com"
+    url: "https://texasmovement.com",
   },
   alumniOf: {
     "@type": "CollegeOrUniversity",
-    name: "Civil Engineering degree"
+    name: "BS in Civil Engineering",
   },
   sameAs: [
-    "https://www.linkedin.com/in/alexandermathai"
+    "https://www.linkedin.com/in/alexandermathai",
+    "https://texasmovement.com",
   ],
   description:
-    "Founder of Texas Movement International LLC. Builds systems for performance, media, consulting, AI workflows, and strategic operations."
+    "Founder of Texas Movement International LLC. Builds systems for performance, media, consulting, IP defense, AI workflows, and strategic operations.",
 };
 
 const organizationJsonLd = {
@@ -32,17 +33,17 @@ const organizationJsonLd = {
   name: "Texas Movement International LLC",
   url: "https://texasmovement.com",
   description:
-    "A consulting and media company focused on strategy, positioning, performance, and systems.",
+    "A systems company focused on footwear, performance, media, consulting, IP defense, and strategic operations.",
   sameAs: [
-    "https://www.linkedin.com/company/texas-movement-consulting"
+    "https://www.linkedin.com/company/texas-movement-consulting",
   ],
   contactPoint: [
     {
       "@type": "ContactPoint",
       contactType: "General Inquiries",
-      email: "movementconsultant@gmail.com"
-    }
-  ]
+      email: "movementconsultant@gmail.com",
+    },
+  ],
 };
 
 const websiteJsonLd = {
@@ -51,7 +52,7 @@ const websiteJsonLd = {
   name: "Alexander Mathai",
   url,
   description:
-    "Founder page for Alexander Mathai, operator behind Texas Movement International LLC."
+    "Founder page for Alexander Mathai, operator behind Texas Movement International LLC.",
 };
 
 const faqJsonLd = {
@@ -63,34 +64,38 @@ const faqJsonLd = {
       name: "Who is Alexander Mathai?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Alexander Mathai is the founder of Texas Movement International LLC. He builds systems for performance, media, consulting, AI workflows, and strategic operations."
-      }
+        text:
+          "Alexander Mathai is the founder of Texas Movement International LLC and the operator behind its consulting, media, performance, IP defense, and systems work.",
+      },
     },
     {
       "@type": "Question",
       name: "What does Alexander Mathai do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "He works on founder operations, AI-assisted workflows, media systems, consulting strategy, and performance-oriented builds that help serious teams stay organized and execute cleanly."
-      }
+        text:
+          "He builds systems for founders and teams who need help with strategy, AI workflows, media operations, IP defense, and complex execution problems.",
+      },
     },
     {
       "@type": "Question",
       name: "What is Texas Movement International LLC?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Texas Movement International LLC is the company Alexander founded to house consulting, media, performance, and related systems work."
-      }
+        text:
+          "Texas Movement International LLC is the company Alexander founded to organize footwear, performance, media, consulting, IP defense, and strategic operations under one operating structure.",
+      },
     },
     {
       "@type": "Question",
-      name: "What kinds of clients or projects is this page for?",
+      name: "Who is this page for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "This page is for founders, operators, legal teams, and brands that need help with complex workflows, strategic clarity, and durable systems."
-      }
-    }
-  ]
+        text:
+          "This page is for founders, operators, legal teams, promoters, and brands that need a clear profile of the person behind Texas Movement and a direct path into the ecosystem.",
+      },
+    },
+  ],
 };
 ---
 
@@ -149,9 +154,9 @@ const faqJsonLd = {
       <section id="overview" class="hero">
         <div class="hero-copy">
           <p class="eyebrow">FOUNDERSHIP · SYSTEMS · EXECUTION</p>
-          <h1>Alexander Mathai builds systems for performance, media, consulting, and strategic operations.</h1>
+          <h1>Alexander Mathai builds systems for performance, media, consulting, IP defense, and strategic operations.</h1>
           <p class="lead">
-            Alexander Mathai is the founder of Texas Movement International LLC. He works on complex workflows, founder operations, AI-assisted systems, and strategic problem-solving for operators, legal teams, and brands.
+            Alexander Mathai is the founder of Texas Movement International LLC. He works on complex workflows, founder operations, AI-assisted systems, platform-side IP defense, and strategic problem-solving for operators, legal teams, promoters, and brands.
           </p>
           <p class="supporting">
             This page is the personal authority layer. Texas Movement is the company layer. Together, they show the person behind the system and the system behind the company.
@@ -177,13 +182,15 @@ const faqJsonLd = {
           <div class="hero-card-body">
             <p class="hero-card-title">What I do</p>
             <p>
-              I help serious people organize messy problems into workable systems. That includes consulting strategy, AI workflows, media operations, performance systems, and cross-functional execution support.
+              I help serious people organize messy problems into workable systems. That includes consulting strategy,
+              AI workflows, media operations, IP defense through Texas Movement Distribution, performance systems, and
+              cross-functional execution support.
             </p>
           </div>
         </aside>
       </section>
 
-      <section class="section">
+      <section id="work" class="section">
         <h2>Core focus areas</h2>
         <div class="cards">
           <article class="card">
@@ -199,6 +206,10 @@ const faqJsonLd = {
             <p>Shape the message with content systems that support credibility and distribution.</p>
           </article>
           <article class="card">
+            <h3>IP defense and platform ops</h3>
+            <p>Work with Texas Movement Distribution to keep creator catalogs defended and platform operations under control.</p>
+          </article>
+          <article class="card">
             <h3>Performance thinking</h3>
             <p>Apply engineering-style analysis to training, routines, and high-output environments.</p>
           </article>
@@ -210,7 +221,7 @@ const faqJsonLd = {
         <div class="bullets">
           <p>Founder and 100% owner of Texas Movement International LLC.</p>
           <p>BS in Civil Engineering, FE passed in 2012.</p>
-          <p>Experience across AI consulting, media production, e-commerce operations, and legal document support.</p>
+          <p>Experience across AI consulting, media production, e-commerce operations, IP defense workflows, and legal document support.</p>
           <p>Based in the Chicago area and operating nationally.</p>
         </div>
       </section>
@@ -229,6 +240,7 @@ const faqJsonLd = {
         <h2>Texas Movement links</h2>
         <div class="link-grid">
           <a href="https://texasmovement.com/" target="_blank" rel="noreferrer">TexasMovement.com</a>
+          <a href="https://distribution.texasmovement.com/" target="_blank" rel="noreferrer">Texas Movement Distribution</a>
           <a href="https://consulting.texasmovement.com/" target="_blank" rel="noreferrer">Consulting</a>
           <a href="https://media.texasmovement.com/" target="_blank" rel="noreferrer">Media</a>
           <a href="https://performance.texasmovement.com/" target="_blank" rel="noreferrer">Performance</a>
@@ -243,22 +255,22 @@ const faqJsonLd = {
         <div class="faq">
           <div class="faq-item">
             <h3>Who is Alexander Mathai?</h3>
-            <p>He is the founder of Texas Movement International LLC and the operator behind its consulting, media, performance, and systems work.</p>
+            <p>He is the founder of Texas Movement International LLC and the operator behind its consulting, media, performance, IP defense, and systems work.</p>
           </div>
 
           <div class="faq-item">
             <h3>What does Alexander Mathai do?</h3>
-            <p>He builds systems for founders and teams that need help with strategy, AI workflows, media operations, and complex execution problems.</p>
+            <p>He builds systems for founders and teams that need help with strategy, AI workflows, media operations, IP defense, and complex execution problems.</p>
           </div>
 
           <div class="faq-item">
             <h3>What is Texas Movement International LLC?</h3>
-            <p>It is the company Alexander founded to organize consulting, media, performance, and related verticals under one operating structure.</p>
+            <p>It is the company Alexander founded to organize footwear, performance, media, consulting, IP defense, and related verticals under one operating structure.</p>
           </div>
 
           <div class="faq-item">
             <h3>Who is this page for?</h3>
-            <p>It is for people who want a clear founder profile, a direct explanation of what he does, and a clean path into the Texas Movement ecosystem.</p>
+            <p>This page is for people who want a clear founder profile, a direct explanation of what he does, and a clean path into the Texas Movement ecosystem.</p>
           </div>
         </div>
       </section>
