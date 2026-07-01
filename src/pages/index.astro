@@ -374,7 +374,18 @@ const faqJsonLd = {
       </section>
 
       <footer class="footer">
-        <p>© 2026 Alexander Mathai · Texas Movement International LLC</p>
+        <div class="footer-row">
+          <p>© 2026 Alexander Mathai · Texas Movement International LLC</p>
+          <div class="footer-links">
+            <a href="#overview">Back to top ↑</a>
+            <span class="footer-separator">·</span>
+            <a href="https://texasmovement.com/" target="_blank" rel="noreferrer">TMI</a>
+            <span class="footer-separator">·</span>
+            <a href="https://consulting.texasmovement.com/" target="_blank" rel="noreferrer">TMC</a>
+            <span class="footer-separator">·</span>
+            <a href="https://hero.texasmovement.com/" target="_blank" rel="noreferrer">HERO</a>
+          </div>
+        </div>
       </footer>
     </main>
   </body>
@@ -496,7 +507,6 @@ const faqJsonLd = {
     color: #f8fafc;
   }
 
-  .lead,
   .supporting,
   .hero-card-body p,
   .card p,
@@ -604,6 +614,34 @@ const faqJsonLd = {
     font-size: 0.9rem;
   }
 
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-separator {
+    color: #64748b;
+  }
+
   @media (max-width: 800px) {
     .hero,
     .cards,
@@ -612,6 +650,11 @@ const faqJsonLd = {
     }
 
     .topbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-row {
       flex-direction: column;
       align-items: flex-start;
     }
