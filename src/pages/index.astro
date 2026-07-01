@@ -1,5 +1,4 @@
 ---
-// Use the correct SEO package
 import AstroSeo from 'astro-seo';
 
 const siteUrl = 'https://alexandermathai.com';
@@ -47,7 +46,7 @@ const email = 'movementconsultant@gmail.com';
 
     <meta name="theme-color" content="#15181E" />
 
-    <!-- Person + ecosystem schema – now properly stringified -->
+    <!-- Person + ecosystem schema – properly stringified -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
@@ -79,7 +78,7 @@ const email = 'movementconsultant@gmail.com';
     />
 
     <style>
-      /* All styles unchanged – kept as they are */
+      /* All CSS unchanged – keep as provided */
       :root {
         --paper: #e7e8e2;
         --panel: #ddded7;
