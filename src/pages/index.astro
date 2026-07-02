@@ -1,10 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
-import { Image, Picture, getImage } from 'astro:assets';
 
-// Local optimized sources (see assets list). OG PNG stays static in /public.
-import heroPortrait from './images/AVM-Blue-turtleneck-standing-arm-cross.jpg';
-import avatarMark from './images/AVM-Blue-turtleneck-standing-arm-cross.jpg';
+// No astro:assets imports; hero and avatar come from public/
 
 // Set `site: 'https://alexandermathai.com'` in astro.config.mjs
 const siteUrl = (Astro.site?.href ?? 'https://alexandermathai.com/').replace(/\/$/, '');
@@ -14,7 +11,7 @@ const title = 'Alexander Mathai — Founder, Texas Movement International';
 const description =
   'Alexander Mathai operates Texas Movement International, a systems company for people who move. This is the founder and authority layer: keynotes, operating record, and routes into the ecosystem.';
 
-const ogImage = `${siteUrl}/og-alexander-mathai.png`;
+const ogImage = `${siteUrl}/og-alexandermathai.png`;
 const ogImageAlt = 'Alexander Mathai, Founder of Texas Movement International';
 const twitterHandle = '@alexanderofnazareth';
 
@@ -27,10 +24,6 @@ const instagramUrl = 'https://www.instagram.com/alexanderofnazareth/';
 const email = 'movementconsultant@gmail.com';
 const keynoteMailto = `mailto:${email}?subject=${encodeURIComponent('Keynote Inquiry — [Event / City / Date]')}`;
 const briefMailto = `mailto:${email}?subject=${encodeURIComponent('Project Brief — [Lane / Stakes / Deadline]')}`;
-
-// Build-time LQIP + LCP preload derived from the hero source
-const heroLqip = await getImage({ src: heroPortrait, width: 24, format: 'webp', quality: 20 });
-const heroPreload = await getImage({ src: heroPortrait, width: 880, format: 'avif' });
 
 // Single source of truth for FAQ markup + FAQPage schema
 const faqs = [
@@ -130,6 +123,7 @@ const schema = {
   ],
 };
 ---
+---
 
 <html lang="en">
   <head>
@@ -173,15 +167,7 @@ const schema = {
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#15181E" />
 
-    {/* LCP hint for the desktop hero rendition */}
-    <link
-      rel="preload"
-      as="image"
-      href={heroPreload.src}
-      type="image/avif"
-      media="(min-width: 901px)"
-      fetchpriority="high"
-    />
+    
 
     {/* Production: self-host via @fontsource to cut third-party requests */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -720,13 +706,11 @@ const schema = {
       <div class="wrap">
         <div class="topbar">
           <a href="#top" class="brand" aria-label="Alexander Mathai — back to top">
-            <span class="brand-mark" aria-hidden="true">
-              <Image
-                src={avatarMark}
-                width={28}
-                height={28}
-                densities={[1, 2]}
-                format="webp"
+                        <span class="brand-mark" aria-hidden="true">
+              <img
+                src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
+                width="28"
+                height="28"
                 alt=""
                 loading="eager"
                 decoding="async"
@@ -838,15 +822,11 @@ const schema = {
             </div>
           </div>
 
-          <figure class="hero-photo" style={`background-image:url('${heroLqip.src}')`}>
-            <Picture
-              src={heroPortrait}
-              widths={[400, 800, 1200, 1800]}
-              sizes="(max-width: 900px) calc(100vw - 36px), 424px"
-              formats={['avif', 'webp']}
+                    <figure class="hero-photo" style="background-image:url('/AVM-Blue-turtleneck-standing-arm-cross.jpg')">
+            <img
+              src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
               alt="Alexander Mathai standing with arms crossed, wearing a blue turtleneck"
               loading="eager"
-              fetchpriority="high"
               decoding="async"
             />
             <figcaption class="hero-photo-caption">
