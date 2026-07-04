@@ -20,37 +20,17 @@ const founderLinkUrl = 'https://founderlink.texasmovement.com';
 const linkedinUrl = 'https://www.linkedin.com/in/alexandermathai';
 const instagramUrl = 'https://www.instagram.com/alexanderofnazareth/';
 
-// TODO: one-line swap to a branded mailbox (e.g. lex@alexandermathai.com) when live
-const email = 'movementconsultant@gmail.com';
-const keynoteMailto = `mailto:${email}?subject=${encodeURIComponent('Keynote Inquiry — [Event / City / Date]')}`;
-const briefMailto = `mailto:${email}?subject=${encodeURIComponent('Project Brief — [Lane / Stakes / Deadline]')}`;
+const keynoteEmail = 'Alexander@TexasMovement.com';
+const consultingEmail = 'Consulting@TexasMovement.com';
+const founderLinkEmail = 'FounderLink@TexasMovement.com';
+
+const keynoteMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent('Keynote Inquiry — [Event / City / Date]')}`;
+const briefMailto = `mailto:${consultingEmail}?subject=${encodeURIComponent('Project Brief — [Lane / Stakes / Deadline]')}`;
+const founderLinkMailto = `mailto:${founderLinkEmail}?subject=${encodeURIComponent('FounderLink Network — [City / Lane / Stakes]')}`;
 
 // Single source of truth for FAQ markup + FAQPage schema
 const faqs = [
-  {
-    q: 'What is this page?',
-    a: 'The founder and authority layer of Texas Movement International. It explains how I work, how the ecosystem is structured, and how to route serious work.',
-  },
-  {
-    q: 'How do I work with you directly?',
-    a: 'Most serious work routes through Texas Movement lanes, especially Consulting and FounderLink. Keynotes and select collaborations start with a brief sent via email.',
-  },
-  {
-    q: 'Is this a personal brand site?',
-    a: 'No. It is an operating record and authority layer. It exists to connect real work to the right lanes, not to collect attention without a system behind it.',
-  },
-  {
-    q: 'Where should I follow ongoing thinking?',
-    a: 'LinkedIn and Texas Movement Media carry most of the structured thinking in public. Instagram is where some of the texture and in-between live.',
-  },
-  {
-    q: 'What kinds of work are not a fit?',
-    a: 'Hype-first campaigns, vague no-context requests, and anything looking for a quick win with no stake or system behind it.',
-  },
-  {
-    q: 'How does this connect to Texas Movement International?',
-    a: 'I am the founder and operator behind Texas Movement International and its lanes. This page consolidates that identity so systems, AI, and people connect to one founder, not a scattered graph.',
-  },
+  // ...
 ];
 
 const personId = `${siteUrl}/#person`;
@@ -68,7 +48,7 @@ const schema = {
       jobTitle: 'Founder & President, Texas Movement International',
       description:
         'Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.',
-      email: `mailto:${email}`,
+      email: `mailto:${keynoteEmail}`,
       sameAs: [linkedinUrl, instagramUrl, hubUrl],
       worksFor: { '@id': orgId },
       knowsAbout: [
@@ -87,12 +67,25 @@ const schema = {
       contactPoint: [
         {
           '@type': 'ContactPoint',
-          contactType: 'business inquiries',
-          email,
+          contactType: 'keynote speaking',
+          email: keynoteEmail,
+        },
+        {
+          '@type': 'ContactPoint',
+          contactType: 'consulting',
+          email: consultingEmail,
+        },
+        {
+          '@type': 'ContactPoint',
+          contactType: 'FounderLink network',
+          email: founderLinkEmail,
           url: founderLinkUrl,
         },
       ],
     },
+    // ...
+  ],
+};
     {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
