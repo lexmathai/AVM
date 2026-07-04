@@ -75,7 +75,7 @@ const schema = {
           contactType: 'consulting',
           email: consultingEmail,
         },
-        {
+                {
           '@type': 'ContactPoint',
           contactType: 'FounderLink network',
           email: founderLinkEmail,
@@ -83,9 +83,6 @@ const schema = {
         },
       ],
     },
-    // ...
-  ],
-
     {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
@@ -116,28 +113,6 @@ const schema = {
   ],
 };
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <SEO
-      title={title}
-      description={description}
-      canonical={canonical}
-      openGraph={{
-        basic: {
-          type: 'website',
-          title,
-          image: ogImage,
-          url: canonical,
-        },
-        optional: {
-          description,
-          siteName: 'Alexander Mathai',
-          locale: 'en_US',
-        },
         image: {
           width: 1200,
           height: 630,
