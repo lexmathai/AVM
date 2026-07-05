@@ -19,6 +19,7 @@ const hubUrl = 'https://texasmovement.com';
 const founderLinkUrl = 'https://founderlink.texasmovement.com';
 const linkedinUrl = 'https://www.linkedin.com/in/alexandermathai';
 const instagramUrl = 'https://www.instagram.com/alexanderofnazareth/';
+const calendarUrl = 'https://calendar.app.google/b1L2qPDR5fPLHxhK8';
 
 const keynoteEmail = 'Alexander@TexasMovement.com';
 const consultingEmail = 'Consulting@TexasMovement.com';
@@ -127,17 +128,15 @@ const schema = {
       description={description}
       canonical={canonical}
       openGraph={{
-        type: 'website',
-        url: canonical,
+        basic: {
+          title,
+          type: 'website',
+          image: ogImage,
+          url: canonical,
+        },
+        // Optional additional fields supported by astro-seo
         title,
         description,
-        images: [{
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: ogImageAlt,
-          type: 'image/png',
-        }],
       }}
       twitter={{
         card: 'summary_large_image',
@@ -748,12 +747,21 @@ const schema = {
             <div class="hero-ctas">
               <a
                 class="btn"
+                href={calendarUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Schedule a call with Alexander (opens in a new tab)"
+              >
+                Schedule a call <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a
+                class="btn btn--ghost"
                 href={founderLinkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Start intake via FounderLink (opens in a new tab)"
               >
-                Start intake · FounderLink <span class="arrow" aria-hidden="true">→</span>
+                FounderLink intake <span class="arrow" aria-hidden="true">→</span>
               </a>
               <a
                 class="btn btn--ghost"
@@ -836,9 +844,14 @@ const schema = {
               operating <strong>system</strong>.
             </p>
 
-            <p class="cta-link">
-              <a href={keynoteMailto}>Email a keynote inquiry →</a>
-            </p>
+            <div class="hero-ctas">
+              <a class="btn" href={calendarUrl} target="_blank" rel="noopener noreferrer">
+                Book a discovery call <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost" href={keynoteMailto}>
+                Email inquiry <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
 
           <aside aria-label="Keynote angles">
@@ -1086,7 +1099,10 @@ const schema = {
             which lanes you believe are in play.
           </p>
           <div class="hero-ctas">
-            <a class="btn" href={briefMailto}>
+            <a class="btn" href={calendarUrl} target="_blank" rel="noopener noreferrer">
+              Schedule a call <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href={briefMailto}>
               Email a brief <span class="arrow" aria-hidden="true">→</span>
             </a>
             <a
