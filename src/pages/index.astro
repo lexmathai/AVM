@@ -30,7 +30,9 @@ const founderLinkMailto = `mailto:${founderLinkEmail}?subject=${encodeURICompone
 
 // Single source of truth for FAQ markup + FAQPage schema
 const faqs = [
-  // ...
+  // Add your actual FAQ items here, for example:
+  // { q: 'What is Texas Movement International?', a: 'Texas Movement International is a systems company for people who move...' },
+  // { q: 'How do I book Alexander for a keynote?', a: 'Send a brief email with event details, city, and date to Alexander@TexasMovement.com...' }
 ];
 
 const personId = `${siteUrl}/#person`;
@@ -75,7 +77,7 @@ const schema = {
           contactType: 'consulting',
           email: consultingEmail,
         },
-                {
+        {
           '@type': 'ContactPoint',
           contactType: 'FounderLink network',
           email: founderLinkEmail,
@@ -101,7 +103,7 @@ const schema = {
       about: { '@id': personId },
       primaryImageOfPage: ogImage,
     },
-    {
+    ...(faqs.length > 0 ? [{
       '@type': 'FAQPage',
       '@id': `${siteUrl}/#faq`,
       mainEntity: faqs.map((f) => ({
@@ -109,16 +111,33 @@ const schema = {
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
-    },
+    }] : []),
   ],
 };
 ---
-        image: {
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      openGraph={{
+        type: 'website',
+        url: canonical,
+        title,
+        description,
+        images: [{
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: ogImageAlt,
           type: 'image/png',
-        },
+        }],
       }}
       twitter={{
         card: 'summary_large_image',
@@ -133,8 +152,6 @@ const schema = {
 
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#15181E" />
-
-    
 
     {/* Production: self-host via @fontsource to cut third-party requests */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -673,7 +690,7 @@ const schema = {
       <div class="wrap">
         <div class="topbar">
           <a href="#top" class="brand" aria-label="Alexander Mathai — back to top">
-                        <span class="brand-mark" aria-hidden="true">
+            <span class="brand-mark" aria-hidden="true">
               <img
                 src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
                 width="28"
@@ -715,7 +732,7 @@ const schema = {
             <p class="hero-tagline">
               FOUNDER · SYSTEMS · TEXAS MOVEMENT INTERNATIONAL.
             </p>
-                        <h1>Founder behind Texas Movement, hired for systems and operating leverage.</h1>
+            <h1>Founder behind Texas Movement, hired for systems and operating leverage.</h1>
             <p class="hero-body">
               I build <strong>systems</strong> for people and institutions who have
               real stakes: athletes, founders, cities, and families. Texas Movement
@@ -786,7 +803,7 @@ const schema = {
             </div>
           </div>
 
-                    <figure class="hero-photo" style="background-image:url('/AVM-Blue-turtleneck-standing-arm-cross.jpg')">
+          <figure class="hero-photo" style={`background-image:url('/AVM-Blue-turtleneck-standing-arm-cross.jpg')`}>
             <img
               src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
               alt="Alexander Mathai standing with arms crossed, wearing a blue turtleneck"
@@ -886,7 +903,7 @@ const schema = {
             then pulls in Performance, Media, Distribution, or Reparations as needed. The lanes are built to
             support founders, teams, and cities who treat execution as an engineering problem, not a campaign.
           </p>
-                    <div class="cards-grid">
+          <div class="cards-grid">
             <article class="card">
               <div class="card-label">Operating record</div>
               <h3 class="card-title">Founder & President, Texas Movement International.</h3>
@@ -1062,7 +1079,7 @@ const schema = {
         <div class="wrap">
           <div class="eyebrow">CONTACT</div>
           <h2>Send a brief with stakes and constraints.</h2>
-                   <p>
+          <p>
             For keynotes, systems work, or serious collaboration, send a short
             <strong>brief</strong> that covers the stakes, current operating constraints, decision-makers,
             and what a good outcome would look like over the next 12–36 months. Include any deadlines and
@@ -1082,19 +1099,19 @@ const schema = {
               Route via FounderLink <span class="arrow" aria-hidden="true">→</span>
             </a>
           </div>
-                            <p class="fineprint">
-  Outreach should be focused on work with real stakes, context, and accountability.
-  If you are unsure which lane to use, route through
-  <a
-    href="https://consulting.texasmovement.com"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Texas Movement Consulting
-  </a>
-  and we will determine fit. Founders looking to join FounderLink as network members
-  can email <a href={founderLinkMailto}>FounderLink@TexasMovement.com</a> with a short operating record and lane.
-</p>
+          <p class="fineprint">
+            Outreach should be focused on work with real stakes, context, and accountability.
+            If you are unsure which lane to use, route through
+            <a
+              href="https://consulting.texasmovement.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Texas Movement Consulting
+            </a>
+            and we will determine fit. Founders looking to join FounderLink as network members
+            can email <a href={founderLinkMailto}>FounderLink@TexasMovement.com</a> with a short operating record and lane.
+          </p>
         </div>
       </section>
     </main>
