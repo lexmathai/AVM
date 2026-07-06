@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 
-// No astro:assets imports; hero and avatar come from public/
+// --- Configuration & Constants ---
 
 // Set `site: 'https://alexandermathai.com'` in astro.config.mjs
 const siteUrl = (Astro.site?.href ?? 'https://alexandermathai.com/').replace(/\/$/, '');
@@ -15,26 +15,56 @@ const ogImage = `${siteUrl}/og-alexander-mathai.png`;
 const ogImageAlt = 'Alexander Mathai, Founder of Texas Movement International';
 const twitterHandle = '@alexanderofnazareth';
 
+// Ecosystem URLs
 const hubUrl = 'https://texasmovement.com';
 const founderLinkUrl = 'https://founderlink.texasmovement.com';
+const consultingUrl = 'https://consulting.texasmovement.com';
+const performanceUrl = 'https://performance.texasmovement.com';
+const healthUrl = 'https://health.texasmovement.com';
+const mediaUrl = 'https://media.texasmovement.com';
+const distributionUrl = 'https://distribution.texasmovement.com';
+const socialUrl = 'https://social.texasmovement.com';
+const reparationsUrl = 'https://reparations.texasmovement.com';
+
+// Social Profiles
 const linkedinUrl = 'https://www.linkedin.com/in/alexandermathai';
 const instagramUrl = 'https://www.instagram.com/alexanderofnazareth/';
-const calendarUrl = 'https://calendar.app.google/b1L2qPDR5fPLHxhK8';
 
+// Contact Emails
 const keynoteEmail = 'Alexander@TexasMovement.com';
 const consultingEmail = 'Consulting@TexasMovement.com';
 const founderLinkEmail = 'FounderLink@TexasMovement.com';
 
+// Mailto Links
 const keynoteMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent('Keynote Inquiry — [Event / City / Date]')}`;
 const briefMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent('Project Brief — [Lane / Stakes / Deadline]')}`;
 const founderLinkMailto = `mailto:${founderLinkEmail}?subject=${encodeURIComponent('FounderLink Network — [City / Lane / Stakes]')}`;
 
-// Single source of truth for FAQ markup + FAQPage schema
+// --- FAQ Data (Source of Truth for Content + Schema) ---
 const faqs = [
-  // Add your actual FAQ items here, for example:
-  // { q: 'What is Texas Movement International?', a: 'Texas Movement International is a systems company for people who move...' },
-  // { q: 'How do I book Alexander for a keynote?', a: 'Send a brief email with event details, city, and date to Alexander@TexasMovement.com...' }
+  {
+    q: 'What is Texas Movement International?',
+    a: 'Texas Movement International is a systems company built for people who move—athletes, founders, and cities. It operates across several lanes: Consulting for AI and workflows, Performance and Health for physical systems, Media for signal, Distribution for rights, and FounderLink for intake. It is not a lifestyle brand; it is an operating engine for serious work.',
+  },
+  {
+    q: 'How do I book Alexander for a keynote?',
+    a: 'Keynotes are scoped like consulting engagements. Send a brief email to Alexander@TexasMovement.com with the event name, city, date, and the specific decision-making context of the room. We look for engagements where the audience is responsible for outcomes, not just attendance.',
+  },
+  {
+    q: 'What is the difference between Consulting and FounderLink?',
+    a: 'Consulting is for specific systems builds, AI workflows, and operational diagnostics. FounderLink is the intake and routing layer for broader network opportunities, structural questions, or when you are unsure which lane fits your stakes. If in doubt, start with FounderLink.',
+  },
+  {
+    q: 'Do you work with early-stage startups?',
+    a: 'We work with founders who have real stakes and operating constraints. This often includes early-stage founders, but only those treating execution as an engineering problem. If you are looking for hype or generic advice, this is not the right fit. If you are looking for structure, sequencing, and leverage, we should talk.',
+  },
+  {
+    q: 'What is the "Reparations" lane?',
+    a: 'Texas Movement Reparations Partners handles structural analysis on economic repair, rights, and long-horizon wealth building. It is distinct from charity or standard DEI initiatives, focusing instead on catalog ownership, distribution rights, and systemic leverage for underrepresented founders and creators.',
+  },
 ];
+
+// --- Schema.org JSON-LD ---
 
 const personId = `${siteUrl}/#person`;
 const orgId = 'https://texasmovement.com/#org';
@@ -52,7 +82,14 @@ const schema = {
       description:
         'Founder of Texas Movement International, operating systems for performance, media, consulting, distribution, health, reparations, and public layers.',
       email: `mailto:${keynoteEmail}`,
-      sameAs: [linkedinUrl, instagramUrl, hubUrl],
+      sameAs: [
+        linkedinUrl,
+        instagramUrl,
+        hubUrl,
+        // Add more profiles here as they become active:
+        // 'https://youtube.com/@...',
+        // 'https://github.com/...',
+      ],
       worksFor: { '@id': orgId },
       knowsAbout: [
         'Systems design for founders',
@@ -104,15 +141,20 @@ const schema = {
       about: { '@id': personId },
       primaryImageOfPage: ogImage,
     },
-    ...(faqs.length > 0 ? [{
-      '@type': 'FAQPage',
-      '@id': `${siteUrl}/#faq`,
-      mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    }] : []),
+    // Conditionally include FAQPage only if FAQs exist
+    ...(faqs.length > 0
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${siteUrl}/#faq`,
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]
+      : []),
   ],
 };
 ---
@@ -123,6 +165,11 @@ const schema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    {/* 
+      SEO Component Fix: 
+      astro-seo requires OpenGraph properties to be nested inside a `basic` object.
+      See: https://github.com/jonasmerlin/astro-seo 
+    */}
     <SEO
       title={title}
       description={description}
@@ -152,7 +199,11 @@ const schema = {
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#15181E" />
 
-    {/* Production: self-host via @fontsource to cut third-party requests */}
+    {/* 
+      Performance Note: 
+      In production, consider self-hosting these fonts via @fontsource to reduce third-party requests.
+      Example: npm install @fontsource/ibm-plex-sans @fontsource/space-grotesk 
+    */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -711,7 +762,7 @@ const schema = {
             <span class="nav-toggle-label">Menu</span>
           </button>
 
-          <nav id="site-nav" class="site-nav" data-state="closed" aria-label="Primary">
+          <nav id="site-nav" class="site-nav" data-state="closed" aria-label="Primary Navigation">
             <a href="#overview">Overview</a>
             <a href="#keynote">Keynotes</a>
             <a href="#systems">Systems work</a>
@@ -747,21 +798,12 @@ const schema = {
             <div class="hero-ctas">
               <a
                 class="btn"
-                href={calendarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Schedule a call with Alexander (opens in a new tab)"
-              >
-                Schedule a call <span class="arrow" aria-hidden="true">→</span>
-              </a>
-              <a
-                class="btn btn--ghost"
                 href={founderLinkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Start intake via FounderLink (opens in a new tab)"
               >
-                FounderLink intake <span class="arrow" aria-hidden="true">→</span>
+                Start intake · FounderLink <span class="arrow" aria-hidden="true">→</span>
               </a>
               <a
                 class="btn btn--ghost"
@@ -844,14 +886,9 @@ const schema = {
               operating <strong>system</strong>.
             </p>
 
-            <div class="hero-ctas">
-              <a class="btn" href={calendarUrl} target="_blank" rel="noopener noreferrer">
-                Book a discovery call <span class="arrow" aria-hidden="true">→</span>
-              </a>
-              <a class="btn btn--ghost" href={keynoteMailto}>
-                Email inquiry <span class="arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
+            <p class="cta-link">
+              <a href={keynoteMailto}>Email a keynote inquiry →</a>
+            </p>
           </div>
 
           <aside aria-label="Keynote angles">
@@ -942,7 +979,7 @@ const schema = {
               </p>
               <p class="cta-link">
                 <a
-                  href="https://consulting.texasmovement.com"
+                  href={consultingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -961,7 +998,7 @@ const schema = {
               </p>
               <p class="cta-link">
                 <a
-                  href="https://performance.texasmovement.com"
+                  href={performanceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -969,7 +1006,7 @@ const schema = {
                 </a>
                 &nbsp;&nbsp;
                 <a
-                  href="https://health.texasmovement.com"
+                  href={healthUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -988,7 +1025,7 @@ const schema = {
               </p>
               <p class="cta-link">
                 <a
-                  href="https://media.texasmovement.com"
+                  href={mediaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -996,7 +1033,7 @@ const schema = {
                 </a>
                 &nbsp;&nbsp;
                 <a
-                  href="https://distribution.texasmovement.com"
+                  href={distributionUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1004,7 +1041,7 @@ const schema = {
                 </a>
                 &nbsp;&nbsp;
                 <a
-                  href="https://social.texasmovement.com"
+                  href={socialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1031,7 +1068,7 @@ const schema = {
                 </a>
                 &nbsp;&nbsp;
                 <a
-                  href="https://reparations.texasmovement.com"
+                  href={reparationsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1099,10 +1136,7 @@ const schema = {
             which lanes you believe are in play.
           </p>
           <div class="hero-ctas">
-            <a class="btn" href={calendarUrl} target="_blank" rel="noopener noreferrer">
-              Schedule a call <span class="arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="btn btn--ghost" href={briefMailto}>
+            <a class="btn" href={briefMailto}>
               Email a brief <span class="arrow" aria-hidden="true">→</span>
             </a>
             <a
@@ -1119,7 +1153,7 @@ const schema = {
             Outreach should be focused on work with real stakes, context, and accountability.
             If you are unsure which lane to use, route through
             <a
-              href="https://consulting.texasmovement.com"
+              href={consultingUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -1143,14 +1177,14 @@ const schema = {
             <a href="#top">Back to top</a>
             <a href={hubUrl}>TexasMovement.com hub</a>
             <a href="https://hero.texasmovement.com">HERO</a>
-            <a href="https://consulting.texasmovement.com">Consulting</a>
-            <a href="https://performance.texasmovement.com">Performance</a>
-            <a href="https://health.texasmovement.com">Health</a>
-            <a href="https://media.texasmovement.com">Media</a>
-            <a href="https://distribution.texasmovement.com">Distribution</a>
+            <a href={consultingUrl}>Consulting</a>
+            <a href={performanceUrl}>Performance</a>
+            <a href={healthUrl}>Health</a>
+            <a href={mediaUrl}>Media</a>
+            <a href={distributionUrl}>Distribution</a>
             <a href={founderLinkUrl}>FounderLink</a>
-            <a href="https://social.texasmovement.com">Social</a>
-            <a href="https://reparations.texasmovement.com">Reparations</a>
+            <a href={socialUrl}>Social</a>
+            <a href={reparationsUrl}>Reparations</a>
             <a href={linkedinUrl} rel="me">LinkedIn</a>
             <a href={instagramUrl} rel="me">Instagram</a>
           </nav>
@@ -1167,12 +1201,26 @@ const schema = {
         const label = toggle.querySelector('.nav-toggle-label');
         const links = () => Array.from(nav.querySelectorAll('a'));
         const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+        
+        // Store the element that had focus before opening the menu
+        let lastFocusedElement = null;
 
         const setOpen = (open) => {
           toggle.setAttribute('aria-expanded', String(open));
           nav.dataset.state = open ? 'open' : 'closed';
           if (label) label.textContent = open ? 'Close' : 'Menu';
-          if (open) links()[0]?.focus();
+          
+          if (open) {
+            lastFocusedElement = document.activeElement;
+            links()[0]?.focus();
+          } else {
+            // Restore focus to the trigger button when closing
+            if (lastFocusedElement) {
+              lastFocusedElement.focus();
+            } else {
+              toggle.focus();
+            }
+          }
         };
 
         toggle.addEventListener('click', () => setOpen(!isOpen()));
@@ -1188,7 +1236,6 @@ const schema = {
 
           if (e.key === 'Escape') {
             setOpen(false);
-            toggle.focus();
             return;
           }
 
