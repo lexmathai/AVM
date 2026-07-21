@@ -9,7 +9,7 @@ const canonical = `${siteUrl}/`;
 
 const title = 'Alexander Mathai — Founder, Texas Movement International';
 const description =
-  'Alexander Mathai operates Texas Movement International, a systems company for people who move. This is the founder and authority layer: keynotes, operating record, and routes into the ecosystem.';
+  'Alexander Mathai operates Texas Movement International, a systems company for people who move. This is the founder and authority layer: keynotes, systems work, and routes into the ecosystem.';
 
 const ogImage = `${siteUrl}/og-alexander-mathai.png`;
 const ogImageAlt = 'Alexander Mathai, Founder of Texas Movement International';
@@ -36,9 +36,15 @@ const consultingEmail = 'Consulting@TexasMovement.com';
 const founderLinkEmail = 'FounderLink@TexasMovement.com';
 
 // Mailto Links
-const keynoteMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent('Keynote Inquiry — [Event / City / Date]')}`;
-const briefMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent('Project Brief — [Lane / Stakes / Deadline]')}`;
-const founderLinkMailto = `mailto:${founderLinkEmail}?subject=${encodeURIComponent('FounderLink Network — [City / Lane / Stakes]')}`;
+const keynoteMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent(
+  'Keynote Inquiry — [Event / City / Date]'
+)}`;
+const briefMailto = `mailto:${keynoteEmail}?subject=${encodeURIComponent(
+  'Project Brief — [Lane / Stakes / Deadline]'
+)}`;
+const founderLinkMailto = `mailto:${founderLinkEmail}?subject=${encodeURIComponent(
+  'FounderLink Network — [City / Lane / Stakes]'
+)}`;
 
 // --- FAQ Data (Source of Truth for Content + Schema) ---
 const faqs = [
@@ -86,9 +92,6 @@ const schema = {
         linkedinUrl,
         instagramUrl,
         hubUrl,
-        // Add more profiles here as they become active:
-        // 'https://youtube.com/@...',
-        // 'https://github.com/...',
       ],
       worksFor: { '@id': orgId },
       knowsAbout: [
@@ -141,7 +144,6 @@ const schema = {
       about: { '@id': personId },
       primaryImageOfPage: ogImage,
     },
-    // Conditionally include FAQPage only if FAQs exist
     ...(faqs.length > 0
       ? [
           {
@@ -165,11 +167,6 @@ const schema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {/* 
-      SEO Component Fix: 
-      astro-seo requires OpenGraph properties to be nested inside a `basic` object.
-      See: https://github.com/jonasmerlin/astro-seo 
-    */}
     <SEO
       title={title}
       description={description}
@@ -181,7 +178,6 @@ const schema = {
           image: ogImage,
           url: canonical,
         },
-        // Optional additional fields supported by astro-seo
         title,
         description,
       }}
@@ -199,11 +195,6 @@ const schema = {
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#15181E" />
 
-    {/* 
-      Performance Note: 
-      In production, consider self-hosting these fonts via @fontsource to reduce third-party requests.
-      Example: npm install @fontsource/ibm-plex-sans @fontsource/space-grotesk 
-    */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -214,7 +205,6 @@ const schema = {
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <style>
-      /* Critical inline styles — lift to src/styles/index.css if the site grows */
       :root {
         --paper: #e7e8e2;
         --panel: #ddded7;
@@ -230,7 +220,7 @@ const schema = {
         --white: #f4f5f0;
         --compression: #274a78;
         --tension: #bd3b22;
-        --accent: #1f2937; /* CTA color */
+        --accent: #1f2937;
         --wrap: 1080px;
       }
 
@@ -359,6 +349,10 @@ const schema = {
         border-radius: 999px;
         padding: 8px 14px;
         cursor: pointer;
+      }
+
+      .nav-toggle-label {
+        margin-left: 2px;
       }
 
       main {
@@ -791,9 +785,9 @@ const schema = {
               not a detached advisor.
             </p>
             <p class="hero-body">
-              The practical routes in are simple: <strong>Consulting</strong> for systems and AI workflows,
-              <strong>keynotes and live work</strong> for rooms making decisions, and <strong>structural lanes</strong>
-              like Distribution and Reparations when the stakes involve rights, catalog, or economic repair.
+              There are three primary routes in: <strong>Consulting</strong> for systems and AI workflows,
+              <strong>keynotes and live work</strong> for rooms making decisions, and <strong>FounderLink</strong>
+              as the intake and routing layer when you are not sure which lane fits.
             </p>
             <div class="hero-ctas">
               <a
@@ -821,7 +815,6 @@ const schema = {
             <p class="hero-note">
               ONE FOUNDER · ONE SYSTEM · SEVERAL LANES · BUILT FOR SERIOUS WORK
             </p>
-
             <div class="social-row">
               <a
                 class="social-pill"
@@ -853,7 +846,10 @@ const schema = {
             </div>
           </div>
 
-          <figure class="hero-photo" style={`background-image:url('/AVM-Blue-turtleneck-standing-arm-cross.jpg')`}>
+          <figure
+            class="hero-photo"
+            style={`background-image:url('/AVM-Blue-turtleneck-standing-arm-cross.jpg')`}
+          >
             <img
               src="/AVM-Blue-turtleneck-standing-arm-cross.jpg"
               alt="Alexander Mathai standing with arms crossed, wearing a blue turtleneck"
@@ -882,10 +878,9 @@ const schema = {
             <p>
               Every keynote is scoped like consulting work: clear constraints,
               outcomes, and accountability. The point is not a talk that sounds
-              good—for a day—but a session that changes how people see their
-              operating <strong>system</strong>.
+              good for a day, but a session that changes how people see their
+              operating <strong>system</strong> and what they do in the next 3–12 months.
             </p>
-
             <p class="cta-link">
               <a href={keynoteMailto}>Email a keynote inquiry →</a>
             </p>
@@ -975,7 +970,7 @@ const schema = {
               <p class="card-body">
                 Systems and AI workflows for founders and operators. Scoped
                 diagnostics, systems builds, and operator retainers for work that
-                needs structure.
+                needs structure. This is where artifacts like the Early Childhood AI Toolkit live.
               </p>
               <p class="cta-link">
                 <a
@@ -1201,20 +1196,18 @@ const schema = {
         const label = toggle.querySelector('.nav-toggle-label');
         const links = () => Array.from(nav.querySelectorAll('a'));
         const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
-        
-        // Store the element that had focus before opening the menu
+
         let lastFocusedElement = null;
 
         const setOpen = (open) => {
           toggle.setAttribute('aria-expanded', String(open));
           nav.dataset.state = open ? 'open' : 'closed';
           if (label) label.textContent = open ? 'Close' : 'Menu';
-          
+
           if (open) {
             lastFocusedElement = document.activeElement;
             links()[0]?.focus();
           } else {
-            // Restore focus to the trigger button when closing
             if (lastFocusedElement) {
               lastFocusedElement.focus();
             } else {
