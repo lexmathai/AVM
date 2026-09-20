@@ -32,7 +32,7 @@
   <!-- Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- JSON-LD Structured Data for SEO -->
   <script type="application/ld+json">
@@ -120,7 +120,6 @@
       position: relative;
     }
 
-    /* Subtle radial glow background */
     body::before {
       content: "";
       position: fixed;
@@ -134,7 +133,6 @@
       z-index: -2;
     }
 
-    /* Premium noise texture overlay */
     body::after {
       content: "";
       position: fixed;
@@ -157,18 +155,15 @@
       flex-direction: column;
     }
 
-    /* Profile Photo Container */
     .profile-photo-container {
       margin-bottom: 2rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
     }
 
     .profile-photo {
-      width: 280px;
-      height: 350px;
+      width: 320px;
+      height: 400px;
       object-fit: cover;
       border-radius: 16px;
       box-shadow: var(--shadow-hover);
@@ -182,7 +177,6 @@
       border-color: var(--accent);
     }
 
-    /* Staggered Entrance Animations */
     .animate-in {
       opacity: 0;
       transform: translateY(24px);
@@ -341,6 +335,151 @@
       transform: translate(4px, -4px);
     }
 
+    /* Pricing Section Styles */
+    .pricing-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .pricing-category {
+      margin-bottom: 3rem;
+    }
+
+    .pricing-category-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.75rem;
+      margin: 0 0 1.5rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: 2px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .pricing-card.featured::before {
+      content: "Most Popular";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-tier {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0 0 1rem;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+
+    .pricing-features li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-cta {
+      display: block;
+      width: 100%;
+      padding: 0.875rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .pricing-cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .pricing-card.featured .pricing-cta {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .pricing-card.featured .pricing-cta:hover {
+      background: var(--accent-hover, #1e40af);
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -406,10 +545,8 @@
 </head>
 <body>
 <main>
-  <!-- PROFILE PHOTOS SECTION -->
   <div class="profile-photo-container animate-in delay-1">
-    <img src="images/headshot-1.jpg" alt="Alexander Mathai - Professional headshot in navy turtleneck" class="profile-photo">
-    <img src="images/headshot-2.jpg" alt="Alexander Mathai - Professional headshot in black polo with logo" class="profile-photo">
+    <img src="images/headshot-1.jpg" alt="Alexander Mathai - Professional headshot with arms crossed in navy turtleneck" class="profile-photo">
   </div>
 
   <header class="animate-in delay-2">
@@ -417,6 +554,100 @@
     <p class="role">Founder &amp; President, Texas Movement International</p>
     <p class="bio">Trained in civil/structural engineering and biomechanics. I bring the same rigorous method to business: diagnose what's failing, build the fix, and transfer the system to the people who run it.</p>
   </header>
+
+  <section class="animate-in delay-3">
+    <h2 class="section-title">Keynote Speaking</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-tier">Essential</h3>
+        <div class="pricing-price">$3,500<span>/event</span></div>
+        <ul class="pricing-features">
+          <li>60-minute keynote presentation</li>
+          <li>Systems thinking framework</li>
+          <li>Performance optimization strategies</li>
+          <li>Q&amp;A session (15 min)</li>
+          <li>Digital resource packet</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Essential%20Keynote" class="pricing-cta">Book Now</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3 class="pricing-tier">Professional</h3>
+        <div class="pricing-price">$6,500<span>/event</span></div>
+        <ul class="pricing-features">
+          <li>90-minute keynote + workshop</li>
+          <li>Custom content development</li>
+          <li>Interactive systems audit</li>
+          <li>Q&amp;A session (30 min)</li>
+          <li>30-day email support</li>
+          <li>Recording + slides included</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Professional%20Keynote" class="pricing-cta">Book Now</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-tier">Enterprise</h3>
+        <div class="pricing-price">$12,000<span>/event</span></div>
+        <ul class="pricing-features">
+          <li>Half-day intensive (3-4 hours)</li>
+          <li>Pre-event consultation</li>
+          <li>Custom case study development</li>
+          <li>Team breakout sessions</li>
+          <li>90-day implementation support</li>
+          <li>Full recording + materials</li>
+          <li>Travel included (US)</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Enterprise%20Keynote" class="pricing-cta">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="animate-in delay-3">
+    <h2 class="section-title">Consulting Services</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-tier">Starter</h3>
+        <div class="pricing-price">$2,500<span>/month</span></div>
+        <ul class="pricing-features">
+          <li>4 hours monthly consultation</li>
+          <li>Systems diagnostic review</li>
+          <li>Action plan development</li>
+          <li>Bi-weekly check-ins</li>
+          <li>Email support</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Starter" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3 class="pricing-tier">Growth</h3>
+        <div class="pricing-price">$5,000<span>/month</span></div>
+        <ul class="pricing-features">
+          <li>10 hours monthly consultation</li>
+          <li>AI systems integration</li>
+          <li>Process optimization</li>
+          <li>Weekly strategy calls</li>
+          <li>Priority email/Slack support</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Growth" class="pricing-cta">Get Started</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-tier">Transformation</h3>
+        <div class="pricing-price">$10,000<span>/month</span></div>
+        <ul class="pricing-features">
+          <li>Unlimited consultation hours</li>
+          <li>Full organizational audit</li>
+          <li>Complete systems rebuild</li>
+          <li>Team training &amp; handoff</li>
+          <li>24/7 priority access</li>
+          <li>Quarterly reviews</li>
+          <li>6-month minimum engagement</li>
+        </ul>
+        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Transformation" class="pricing-cta">Get Started</a>
+      </div>
+    </div>
+  </section>
 
   <section class="animate-in delay-3">
     <h2 class="section-title">Ventures</h2>
