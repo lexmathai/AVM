@@ -145,7 +145,7 @@
     }
 
     main {
-      max-width: 64rem; /* Increased max-width to accommodate 3-column video grid */
+      max-width: 64rem;
       min-height: 100svh;
       margin: 0 auto;
       padding: clamp(3rem, 10vw, 6rem) 1.5rem 4rem;
@@ -381,11 +381,27 @@
       border: 0;
     }
 
-    /* CSS-Only Vertical Video Card */
+    /* CSS-Only Vertical Video Grid */
+    .short-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .short-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .short-card {
       position: relative;
       aspect-ratio: 9/16;
-      background: var(--bg-subtle);
+      background-color: var(--bg-subtle);
+      background-size: cover;
+      background-position: center;
       border: 1px solid var(--rule);
       border-radius: 12px;
       overflow: hidden;
@@ -394,26 +410,40 @@
       justify-content: flex-end;
       padding: 1.5rem;
       text-decoration: none;
-      color: var(--ink);
-      transition: border-color 0.3s ease;
-      max-width: 280px;
+      color: #ffffff;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      width: 100%;
+      max-width: 260px;
     }
 
     .short-card:hover {
       border-color: var(--accent);
+      transform: translateY(-4px);
     }
 
     .short-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
       z-index: 1;
     }
 
     .short-card-content {
       position: relative;
       z-index: 2;
+    }
+    
+    .short-card-content strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: #ffffff;
+    }
+    
+    .short-card-content span {
+      color: rgba(255,255,255,0.8) !important;
+      font-size: 0.85rem;
     }
 
     .short-play {
@@ -431,6 +461,16 @@
       z-index: 2;
       background: rgba(0,0,0,0.4);
       backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+    
+    .short-card:hover .short-play {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .short-card:hover .short-play::after {
+      border-left-color: #ffffff;
     }
 
     .short-play::after {
@@ -639,14 +679,33 @@
       </div>
     </div>
 
-    <div style="display: flex; justify-content: center; margin-top: 1rem;">
-      <div>
-        <p class="archive-label" style="text-align: center;">Personal Perspective / Signal</p>
-        <a href="https://www.tiktok.com/@AlexanderVMathai" target="_blank" rel="noopener noreferrer" class="short-card" aria-label="Play pinned operator log">
+    <div>
+      <p class="archive-label" style="text-align: center; margin-bottom: 0.5rem;">Short-Form Signal / Pinned Archives</p>
+      <div class="short-grid">
+        <!-- SIGNAL 01 -->
+        <a href="https://www.tiktok.com/@AlexanderVMathai/video/YOUR_VIDEO_ID_1" target="_blank" rel="noopener noreferrer" class="short-card" style="background-image: url('tiktok-1.jpg');" aria-label="Play pinned operator log 1">
           <div class="short-play" aria-hidden="true"></div>
           <div class="short-card-content">
-            <strong>@AlexanderVMathai</strong>
-            <span style="color: var(--muted); font-size: 0.85rem;">Operator Signal / TikTok</span>
+            <strong>Signal 01</strong>
+            <span>Operator Perspective</span>
+          </div>
+        </a>
+        
+        <!-- SIGNAL 02 -->
+        <a href="https://www.tiktok.com/@AlexanderVMathai/video/YOUR_VIDEO_ID_2" target="_blank" rel="noopener noreferrer" class="short-card" style="background-image: url('tiktok-2.jpg');" aria-label="Play pinned operator log 2">
+          <div class="short-play" aria-hidden="true"></div>
+          <div class="short-card-content">
+            <strong>Signal 02</strong>
+            <span>Systems Thinking</span>
+          </div>
+        </a>
+        
+        <!-- SIGNAL 03 -->
+        <a href="https://www.tiktok.com/@AlexanderVMathai/video/YOUR_VIDEO_ID_3" target="_blank" rel="noopener noreferrer" class="short-card" style="background-image: url('tiktok-3.jpg');" aria-label="Play pinned operator log 3">
+          <div class="short-play" aria-hidden="true"></div>
+          <div class="short-card-content">
+            <strong>Signal 03</strong>
+            <span>Performance Protocol</span>
           </div>
         </a>
       </div>
