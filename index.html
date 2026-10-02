@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Alexander Mathai | Founder & President, Texas Movement International</title>
-  <meta name="description" content="Alexander (Lex) Mathai is Founder & President of Texas Movement International. Trained in civil/structural engineering and biomechanics, applying rigorous systems thinking to business, media, and performance.">
+  <meta name="description" content="Alexander (Lex) Mathai is Founder & President of Texas Movement International. Operator logs, systems thinking, and independent perspective on business, media, and performance.">
   <link rel="canonical" href="https://alexandermathai.com/">
   
   <!-- Theme Colors -->
@@ -14,7 +14,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Alexander Mathai | Founder & President">
-  <meta property="og:description" content="Founder & President of Texas Movement International. Engineering rigorous systems for business, media, and human performance.">
+  <meta property="og:description" content="Operator logs, systems thinking, and independent perspective on business, media, and performance.">
   <meta property="og:url" content="https://alexandermathai.com/">
   <meta property="og:image" content="https://alexandermathai.com/images/og-image.jpg">
   <meta property="profile:first_name" content="Alexander">
@@ -23,7 +23,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alexander Mathai | Founder & President">
-  <meta name="twitter:description" content="Founder & President of Texas Movement International. Engineering rigorous systems for business, media, and human performance.">
+  <meta name="twitter:description" content="Operator logs, systems thinking, and independent perspective on business, media, and performance.">
   <meta name="twitter:image" content="https://alexandermathai.com/images/og-image.jpg">
 
   <!-- Favicon -->
@@ -44,7 +44,8 @@
     "jobTitle": "Founder & President",
     "worksFor": {
       "@type": "Organization",
-      "name": "Texas Movement International"
+      "name": "Texas Movement International",
+      "url": "https://texasmovement.com/"
     },
     "email": "mailto:lexmathai@gmail.com",
     "telephone": "+1-872-210-2505",
@@ -53,15 +54,12 @@
     "sameAs": [
       "https://www.linkedin.com/in/alexandermathai",
       "https://github.com/lexmathai",
-      "https://www.instagram.com/gabrielofgath",
-      "https://www.instagram.com/tmmediausa",
-      "https://www.instagram.com/herofootwearusa",
-      "https://www.instagram.com/texasmovementconsulting",
+      "https://www.instagram.com/alexanderofnazareth",
+      "https://www.tiktok.com/@AlexanderVMathai",
       "https://www.youtube.com/@TexasMovementMedia",
-      "https://www.youtube.com/@TexasMovementPerformance",
-      "https://www.youtube.com/@herofootwear",
-      "https://www.tiktok.com/@AlexanderVMathai"
+      "https://texasmovement.substack.com"
     ],
+    "knowsAbout": ["Systems Thinking", "Digital Infrastructure", "Biomechanics", "Venture Building", "Media Distribution"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chicago",
@@ -147,7 +145,7 @@
     }
 
     main {
-      max-width: 42rem;
+      max-width: 64rem; /* Increased max-width to accommodate 3-column video grid */
       min-height: 100svh;
       margin: 0 auto;
       padding: clamp(3rem, 10vw, 6rem) 1.5rem 4rem;
@@ -335,72 +333,144 @@
       transform: translate(4px, -4px);
     }
 
-    /* Pricing Section Styles */
-    .pricing-section {
-      margin-bottom: 3.5rem;
+    /* Playlist Grid Styles */
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
     }
 
-    .pricing-category {
-      margin-bottom: 3rem;
+    @media (min-width: 900px) {
+      .playlist-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
-    .pricing-category-title {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.75rem;
-      margin: 0 0 1.5rem;
+    .playlist-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .archive-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* CSS-Only Vertical Video Card */
+    .short-card {
+      position: relative;
+      aspect-ratio: 9/16;
+      background: var(--bg-subtle);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      text-decoration: none;
       color: var(--ink);
-      font-weight: 400;
+      transition: border-color 0.3s ease;
+      max-width: 280px;
     }
 
-    .pricing-grid {
+    .short-card:hover {
+      border-color: var(--accent);
+    }
+
+    .short-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+      z-index: 1;
+    }
+
+    .short-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .short-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border: 2px solid rgba(255,255,255,0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .short-play::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 14px solid white;
+      margin-left: 3px;
+    }
+
+    /* Engagements Section */
+    .engagements-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
     @media (min-width: 768px) {
-      .pricing-grid {
+      .engagements-grid {
         grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    .pricing-card {
+    .engagement-card {
       background: var(--card-bg);
       border: 2px solid var(--rule);
       border-radius: 12px;
       padding: 1.5rem;
       transition: all 0.3s ease;
-      position: relative;
     }
 
-    .pricing-card:hover {
+    .engagement-card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
     }
 
-    .pricing-card.featured {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .pricing-card.featured::before {
-      content: "Most Popular";
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: white;
-      padding: 0.25rem 1rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .pricing-tier {
+    .engagement-tier {
       font-family: 'Instrument Serif', Georgia, serif;
       font-size: 1.5rem;
       margin: 0 0 0.5rem;
@@ -408,27 +478,22 @@
       font-weight: 400;
     }
 
-    .pricing-price {
-      font-size: 2rem;
-      font-weight: 700;
+    .engagement-focus {
+      font-size: 0.875rem;
       color: var(--accent);
-      margin: 0 0 1rem;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
     }
 
-    .pricing-price span {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .pricing-features {
+    .engagement-features {
       list-style: none;
       padding: 0;
-      margin: 0 0 1.5rem;
+      margin: 0;
     }
 
-    .pricing-features li {
+    .engagement-features li {
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--rule);
       font-size: 0.9rem;
@@ -438,46 +503,15 @@
       gap: 0.5rem;
     }
 
-    .pricing-features li:last-child {
+    .engagement-features li:last-child {
       border-bottom: none;
     }
 
-    .pricing-features li::before {
-      content: "✓";
+    .engagement-features li::before {
+      content: "→";
       color: var(--accent);
       font-weight: 700;
       flex-shrink: 0;
-    }
-
-    .pricing-cta {
-      display: block;
-      width: 100%;
-      padding: 0.875rem;
-      background: var(--bg-subtle);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-    }
-
-    .pricing-cta:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }
-
-    .pricing-card.featured .pricing-cta {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }
-
-    .pricing-card.featured .pricing-cta:hover {
-      background: var(--accent-hover, #1e40af);
     }
 
     .contact-grid {
@@ -546,107 +580,122 @@
 <body>
 <main>
   <div class="profile-photo-container animate-in delay-1">
-    <img src="images/headshot-1.jpg" alt="Alexander Mathai - Professional headshot with arms crossed in navy turtleneck" class="profile-photo">
+    <img src="images/headshot-1.jpg" alt="Alexander Mathai - Professional headshot" class="profile-photo">
   </div>
 
   <header class="animate-in delay-2">
     <h1>Alexander Mathai</h1>
-    <p class="role">Founder &amp; President, Texas Movement International</p>
-    <p class="bio">Trained in civil/structural engineering and biomechanics. I bring the same rigorous method to business: diagnose what's failing, build the fix, and transfer the system to the people who run it.</p>
+    <p class="role">Founder & President, Texas Movement International</p>
+    <p class="bio">Operator logs, systems thinking, and independent perspective on business, media, and human performance. Building durable infrastructure for independent ventures.</p>
   </header>
 
   <section class="animate-in delay-3">
-    <h2 class="section-title">Keynote Speaking</h2>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3 class="pricing-tier">Essential</h3>
-        <div class="pricing-price">$3,500<span>/event</span></div>
-        <ul class="pricing-features">
-          <li>60-minute keynote presentation</li>
-          <li>Systems thinking framework</li>
-          <li>Performance optimization strategies</li>
-          <li>Q&amp;A session (15 min)</li>
-          <li>Digital resource packet</li>
-        </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Essential%20Keynote" class="pricing-cta">Book Now</a>
+    <h2 class="section-title">Operator Logs & Archives</h2>
+    <p style="margin-bottom: 2rem; color: var(--muted);">
+      Selected broadcasts, systems documentation, and performance protocols.
+    </p>
+    
+    <div class="playlist-grid">
+      <div class="playlist-card">
+        <p class="archive-label">Systems & Strategy</p>
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/WvlaWG2Oi-k?list=PLfuA6emw6UmxLB43itgFOb0JnXdUwBAHV" 
+            title="Systems & Strategy Playlist" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
 
-      <div class="pricing-card featured">
-        <h3 class="pricing-tier">Professional</h3>
-        <div class="pricing-price">$6,500<span>/event</span></div>
-        <ul class="pricing-features">
-          <li>90-minute keynote + workshop</li>
-          <li>Custom content development</li>
-          <li>Interactive systems audit</li>
-          <li>Q&amp;A session (30 min)</li>
-          <li>30-day email support</li>
-          <li>Recording + slides included</li>
-        </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Professional%20Keynote" class="pricing-cta">Book Now</a>
+      <div class="playlist-card">
+        <p class="archive-label">Performance & Biomechanics</p>
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/5u33Y2hljYY?list=PLfuA6emw6UmzTXWCqT2PDfU2r8285TBY8" 
+            title="Performance & Biomechanics Playlist" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
 
-      <div class="pricing-card">
-        <h3 class="pricing-tier">Enterprise</h3>
-        <div class="pricing-price">$12,000<span>/event</span></div>
-        <ul class="pricing-features">
-          <li>Half-day intensive (3-4 hours)</li>
-          <li>Pre-event consultation</li>
-          <li>Custom case study development</li>
-          <li>Team breakout sessions</li>
-          <li>90-day implementation support</li>
-          <li>Full recording + materials</li>
-          <li>Travel included (US)</li>
-        </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Booking%20Inquiry%20-%20Enterprise%20Keynote" class="pricing-cta">Book Now</a>
+      <div class="playlist-card">
+        <p class="archive-label">Media & Distribution</p>
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/nWA1A1PN9rA?list=PLfuA6emw6UmzgkJlNTndJpLaRwHoRf_l2" 
+            title="Media & Distribution Playlist" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+      <div>
+        <p class="archive-label" style="text-align: center;">Personal Perspective / Signal</p>
+        <a href="https://www.tiktok.com/@AlexanderVMathai" target="_blank" rel="noopener noreferrer" class="short-card" aria-label="Play pinned operator log">
+          <div class="short-play" aria-hidden="true"></div>
+          <div class="short-card-content">
+            <strong>@AlexanderVMathai</strong>
+            <span style="color: var(--muted); font-size: 0.85rem;">Operator Signal / TikTok</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="animate-in delay-3">
-    <h2 class="section-title">Consulting Services</h2>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3 class="pricing-tier">Starter</h3>
-        <div class="pricing-price">$2,500<span>/month</span></div>
-        <ul class="pricing-features">
-          <li>4 hours monthly consultation</li>
-          <li>Systems diagnostic review</li>
-          <li>Action plan development</li>
-          <li>Bi-weekly check-ins</li>
-          <li>Email support</li>
+    <h2 class="section-title">Select Engagements</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--muted);">
+      I work with a limited number of founders and organizations each quarter. 
+      Engagements are structured around specific operational challenges, not hourly billing.
+    </p>
+    <div class="engagements-grid">
+      <div class="engagement-card">
+        <h3 class="engagement-tier">Systems Audit</h3>
+        <p class="engagement-focus">Diagnostic</p>
+        <ul class="engagement-features">
+          <li>Digital infrastructure review</li>
+          <li>Operational bottleneck identification</li>
+          <li>Architecture recommendations</li>
+          <li>Implementation roadmap</li>
         </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Starter" class="pricing-cta">Get Started</a>
       </div>
 
-      <div class="pricing-card featured">
-        <h3 class="pricing-tier">Growth</h3>
-        <div class="pricing-price">$5,000<span>/month</span></div>
-        <ul class="pricing-features">
-          <li>10 hours monthly consultation</li>
-          <li>AI systems integration</li>
-          <li>Process optimization</li>
-          <li>Weekly strategy calls</li>
-          <li>Priority email/Slack support</li>
-          <li>Monthly performance report</li>
+      <div class="engagement-card">
+        <h3 class="engagement-tier">Strategic Advisory</h3>
+        <p class="engagement-focus">Ongoing</p>
+        <ul class="engagement-features">
+          <li>Monthly strategy sessions</li>
+          <li>Systems thinking frameworks</li>
+          <li>Decision-making support</li>
+          <li>Long-term ownership planning</li>
         </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Growth" class="pricing-cta">Get Started</a>
       </div>
 
-      <div class="pricing-card">
-        <h3 class="pricing-tier">Transformation</h3>
-        <div class="pricing-price">$10,000<span>/month</span></div>
-        <ul class="pricing-features">
-          <li>Unlimited consultation hours</li>
-          <li>Full organizational audit</li>
-          <li>Complete systems rebuild</li>
-          <li>Team training &amp; handoff</li>
-          <li>24/7 priority access</li>
-          <li>Quarterly reviews</li>
-          <li>6-month minimum engagement</li>
+      <div class="engagement-card">
+        <h3 class="engagement-tier">Keynote & Workshop</h3>
+        <p class="engagement-focus">Event</p>
+        <ul class="engagement-features">
+          <li>Systems thinking for operators</li>
+          <li>Performance optimization</li>
+          <li>Custom content development</li>
+          <li>Interactive team sessions</li>
         </ul>
-        <a href="mailto:lexmathai@gmail.com?subject=Consulting%20Inquiry%20-%20Transformation" class="pricing-cta">Get Started</a>
       </div>
     </div>
+    <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--muted); text-align: center;">
+      For engagement inquiries, contact directly below.
+    </p>
   </section>
 
   <section class="animate-in delay-3">
@@ -655,28 +704,7 @@
       <a href="https://texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Texas Movement International">
         <div class="link-card-content">
           <span class="link-card-title">Texas Movement International</span>
-          <span class="link-card-desc">Parent company &amp; core operations</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://consulting.texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Texas Movement Consulting">
-        <div class="link-card-content">
-          <span class="link-card-title">Texas Movement Consulting</span>
-          <span class="link-card-desc">Strategy &amp; AI systems for founders and operators</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://media.texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Texas Movement Media">
-        <div class="link-card-content">
-          <span class="link-card-title">Texas Movement Media</span>
-          <span class="link-card-desc">Independent media, documentation &amp; content systems</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://hero.texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="HERO Footwear">
-        <div class="link-card-content">
-          <span class="link-card-title">HERO Footwear</span>
-          <span class="link-card-desc">Creative Director &amp; brand development</span>
+          <span class="link-card-desc">Parent company & venture studio</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
@@ -684,54 +712,40 @@
   </section>
 
   <section class="animate-in delay-3">
-    <h2 class="section-title">Content &amp; Social</h2>
+    <h2 class="section-title">Writing & Distribution</h2>
     <div class="link-group social-grid">
-      <a href="https://www.linkedin.com/in/alexandermathai" class="link-card" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
-        <div class="link-card-content">
-          <span class="link-card-title">LinkedIn</span>
-          <span class="link-card-desc">Professional background &amp; updates</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
       <a href="https://texasmovement.substack.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Substack Newsletter">
         <div class="link-card-content">
           <span class="link-card-title">Substack</span>
-          <span class="link-card-desc">Long-form writing &amp; analysis</span>
+          <span class="link-card-desc">Long-form essays & operator logs</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
       <a href="https://www.youtube.com/@TexasMovementMedia" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube: Texas Movement Media">
         <div class="link-card-content">
-          <span class="link-card-title">YouTube: Media</span>
-          <span class="link-card-desc">Documentaries, signal, and systems</span>
+          <span class="link-card-title">YouTube</span>
+          <span class="link-card-desc">Documentaries & systems analysis</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://www.youtube.com/@TexasMovementPerformance" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube: Texas Movement Performance">
+      <a href="https://www.linkedin.com/in/alexandermathai" class="link-card" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
         <div class="link-card-content">
-          <span class="link-card-title">YouTube: Performance</span>
-          <span class="link-card-desc">Performance science &amp; athletic advisory</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://www.youtube.com/@herofootwear" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube: HERO Footwear">
-        <div class="link-card-content">
-          <span class="link-card-title">YouTube: HERO</span>
-          <span class="link-card-desc">Brand content &amp; product showcases</span>
+          <span class="link-card-title">LinkedIn</span>
+          <span class="link-card-desc">Professional background & updates</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
       <a href="https://github.com/lexmathai" class="link-card" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
         <div class="link-card-content">
           <span class="link-card-title">GitHub</span>
-          <span class="link-card-desc">Open source &amp; technical projects</span>
+          <span class="link-card-desc">Open source & technical projects</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://www.instagram.com/gabrielofgath" class="link-card" target="_blank" rel="noopener noreferrer" title="Instagram: @gabrielofgath">
+      <a href="https://www.instagram.com/alexanderofnazareth" class="link-card" target="_blank" rel="noopener noreferrer" title="Instagram: @alexanderofnazareth">
         <div class="link-card-content">
-          <span class="link-card-title">IG: @gabrielofgath</span>
-          <span class="link-card-desc">Personal &amp; founder perspective</span>
+          <span class="link-card-title">Instagram</span>
+          <span class="link-card-desc">@alexanderofnazareth</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
@@ -747,6 +761,9 @@
 
   <section class="animate-in delay-4">
     <h2 class="section-title">Direct Contact</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--muted);">
+      Direct to Founder. No automated routing, no intake forms, no agency intermediaries.
+    </p>
     <div class="contact-grid">
       <a href="mailto:lexmathai@gmail.com" class="contact-item" title="Send an email">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -754,11 +771,11 @@
         </svg>
         lexmathai@gmail.com
       </a>
-      <a href="tel:+18722102505" class="contact-item" title="Call via Google Voice">
+      <a href="tel:+18722102505" class="contact-item" title="Call direct">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        872-210-2505 <span style="font-size: 0.8em; color: var(--muted); font-weight: 400; margin-left: 4px;">(Google Voice)</span>
+        872-210-2505
       </a>
     </div>
   </section>
