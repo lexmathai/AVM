@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Alexander Mathai | Founder & President, Texas Movement International</title>
-  <meta name="description" content="Alexander (Lex) Mathai is Founder & President of Texas Movement International. Operator logs, systems thinking, and independent perspective on business, media, and performance.">
+  <title>Alexander Mathai | Websites & Content for Black Attorneys & Professionals</title>
+  <meta name="description" content="I build websites and create TikTok/YouTube content for African American attorneys and professionals who want to attract the right clients and build authentic authority online.">
   <link rel="canonical" href="https://alexandermathai.com/">
   
   <!-- Theme Colors -->
@@ -13,8 +13,8 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Alexander Mathai | Founder & President">
-  <meta property="og:description" content="Operator logs, systems thinking, and independent perspective on business, media, and performance.">
+  <meta property="og:title" content="Alexander Mathai | Websites & Content for Black Professionals">
+  <meta property="og:description" content="I help African American attorneys and professionals build credible websites and create content that attracts the right clients.">
   <meta property="og:url" content="https://alexandermathai.com/">
   <meta property="og:image" content="https://alexandermathai.com/images/og-image.jpg">
   <meta property="profile:first_name" content="Alexander">
@@ -22,8 +22,8 @@
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alexander Mathai | Founder & President">
-  <meta name="twitter:description" content="Operator logs, systems thinking, and independent perspective on business, media, and performance.">
+  <meta name="twitter:title" content="Alexander Mathai | Websites & Content for Black Professionals">
+  <meta name="twitter:description" content="I help African American attorneys and professionals build credible websites and create content that attracts the right clients.">
   <meta name="twitter:image" content="https://alexandermathai.com/images/og-image.jpg">
 
   <!-- Favicon -->
@@ -41,12 +41,8 @@
     "@type": "Person",
     "name": "Alexander Mathai",
     "alternateName": "Lex Mathai",
-    "jobTitle": "Founder & President",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Texas Movement International",
-      "url": "https://texasmovement.com/"
-    },
+    "jobTitle": "Web Designer & Content Creator",
+    "description": "I build websites and create TikTok/YouTube content for African American attorneys and professionals.",
     "email": "mailto:lexmathai@gmail.com",
     "telephone": "+1-872-210-2505",
     "url": "https://alexandermathai.com/",
@@ -57,13 +53,9 @@
       "https://www.instagram.com/AlexanderVMathai",
       "https://www.tiktok.com/@AlexanderVMathai",
       "https://www.youtube.com/@TexasMovementMedia",
-      "https://texasmovement.substack.com",
-      "https://hero.texasmovement.com/",
-      "https://www.youtube.com/@herofootwear",
-      "https://www.instagram.com/herofootwearusa",
-      "https://www.tiktok.com/@herofootwear"
+      "https://texasmovement.substack.com"
     ],
-    "knowsAbout": ["Systems Thinking", "Digital Infrastructure", "Biomechanics", "Venture Building", "Media Distribution"],
+    "knowsAbout": ["Web Design", "Content Creation", "TikTok", "YouTube", "Professional Branding", "Legal Marketing"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chicago",
@@ -86,6 +78,7 @@
       --card-bg: #ffffff;
       --shadow: 0 1px 2px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.04);
       --shadow-hover: 0 4px 8px rgba(0,0,0,0.04), 0 12px 24px rgba(0,0,0,0.08);
+      --gold: #d4af37;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -169,7 +162,7 @@
       object-fit: cover;
       border-radius: 16px;
       box-shadow: var(--shadow-hover);
-      border: 3px solid var(--rule);
+      border: 4px solid var(--gold);
       transition: transform 0.3s ease, border-color 0.3s ease;
       background: var(--bg-subtle);
     }
@@ -201,44 +194,51 @@
     h1 {
       margin: 0 0 0.75rem;
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(3.5rem, 12vw, 5.5rem);
-      line-height: 0.95;
+      font-size: clamp(3rem, 10vw, 4.5rem);
+      line-height: 1;
       letter-spacing: -0.03em;
       font-weight: 400;
       color: var(--ink);
     }
     
-    .role { 
+    .tagline { 
       margin: 0 auto 1.5rem; 
       color: var(--accent); 
       font-weight: 600;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       letter-spacing: -0.01em;
       max-width: 600px;
     }
     
-    .bio { 
+    .intro { 
       position: relative;
-      padding-left: 1.5rem;
-      border-left: 3px solid var(--accent);
-      margin: 0 auto 1rem;
-      color: var(--muted);
+      padding: 1.5rem;
+      border-left: 4px solid var(--gold);
+      margin: 0 auto 2rem;
+      color: var(--ink);
       font-size: 1.125rem;
       line-height: 1.7;
       max-width: 600px;
       text-align: left;
+      background: var(--bg-subtle);
+      border-radius: 8px;
+    }
+    
+    .intro strong {
+      color: var(--accent);
+      font-weight: 600;
     }
     
     section { margin-bottom: 3.5rem; }
     
     .section-title {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--muted);
-      margin: 0 0 1.25rem;
-      font-weight: 600;
+      margin: 0 0 1.5rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -247,10 +247,36 @@
     .section-title::after {
       content: "";
       flex: 1;
-      height: 1px;
+      height: 2px;
       background: var(--rule);
     }
     
+    .problem-statement {
+      background: var(--card-bg);
+      border: 2px solid var(--rule);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .problem-statement h3 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+    }
+    
+    .problem-statement ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      color: var(--muted);
+    }
+    
+    .problem-statement li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
     .link-group {
       display: flex;
       flex-direction: column;
@@ -337,6 +363,112 @@
       transform: translate(4px, -4px);
     }
 
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 2px solid var(--rule);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.75rem;
+      margin: 0 0 1rem;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .service-features li:last-child {
+      border-bottom: none;
+    }
+
+    .service-features li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Content Showcase */
+    .content-showcase {
+      background: var(--card-bg);
+      border: 2px solid var(--rule);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .content-showcase h3 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.75rem;
+      margin: 0 0 1rem;
+      font-weight: 400;
+    }
+
+    .platform-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-tag {
+      background: var(--bg-subtle);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+    }
+
     /* Playlist Grid Styles */
     .playlist-grid {
       display: grid;
@@ -385,77 +517,6 @@
       border: 0;
     }
 
-    /* Engagements Section */
-    .engagements-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .engagements-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .engagement-card {
-      background: var(--card-bg);
-      border: 2px solid var(--rule);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .engagement-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .engagement-tier {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.5rem;
-      margin: 0 0 0.5rem;
-      color: var(--ink);
-      font-weight: 400;
-    }
-
-    .engagement-focus {
-      font-size: 0.875rem;
-      color: var(--accent);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-
-    .engagement-features {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .engagement-features li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.9rem;
-      color: var(--muted);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .engagement-features li:last-child {
-      border-bottom: none;
-    }
-
-    .engagement-features li::before {
-      content: "→";
-      color: var(--accent);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -474,7 +535,7 @@
       justify-content: center;
       gap: 0.75rem;
       background: var(--card-bg);
-      border: 1px solid var(--rule);
+      border: 2px solid var(--rule);
       border-radius: 12px;
       padding: 1.25rem 1rem;
       text-decoration: none;
@@ -497,6 +558,49 @@
       height: 20px;
       color: var(--accent);
       flex-shrink: 0;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent), #1e40af);
+      color: white;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .cta-section h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0 0 1rem;
+      font-weight: 400;
+    }
+
+    .cta-section p {
+      font-size: 1.125rem;
+      margin: 0 0 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--accent);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
 
     footer { 
@@ -522,28 +626,81 @@
 <body>
 <main>
   <div class="profile-photo-container animate-in delay-1">
-    <img src="images/headshot-1.jpg" alt="Alexander Mathai - Professional headshot" class="profile-photo">
+    <img src="images/headshot-1.jpg" alt="Alexander Mathai" class="profile-photo">
   </div>
 
   <header class="animate-in delay-2">
     <h1>Alexander Mathai</h1>
-    <p class="role">Founder & President, Texas Movement International</p>
-    <p class="bio">Operator logs, systems thinking, and independent perspective on business, media, and human performance. Building durable infrastructure for independent ventures.</p>
+    <p class="tagline">Websites & content for Black attorneys and professionals.</p>
+    <div class="intro">
+      <strong>I understand your market.</strong> You need a website that builds instant credibility with clients who've been burned before. You need content that attracts the <em>right</em> clients—not just any clients. And you need someone who gets it. I build professional websites and create TikTok/YouTube content for African American attorneys and professionals who want to own their online presence.
+    </div>
   </header>
 
   <section class="animate-in delay-3">
-    <h2 class="section-title">Operator Logs & Archives</h2>
-    <p style="margin-bottom: 2rem; color: var(--muted);">
-      Selected broadcasts, systems documentation, and performance protocols.
-    </p>
+    <h2 class="section-title">The Problem</h2>
+    <div class="problem-statement">
+      <h3>Most websites for Black professionals miss the mark.</h3>
+      <ul>
+        <li><strong>Too corporate:</strong> They look like every other firm and don't reflect your personality or approach</li>
+        <li><strong>Too generic:</strong> They don't speak to your specific clients or address their concerns</li>
+        <li><strong>No content strategy:</strong> You have a website but no way to build authority on TikTok or YouTube where your clients actually spend time</li>
+        <li><strong>Wrong designer:</strong> Someone who doesn't understand your market, your aesthetic, or your clients' experiences</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="animate-in delay-3">
+    <h2 class="section-title">What I Do</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Professional Websites</h3>
+        <p>Websites that establish instant credibility and attract the right clients. Built for attorneys, consultants, and professionals who need to stand out.</p>
+        <ul class="service-features">
+          <li>Mobile-first design that looks professional</li>
+          <li>Client-focused messaging that converts</li>
+          <li>Easy-to-update so you're not dependent on me</li>
+          <li>SEO-optimized so clients can find you</li>
+          <li>You own everything—no lock-in</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>TikTok & YouTube Content</h3>
+        <p>Short-form and long-form content that builds your authority and attracts clients. I handle scripting, filming, and editing so you can focus on your practice.</p>
+        <ul class="service-features">
+          <li>TikTok videos that explain complex topics simply</li>
+          <li>YouTube content that builds long-term authority</li>
+          <li>Professional editing that matches your brand</li>
+          <li>Content strategy tailored to your practice area</li>
+          <li>You stay authentic—I just make you look good</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="animate-in delay-3">
+    <h2 class="section-title">Content I've Created</h2>
+    <div class="content-showcase">
+      <h3>See my work in action</h3>
+      <div class="platform-tags">
+        <span class="platform-tag">YouTube</span>
+        <span class="platform-tag">TikTok</span>
+        <span class="platform-tag">Short-form</span>
+        <span class="platform-tag">Long-form</span>
+      </div>
+      <p style="color: var(--muted); margin-bottom: 2rem;">Here's a sample of content I've produced. This is the level of quality and strategy I bring to every project.</p>
+    </div>
     
     <div class="playlist-grid">
       <div class="playlist-card">
-        <p class="archive-label">Systems & Strategy</p>
+        <p class="archive-label">Long-form Content</p>
         <div class="video-wrapper">
           <iframe 
             src="https://www.youtube-nocookie.com/embed/WvlaWG2Oi-k?list=PLfuA6emw6UmxLB43itgFOb0JnXdUwBAHV" 
-            title="Systems & Strategy Playlist" 
+            title="Long-form Content Examples" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen 
@@ -553,11 +710,11 @@
       </div>
 
       <div class="playlist-card">
-        <p class="archive-label">Performance & Biomechanics</p>
+        <p class="archive-label">Systems & Strategy</p>
         <div class="video-wrapper">
           <iframe 
             src="https://www.youtube-nocookie.com/embed/5u33Y2hljYY?list=PLfuA6emw6UmzTXWCqT2PDfU2r8285TBY8" 
-            title="Performance & Biomechanics Playlist" 
+            title="Systems & Strategy Content" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen 
@@ -571,7 +728,7 @@
         <div class="video-wrapper">
           <iframe 
             src="https://www.youtube-nocookie.com/embed/nWA1A1PN9rA?list=PLfuA6emw6UmzgkJlNTndJpLaRwHoRf_l2" 
-            title="Media & Distribution Playlist" 
+            title="Media & Distribution Examples" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen 
@@ -583,143 +740,66 @@
   </section>
 
   <section class="animate-in delay-3">
-    <h2 class="section-title">Select Engagements</h2>
-    <p style="margin-bottom: 1.5rem; color: var(--muted);">
-      I work with a limited number of founders and organizations each quarter. 
-      Engagements are structured around specific operational challenges, not hourly billing.
-    </p>
-    <div class="engagements-grid">
-      <div class="engagement-card">
-        <h3 class="engagement-tier">Systems Audit</h3>
-        <p class="engagement-focus">Diagnostic</p>
-        <ul class="engagement-features">
-          <li>Digital infrastructure review</li>
-          <li>Operational bottleneck identification</li>
-          <li>Architecture recommendations</li>
-          <li>Implementation roadmap</li>
-        </ul>
-      </div>
-
-      <div class="engagement-card">
-        <h3 class="engagement-tier">Strategic Advisory</h3>
-        <p class="engagement-focus">Ongoing</p>
-        <ul class="engagement-features">
-          <li>Monthly strategy sessions</li>
-          <li>Systems thinking frameworks</li>
-          <li>Decision-making support</li>
-          <li>Long-term ownership planning</li>
-        </ul>
-      </div>
-
-      <div class="engagement-card">
-        <h3 class="engagement-tier">Keynote & Workshop</h3>
-        <p class="engagement-focus">Event</p>
-        <ul class="engagement-features">
-          <li>Systems thinking for operators</li>
-          <li>Performance optimization</li>
-          <li>Custom content development</li>
-          <li>Interactive team sessions</li>
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--muted); text-align: center;">
-      For engagement inquiries, contact directly below.
-    </p>
-  </section>
-
-  <section class="animate-in delay-3">
-    <h2 class="section-title">Ventures</h2>
-    <div class="link-group">
-      <a href="https://texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Texas Movement International">
-        <div class="link-card-content">
-          <span class="link-card-title">Texas Movement International</span>
-          <span class="link-card-desc">Parent company & venture studio</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://hero.texasmovement.com" class="link-card" target="_blank" rel="noopener noreferrer" title="HERO by Texas Movement">
-        <div class="link-card-content">
-          <span class="link-card-title">HERO</span>
-          <span class="link-card-desc">Performance apparel & footwear (Incubating)</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-    </div>
-  </section>
-
-  <section class="animate-in delay-3">
-    <h2 class="section-title">Writing & Distribution</h2>
+    <h2 class="section-title">Find Me Online</h2>
     <div class="link-group social-grid">
-      <a href="https://texasmovement.substack.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Substack Newsletter">
-        <div class="link-card-content">
-          <span class="link-card-title">Substack</span>
-          <span class="link-card-desc">Long-form essays & operator logs</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://www.youtube.com/@TexasMovementMedia" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube: Texas Movement Media">
-        <div class="link-card-content">
-          <span class="link-card-title">YouTube: TMM</span>
-          <span class="link-card-desc">Documentaries & systems analysis</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
       <a href="https://www.linkedin.com/in/alexandermathai" class="link-card" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
         <div class="link-card-content">
           <span class="link-card-title">LinkedIn</span>
-          <span class="link-card-desc">Professional background & updates</span>
+          <span class="link-card-desc">Professional background & case studies</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://github.com/lexmathai" class="link-card" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
+      <a href="https://www.youtube.com/@TexasMovementMedia" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube Channel">
         <div class="link-card-content">
-          <span class="link-card-title">GitHub</span>
-          <span class="link-card-desc">Open source & technical projects</span>
+          <span class="link-card-title">YouTube</span>
+          <span class="link-card-desc">Long-form content & tutorials</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://www.instagram.com/AlexanderVMathai" class="link-card" target="_blank" rel="noopener noreferrer" title="Instagram: @AlexanderVMathai">
+      <a href="https://www.tiktok.com/@AlexanderVMathai" class="link-card" target="_blank" rel="noopener noreferrer" title="TikTok">
+        <div class="link-card-content">
+          <span class="link-card-title">TikTok</span>
+          <span class="link-card-desc">Short-form content & tips</span>
+        </div>
+        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </a>
+      <a href="https://www.instagram.com/AlexanderVMathai" class="link-card" target="_blank" rel="noopener noreferrer" title="Instagram">
         <div class="link-card-content">
           <span class="link-card-title">Instagram</span>
           <span class="link-card-desc">@AlexanderVMathai</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://www.tiktok.com/@AlexanderVMathai" class="link-card" target="_blank" rel="noopener noreferrer" title="TikTok: @AlexanderVMathai">
+      <a href="https://texasmovement.substack.com" class="link-card" target="_blank" rel="noopener noreferrer" title="Newsletter">
         <div class="link-card-content">
-          <span class="link-card-title">TikTok</span>
-          <span class="link-card-desc">@AlexanderVMathai</span>
+          <span class="link-card-title">Newsletter</span>
+          <span class="link-card-desc">Deep dives on strategy & systems</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
-      <a href="https://www.youtube.com/@herofootwear" class="link-card" target="_blank" rel="noopener noreferrer" title="YouTube: HERO Footwear">
+      <a href="https://github.com/lexmathai" class="link-card" target="_blank" rel="noopener noreferrer" title="GitHub">
         <div class="link-card-content">
-          <span class="link-card-title">YouTube: HERO</span>
-          <span class="link-card-desc">Brand content & product showcases</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://www.instagram.com/herofootwearusa" class="link-card" target="_blank" rel="noopener noreferrer" title="Instagram: @herofootwearusa">
-        <div class="link-card-content">
-          <span class="link-card-title">IG: HERO</span>
-          <span class="link-card-desc">@herofootwearusa</span>
-        </div>
-        <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-      <a href="https://www.tiktok.com/@herofootwear" class="link-card" target="_blank" rel="noopener noreferrer" title="TikTok: @herofootwear">
-        <div class="link-card-content">
-          <span class="link-card-title">TikTok: HERO</span>
-          <span class="link-card-desc">@herofootwear</span>
+          <span class="link-card-title">GitHub</span>
+          <span class="link-card-desc">Technical projects & code</span>
         </div>
         <svg class="link-card-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
     </div>
   </section>
 
+  <div class="cta-section animate-in delay-3">
+    <h2>Ready to build something that works?</h2>
+    <p>Let's talk about your website, your content strategy, or both. No pitch decks. No pressure. Just a conversation about what you need.</p>
+    <a href="mailto:lexmathai@gmail.com" class="cta-button">
+      Start the conversation
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+
   <section class="animate-in delay-4">
     <h2 class="section-title">Direct Contact</h2>
     <p style="margin-bottom: 1.5rem; color: var(--muted);">
-      Direct to Founder. No automated routing, no intake forms, no agency intermediaries.
+      I respond to every message personally. No assistants, no automated systems.
     </p>
     <div class="contact-grid">
       <a href="mailto:lexmathai@gmail.com" class="contact-item" title="Send an email">
