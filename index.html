@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#101512" />
 
-  <title>Alexander Mathai | Founder, Operator & Digital Builder</title>
+  <title>Alexander Mathai | Founder, Operator &amp; Digital Builder</title>
+
   <meta
     name="description"
     content="Alexander Mathai is the Chicago-based founder and president of Texas Movement International. Explore his work in websites, business systems, consulting, media, and product development."
@@ -25,8 +26,13 @@
     content="Websites, workflows, and practical systems for independent businesses. Based in Chicago."
   />
   <meta property="og:url" content="https://alexandermathai.com/" />
+  <meta
+    property="og:image"
+    content="https://alexandermathai.com/images/headshot-1.jpg"
+  />
+  <meta property="og:image:alt" content="Alexander Mathai" />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
     content="Alexander Mathai | Founder, Operator & Digital Builder"
@@ -35,6 +41,11 @@
     name="twitter:description"
     content="Websites, workflows, and practical systems for independent businesses."
   />
+  <meta
+    name="twitter:image"
+    content="https://alexandermathai.com/images/headshot-1.jpg"
+  />
+  <meta name="twitter:image:alt" content="Alexander Mathai" />
 
   <script type="application/ld+json">
     {
@@ -44,6 +55,7 @@
       "name": "Alexander Mathai",
       "alternateName": "Alexander Varghese Mathai",
       "url": "https://alexandermathai.com/",
+      "image": "https://alexandermathai.com/images/headshot-1.jpg",
       "jobTitle": "Founder & President",
       "description": "Founder and operator working across digital development, business systems, media, and product development.",
       "worksFor": {
@@ -124,6 +136,11 @@
       font: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     h1,
     h2,
     h3,
@@ -141,9 +158,8 @@
 
     h1 {
       margin-bottom: 24px;
-      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      font-size: clamp(3.2rem, 6.8vw, 5.8rem);
       font-weight: 650;
-      max-width: 900px;
     }
 
     h2 {
@@ -247,19 +263,67 @@
     }
 
     .hero {
-      padding-block: 100px 70px;
+      padding-block: 70px 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.85fr);
+      grid-template-areas: "copy portrait";
+      align-items: center;
+      gap: clamp(30px, 5vw, 68px);
+    }
+
+    .hero-copy {
+      grid-area: copy;
+      min-width: 0;
+    }
+
+    .hero-portrait {
+      grid-area: portrait;
+      width: 100%;
+      max-width: 390px;
+      margin: 0;
+      justify-self: end;
+    }
+
+    .portrait-frame {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgb(0 0 0 / 18%);
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    .portrait-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .portrait-caption span:first-child {
+      color: var(--text);
     }
 
     .hero-role {
       margin-bottom: 20px;
       color: var(--accent);
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: clamp(1rem, 2vw, 1.15rem);
     }
 
     .hero-description {
-      max-width: 760px;
+      max-width: 720px;
       color: var(--muted);
-      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
       line-height: 1.6;
     }
 
@@ -285,7 +349,9 @@
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease;
+      transition:
+        background 160ms ease,
+        border-color 160ms ease;
     }
 
     .button:hover {
@@ -308,10 +374,10 @@
 
     .context-strip {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
       padding-block: 26px;
-      margin-top: 60px;
+      margin-top: 54px;
       border-block: 1px solid var(--line);
     }
 
@@ -350,6 +416,7 @@
     .card {
       display: flex;
       flex-direction: column;
+      min-width: 0;
       padding: 28px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -474,12 +541,18 @@
 
     .split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 60px;
       align-items: start;
     }
 
     .muted {
+      color: var(--muted);
+    }
+
+    .section-note {
+      margin-top: 24px;
+      margin-bottom: 0;
       color: var(--muted);
     }
 
@@ -534,6 +607,11 @@
       font-size: clamp(1.1rem, 3vw, 1.65rem);
     }
 
+    .contact-location {
+      margin-top: 24px;
+      color: var(--muted);
+    }
+
     .site-footer {
       padding-block: 26px;
       border-top: 1px solid var(--line);
@@ -572,6 +650,25 @@
       }
     }
 
+    @media (max-width: 1000px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.85fr);
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 6.5vw, 5rem);
+      }
+
+      .hero .actions {
+        gap: 10px;
+      }
+
+      .hero .button {
+        padding-inline: 16px;
+      }
+    }
+
     @media (max-width: 900px) {
       .grid-three {
         grid-template-columns: 1fr;
@@ -593,6 +690,29 @@
 
       .card {
         padding: 26px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "portrait"
+          "copy";
+        gap: 30px;
+      }
+
+      .hero-portrait {
+        justify-self: start;
+        width: min(100%, 320px);
+      }
+
+      .portrait-frame {
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 10vw, 5rem);
       }
     }
 
@@ -622,11 +742,20 @@
       }
 
       .hero {
-        padding-block: 58px 28px;
+        padding-block: 32px 28px;
+      }
+
+      .hero-portrait {
+        width: min(100%, 280px);
       }
 
       .hero h1 {
-        font-size: clamp(3rem, 13vw, 4.5rem);
+        font-size: clamp(3rem, 12vw, 4.5rem);
+      }
+
+      .hero .eyebrow {
+        font-size: 0.69rem;
+        letter-spacing: 0.11em;
       }
 
       .context-strip {
@@ -792,7 +921,11 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Alexander Mathai, home">
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Alexander Mathai, home"
+      >
         Alexander Mathai<span>.</span>
       </a>
 
@@ -806,35 +939,63 @@
   </header>
 
   <main id="main">
-    <section class="hero container" aria-labelledby="hero-heading">
-      <p class="eyebrow">Chicago, Illinois · Independent ownership</p>
+    <section
+      class="hero container"
+      aria-labelledby="hero-heading"
+    >
+      <div class="hero-grid">
+        <figure class="hero-portrait">
+          <div class="portrait-frame">
+            <img
+              src="images/headshot-1.jpg"
+              alt="Alexander Mathai"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
 
-      <h1 id="hero-heading">Alexander Mathai</h1>
+          <figcaption class="portrait-caption">
+            <span>Alexander Mathai</span>
+            <span>Chicago, Illinois</span>
+          </figcaption>
+        </figure>
 
-      <p class="hero-role">
-        Founder &amp; President, Texas Movement International
-      </p>
+        <div class="hero-copy">
+          <p class="eyebrow">
+            Chicago, Illinois · Independent ownership
+          </p>
 
-      <p class="hero-description">
-        I build websites, improve business workflows, and help founders
-        turn complex ideas into practical operating systems.
-      </p>
+          <h1 id="hero-heading">Alexander Mathai</h1>
 
-      <p class="muted">
-        My work connects business operations, digital development,
-        performance, media, and product creation.
-      </p>
+          <p class="hero-role">
+            Founder &amp; President, Texas Movement International
+          </p>
 
-      <div class="actions">
-        <a class="button button-primary" href="#work">
-          Explore My Work
-        </a>
-        <a class="button" href="#resume">
-          View Resume
-        </a>
-        <a class="button" href="#contact">
-          Discuss a Project
-        </a>
+          <p class="hero-description">
+            I build websites, improve business workflows, and help
+            founders turn complex ideas into practical operating systems.
+          </p>
+
+          <p class="muted">
+            My work connects business operations, digital development,
+            performance, media, and product creation.
+          </p>
+
+          <div class="actions">
+            <a class="button button-primary" href="#work">
+              Explore My Work
+            </a>
+
+            <a class="button" href="#resume">
+              View Resume
+            </a>
+
+            <a class="button" href="#contact">
+              Discuss a Project
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="context-strip" aria-label="Professional overview">
@@ -842,10 +1003,12 @@
           <span class="context-label">Ownership</span>
           Founder &amp; 100% owner of TMI
         </p>
+
         <p>
           <span class="context-label">Focus</span>
           Websites, workflows &amp; business systems
         </p>
+
         <p>
           <span class="context-label">Approach</span>
           Strategy connected to execution
@@ -853,11 +1016,17 @@
       </div>
     </section>
 
-    <section id="work" class="section" aria-labelledby="work-heading">
+    <section
+      id="work"
+      class="section"
+      aria-labelledby="work-heading"
+    >
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">01 / Selected work</span>
+
           <h2 id="work-heading">Ideas made operational.</h2>
+
           <p>
             Selected initiatives across digital infrastructure,
             business development, and product creation.
@@ -867,16 +1036,20 @@
         <div class="grid-three">
           <article class="card">
             <span class="card-label">Digital development</span>
+
             <h3>AlexanderMathai.com</h3>
+
             <p>
               A focused personal platform connecting professional
               experience, selected work, services, and direct contact.
             </p>
+
             <p class="project-detail">
               <span>My contribution</span>
               Positioning, content architecture, website development,
               and ongoing iteration.
             </p>
+
             <a class="card-link" href="#resume">
               Explore the background behind the work &rarr;
             </a>
@@ -884,33 +1057,47 @@
 
           <article class="card">
             <span class="card-label">Business ownership</span>
+
             <h3>Texas Movement International</h3>
+
             <p>
               My independently owned company, connecting work across
               consulting, media, performance, and product development.
             </p>
+
             <p class="project-detail">
               <span>My contribution</span>
               Company direction, brand architecture, digital platforms,
               and cross-functional execution.
             </p>
-            <a class="card-link" href="https://texasmovement.com/">
+
+            <a
+              class="card-link"
+              href="https://texasmovement.com/"
+            >
               Explore Texas Movement &rarr;
             </a>
           </article>
 
           <article class="card">
-            <span class="card-label">Product &amp; brand · Incubating</span>
+            <span class="card-label">
+              Product &amp; brand · Incubating
+            </span>
+
             <h3>HERO</h3>
+
             <p>
               An evolving footwear and apparel initiative connecting
-              performance interests with product design and brand development.
+              performance interests with product design and brand
+              development.
             </p>
+
             <p class="project-detail">
               <span>My contribution</span>
               Creative direction, product concepts, digital commerce,
               and brand positioning.
             </p>
+
             <a
               class="card-link"
               href="https://www.instagram.com/herofootwearusa/"
@@ -922,20 +1109,33 @@
       </div>
     </section>
 
-    <section id="resume" class="section" aria-labelledby="resume-heading">
+    <section
+      id="resume"
+      class="section"
+      aria-labelledby="resume-heading"
+    >
       <div class="container">
         <div class="print-only print-header">
           <h1>Alexander Mathai</h1>
-          <p>Founder &amp; President, Texas Movement International LLC</p>
+
+          <p>
+            Founder &amp; President, Texas Movement International LLC
+          </p>
+
           <p>
             Chicago, Illinois · lexmathai@gmail.com · 872-210-2505
           </p>
-          <p>alexandermathai.com · linkedin.com/in/alexandermathai</p>
+
+          <p>
+            alexandermathai.com · linkedin.com/in/alexandermathai
+          </p>
         </div>
 
         <div class="section-heading">
           <span class="eyebrow">02 / Professional background</span>
+
           <h2 id="resume-heading">Founder. Operator. Builder.</h2>
+
           <p class="resume-intro">
             A multidisciplinary background spanning business ownership,
             consulting, digital development, media, product creation,
@@ -949,23 +1149,29 @@
           <div>
             <article class="experience-item">
               <h3>Texas Movement International LLC</h3>
+
               <p class="experience-role">
                 Founder &amp; President · Current
               </p>
+
               <ul>
                 <li>
                   Lead the direction and development of an independently
                   owned company spanning consulting, media, performance,
                   and product initiatives.
                 </li>
+
                 <li>
                   Develop websites and digital platforms that connect
-                  brand positioning, content, services, and customer journeys.
+                  brand positioning, content, services, and customer
+                  journeys.
                 </li>
+
                 <li>
                   Work across business strategy, operational planning,
                   client development, and hands-on implementation.
                 </li>
+
                 <li>
                   Apply AI-assisted workflows to research, planning,
                   content production, and business systems development.
@@ -975,18 +1181,22 @@
 
             <article class="experience-item">
               <h3>Consulting &amp; Performance</h3>
+
               <p class="experience-role">
                 Selected responsibilities within Texas Movement
               </p>
+
               <ul>
                 <li>
                   Connect performance-oriented analysis with practical
                   approaches to individual and business challenges.
                 </li>
+
                 <li>
                   Develop consulting engagements around operational
                   reviews, workflow design, and strategic priorities.
                 </li>
+
                 <li>
                   Translate complex goals into clearer decisions,
                   implementation plans, and working processes.
@@ -996,18 +1206,23 @@
 
             <article class="experience-item">
               <h3>Media &amp; Product Development</h3>
+
               <p class="experience-role">
                 Selected responsibilities within Texas Movement
               </p>
+
               <ul>
                 <li>
-                  Develop editorial direction and content across business,
-                  performance, entrepreneurship, and independent media.
+                  Develop editorial direction and content across
+                  business, performance, entrepreneurship, and
+                  independent media.
                 </li>
+
                 <li>
                   Shape product concepts, brand identity, digital
                   storefronts, and launch materials for HERO.
                 </li>
+
                 <li>
                   Connect content and distribution with broader
                   business and brand objectives.
@@ -1017,14 +1232,17 @@
 
             <article class="experience-item">
               <h3>SWEAT Boxing and Training</h3>
+
               <p class="experience-role">
                 General Manager · Earlier experience
               </p>
+
               <ul>
                 <li>
                   Managed day-to-day fitness business operations,
                   membership development, and customer experience.
                 </li>
+
                 <li>
                   Coordinated staff and supported marketing, outreach,
                   and business development.
@@ -1034,14 +1252,17 @@
 
             <article class="experience-item">
               <h3>James DeOtte Engineering, Inc.</h3>
+
               <p class="experience-role">
                 Civil Engineering Intern · Earlier experience
               </p>
+
               <ul>
                 <li>
                   Supported civil engineering design, utility planning,
                   drainage analysis, and construction documentation.
                 </li>
+
                 <li>
                   Worked with technical drawings and field information
                   under professional supervision.
@@ -1050,9 +1271,13 @@
             </article>
           </div>
 
-          <aside class="resume-sidebar" aria-label="Professional capabilities">
+          <aside
+            class="resume-sidebar"
+            aria-label="Professional capabilities"
+          >
             <div class="sidebar-block">
               <h3>Core Capabilities</h3>
+
               <ul class="skills">
                 <li>Business operations</li>
                 <li>Website development</li>
@@ -1069,6 +1294,7 @@
 
             <div class="sidebar-block">
               <h3>Working Approach</h3>
+
               <p>
                 Understand the problem. Clarify the priorities.
                 Build what is useful. Document the handoff.
@@ -1078,17 +1304,22 @@
 
             <div class="sidebar-block">
               <h3>Professional Profile</h3>
+
               <p>
                 For additional career history and professional updates,
                 visit LinkedIn.
               </p>
-              <a href="https://www.linkedin.com/in/alexandermathai/">
+
+              <a
+                href="https://www.linkedin.com/in/alexandermathai/"
+              >
                 View LinkedIn &rarr;
               </a>
             </div>
 
             <div class="sidebar-block">
               <h3>Location</h3>
+
               <p>
                 Chicago, Illinois<br />
                 Project inquiries welcome by email.
@@ -1106,12 +1337,14 @@
           >
             Print Resume / Save as PDF
           </button>
+
           <a
             class="button"
             href="https://www.linkedin.com/in/alexandermathai/"
           >
             View LinkedIn
           </a>
+
           <a class="button" href="#contact">
             Contact Alexander
           </a>
@@ -1127,27 +1360,36 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">03 / Work with me</span>
-          <h2 id="services-heading">Start with the actual problem.</h2>
+
+          <h2 id="services-heading">
+            Start with the actual problem.
+          </h2>
+
           <p>
             Engagements begin with a defined challenge, a clear scope,
-            and an agreed next step—not a stack of tools looking for a use case.
+            and an agreed next step—not a stack of tools looking for
+            a use case.
           </p>
         </div>
 
         <div class="grid-three">
           <article class="card">
             <span class="card-label">Build</span>
+
             <h3>Websites &amp; Digital Presence</h3>
+
             <p>
               Turn a fragmented online presence into a clearer platform
               for your business, services, and work.
             </p>
+
             <ul>
               <li>Website structure and content planning</li>
               <li>Personal and business websites</li>
               <li>Brand and service presentation</li>
               <li>Practical maintenance and handoff</li>
             </ul>
+
             <a
               class="card-link"
               href="mailto:lexmathai@gmail.com?subject=Website%20Project%20Inquiry"
@@ -1158,17 +1400,21 @@
 
           <article class="card">
             <span class="card-label">Diagnose</span>
+
             <h3>Systems &amp; Workflow Audit</h3>
+
             <p>
               Examine how your digital tools and operating processes
               fit together, then identify what to simplify or improve.
             </p>
+
             <ul>
               <li>Digital infrastructure review</li>
               <li>Workflow and bottleneck mapping</li>
               <li>AI use-case assessment</li>
               <li>Prioritized implementation roadmap</li>
             </ul>
+
             <a
               class="card-link"
               href="mailto:lexmathai@gmail.com?subject=Systems%20Audit%20Inquiry"
@@ -1179,17 +1425,21 @@
 
           <article class="card">
             <span class="card-label">Advise</span>
+
             <h3>Strategic Advisory</h3>
+
             <p>
               A practical thinking partner for founders working through
               positioning, operational decisions, and execution priorities.
             </p>
+
             <ul>
               <li>Business and brand positioning</li>
               <li>Project prioritization</li>
               <li>Systems-oriented decision support</li>
               <li>Ongoing planning and review</li>
             </ul>
+
             <a
               class="card-link"
               href="mailto:lexmathai@gmail.com?subject=Strategic%20Advisory%20Inquiry"
@@ -1199,9 +1449,10 @@
           </article>
         </div>
 
-        <p class="muted" style="margin-top: 24px; margin-bottom: 0;">
-          Workshops and speaking engagements can also be discussed directly.
-          Scope, deliverables, and fees are agreed before work begins.
+        <p class="section-note">
+          Workshops and speaking engagements can also be discussed
+          directly. Scope, deliverables, and fees are agreed before
+          work begins.
         </p>
       </div>
     </section>
@@ -1214,9 +1465,12 @@
       <div class="container split">
         <div>
           <span class="eyebrow">04 / Ownership &amp; ventures</span>
+
           <h2 id="ventures-heading">
-            One founder.<br />Connected initiatives.
+            One founder.<br />
+            Connected initiatives.
           </h2>
+
           <p class="muted">
             I founded and own 100% of Texas Movement International LLC.
             This website presents my work and professional background.
@@ -1231,17 +1485,26 @@
               <a href="https://texasmovement.com/">
                 <span>
                   Texas Movement International
-                  <small>Company, portfolio, and operating initiatives</small>
+                  <small>
+                    Company, portfolio, and operating initiatives
+                  </small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
+
             <li>
-              <a href="https://www.instagram.com/herofootwearusa/">
+              <a
+                href="https://www.instagram.com/herofootwearusa/"
+              >
                 <span>
                   HERO
-                  <small>Footwear and apparel · Incubating</small>
+                  <small>
+                    Footwear and apparel · Incubating
+                  </small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
@@ -1258,11 +1521,14 @@
       <div class="container split">
         <div>
           <span class="eyebrow">05 / Writing &amp; perspective</span>
+
           <h2 id="writing-heading">Thinking in public.</h2>
+
           <p class="muted">
             Essays, professional updates, and observations on business,
             systems, media, and human performance.
           </p>
+
           <p class="muted">
             The work is the foundation. These channels document the
             questions, experiments, and perspective behind it.
@@ -1277,33 +1543,48 @@
                   Substack
                   <small>Long-form essays and operator logs</small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
+
             <li>
-              <a href="https://www.linkedin.com/in/alexandermathai/">
+              <a
+                href="https://www.linkedin.com/in/alexandermathai/"
+              >
                 <span>
                   LinkedIn
-                  <small>Professional background and business updates</small>
+                  <small>
+                    Professional background and business updates
+                  </small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
+
             <li>
-              <a href="https://www.instagram.com/alexandervmathai/">
+              <a
+                href="https://www.instagram.com/alexandervmathai/"
+              >
                 <span>
                   Instagram
                   <small>@AlexanderVMathai</small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
+
             <li>
-              <a href="https://www.tiktok.com/@alexandervmathai">
+              <a
+                href="https://www.tiktok.com/@alexandervmathai"
+              >
                 <span>
                   TikTok
                   <small>@AlexanderVMathai</small>
                 </span>
+
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </li>
@@ -1319,14 +1600,17 @@
     >
       <div class="container">
         <span class="eyebrow">06 / Direct contact</span>
+
         <h2 id="contact-heading">
           What are you building—or trying to fix?
         </h2>
+
         <p class="muted">
           Tell me what you are working on, where you are stuck, and
           what a useful outcome would look like. Include your website,
           timeline, and budget range if available.
         </p>
+
         <p class="muted">
           Direct contact with me. No intake platform required.
         </p>
@@ -1335,12 +1619,13 @@
           <a href="mailto:lexmathai@gmail.com">
             lexmathai@gmail.com
           </a>
+
           <a href="tel:+18722102505">
             872-210-2505
           </a>
         </div>
 
-        <p class="muted" style="margin-top: 24px;">
+        <p class="contact-location">
           Based in Chicago, Illinois.
         </p>
       </div>
@@ -1354,9 +1639,19 @@
       </p>
 
       <div class="footer-links">
-        <a href="https://texasmovement.com/">Texas Movement</a>
-        <a href="https://www.linkedin.com/in/alexandermathai/">LinkedIn</a>
-        <a href="#top">Back to top &uarr;</a>
+        <a href="https://texasmovement.com/">
+          Texas Movement
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/alexandermathai/"
+        >
+          LinkedIn
+        </a>
+
+        <a href="#top">
+          Back to top &uarr;
+        </a>
       </div>
     </div>
   </footer>
@@ -1372,6 +1667,7 @@
 
       if (printButton) {
         printButton.hidden = false;
+
         printButton.addEventListener("click", () => {
           window.print();
         });
